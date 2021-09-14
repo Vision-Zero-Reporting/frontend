@@ -1,5 +1,13 @@
 # frontend
 
+## Configuration
+
+### Environment variables
+Set the following environment variables, either by using the command line, or by using a `.env` file locally.
+ * `baseUrl` - the base URL of the backend analyzer service
+
+Environment variables should be prefixed with `NUXT_ENV_` during the build phase.
+
 ## Build Setup
 
 ```bash

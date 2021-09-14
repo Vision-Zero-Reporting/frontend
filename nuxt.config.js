@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'frontend',
+    title: 'Vision Zero Reporting',
     htmlAttrs: {
       lang: 'en'
     },
@@ -21,12 +21,10 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'element-ui/lib/theme-chalk/index.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/element-ui'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -38,15 +36,25 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // https://go.nuxtjs.dev/buefy
+    'nuxt-buefy',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
 
+  // Environment variables: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env
+  env: {},
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.baseUrl,
+    progress: false
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: [/^element-ui/],
+    transpile: [ // See: https://stackoverflow.com/questions/56690294/vuejs-nuxtjs-unexpected-token-export
+      'vue-highlightable-input'
+    ]
   }
 }
