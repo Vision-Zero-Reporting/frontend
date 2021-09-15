@@ -1,5 +1,10 @@
 <template>
   <div>
+    <b-message v-if="isError" type="is-danger" has-icon>
+      <p>An error occurred while processing this request.</p>
+      <p><strong>Details</strong>: {{isError}}</p>
+    </b-message>
+
     <h1 class="title is-3">Report</h1>
     <article class="content">
       <h2 class='title is-4'>{{title}}</h2>
@@ -44,6 +49,7 @@ export default {
   data() {
     return {
       isLoading: true,
+      isError: '',
       title: '',
       body: '',
       problems: []
@@ -56,7 +62,7 @@ export default {
           this.problems = response.data.problems
         })
         .catch(error => {
-          console.log(error)
+          this.isError = error.message
         })
         .finally(() => {
           this.isLoading = false
@@ -82,7 +88,7 @@ export default {
 </script>
 
 <style scoped>
-article {
+article.content {
   border: 2px SOLID #ddd;
   padding: 20px;
 }
