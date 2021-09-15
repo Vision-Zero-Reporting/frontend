@@ -1,11 +1,9 @@
 <template>
     <li class="problem-entry">
-        <span class='problem-type-marker' :style="{ backgroundColor: this.color }">{{this.type}}</span>
-        <strong>
-            <b-icon :icon="this.icon"></b-icon>
-            {{this.issue}}
-        </strong>
-        <p>{{explain}}</p>
+        <p>
+            <b-icon size="is-small" :icon="this.icon"></b-icon>
+            {{this.type}}
+        </p>
         <q>{{this.problem.sentence}}</q>
     </li>
 </template>
