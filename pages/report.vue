@@ -82,12 +82,11 @@
 
 <script>
 import ProblemTypes from '../assets/ProblemTypes'
-import ProblemEntry from '../components/ProblemEntry.vue'
 import HighlightableInput from "vue-highlightable-input"
 
 export default {
   name: 'Report',
-  components: { ProblemEntry, HighlightableInput },
+  components: { HighlightableInput },
   data() {
     return {
       isLoading: true,
