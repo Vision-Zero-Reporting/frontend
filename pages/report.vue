@@ -48,6 +48,9 @@
             <ol>
               <li v-for="problem in category.problems" :key="problem">
                 <q>{{problem.sentence}}</q>
+                <b-tag type="is-warning is-light" v-if="problem.details && category.id == 'COUNTER'">
+                  {{Counterfactuals[problem.details].name}}
+                </b-tag>
               </li>
             </ol>
 
@@ -82,6 +85,7 @@
 
 <script>
 import ProblemTypes from '../assets/ProblemTypes'
+import Counterfactuals from '../assets/Counterfactuals'
 import HighlightableInput from "vue-highlightable-input"
 
 export default {
@@ -93,7 +97,8 @@ export default {
       isError: '',
       title: '',
       body: '',
-      problems: []
+      problems: [],
+      Counterfactuals
     }
   },
   methods: {
@@ -169,10 +174,13 @@ p.title { font-size: 1.2em; }
 .problem-list h5.subtitle { border-bottom: 0.75rem; }
 .problem-list ol { margin-left: 40px; }
 .problem-list q {
-  padding: 4px;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-left: 2px SOLID rgba(0, 0, 0, 0.1);
+  padding: 3px;
+  background-color: #f2f2f2;
   font-style: italic;
+}
+
+ol li {
+  margin: 8px 0;
 }
 
 li.example::before {
