@@ -53,29 +53,30 @@
 
               <div class="card-content">
                 <h5 class="subtitle is-6">{{category.issue}}. {{category.explain}}</h5>
-                <label>Sentences</label>
-                <ol>
-                  <li v-for="problem in category.problems" :key="problem">
-                    <q>{{problem.sentence}}</q>
-                    <b-tag type="is-warning is-light" v-if="problem.details && category.id == 'COUNTER'">
-                      {{Counterfactuals[problem.details].name}}
-                    </b-tag>
-                  </li>
-                </ol>
 
-                <br />
+                <section>
+                  <label>Sentences</label>
+                  <ol>
+                    <li v-for="problem in category.problems" :key="problem">
+                      <q>{{problem.sentence}}</q>
+                      <b-tag type="is-warning is-light" v-if="problem.details && category.id == 'COUNTER'">
+                        {{Counterfactuals[problem.details].name}}
+                      </b-tag>
+                    </li>
+                  </ol>
+                </section>
 
-                <label>How to fix</label>
-                <p>{{category.fix}}</p>
+                <section>
+                  <label>How to fix</label>
+                  <p>{{category.fix}}</p>
+                </section>
 
-                <br />
-
-                <div v-if="category.examples">
+                <section v-if="category.examples">
                   <label>Examples</label>
                   <ul>
                     <li v-for="example in category.examples" :key="example.text" class="example" :class="example.type">{{example.text}}</li>
                   </ul>
-                </div>
+                </section>
               </div>
             </b-collapse>
           </div>
@@ -198,25 +199,18 @@ p.title { font-size: 1.2em; }
 }
 .card-header-title small { font-weight: normal; font-style: normal; }
 .problem-list h5.subtitle { border-bottom: 0.75rem; }
-.problem-list ol { margin-left: 40px; }
+.problem-list ol { margin-left: 15px; }
 .problem-list q {
   padding: 3px;
   background-color: #f2f2f2;
   font-style: italic;
 }
 
-ol li {
-  margin: 8px 0;
+.card-content section {
+  padding-left: 15px;
+  margin-top: 15px;
 }
-
-li.example::before {
-  color: #444;
-  margin: 0 12px;
-}
-li.good::before { content: '\2713' }
-li.bad::before { content: '\2A2F' }
-
-label {
+.card-content section label {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
@@ -224,5 +218,20 @@ label {
   color: #777;
   display: inline-block;
   margin-bottom: 6px;
+  position: relative;
+  left: -15px;
 }
+
+ol li {
+  margin: 6px 0;
+}
+
+li.example::before {
+  color: #444;
+  margin: 0 6px 0 0;
+}
+li.good::before { content: '\2713' }
+li.bad::before { content: '\2A2F' }
+
+
 </style>
