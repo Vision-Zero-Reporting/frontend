@@ -33,7 +33,7 @@ const ProblemTypes = {
     },
     OBJECT: { // 🟢
         displayAsRegistered: true,
-        name: 'Object-based language',
+        name: 'Object',
         id: 'OBJECT',
         what: 'Determines if actors are described by object-based language rather than person-based language',
         icon: 'package-variant',
@@ -52,7 +52,7 @@ const ProblemTypes = {
         ]
     },
     COUNTER: { // 🟡
-        displayAsRegistered: false,
+        displayAsRegistered: true,
         isExperimental: true,
         name: 'Counterfactual',
         id: 'COUNTER',

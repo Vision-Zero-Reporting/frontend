@@ -15,6 +15,12 @@
         v-model="body"
       />
     </article>
+    <div id="legend">
+      <span class="legend-entry" v-for="problemType in registeredProblemTypes" :key="problemType.id">
+        <span class="legend-color" :style="{ 'background-color': problemType.lightColor, 'border-color': problemType.color }"></span>
+        <span>{{problemType.name}}</span>
+      </span>
+    </div>
     <small>* Not all highlights will be shown above if there are overlapping issues</small>
 
     <hr />
@@ -99,6 +105,7 @@ export default {
       title: '',
       body: '',
       problems: [],
+      ProblemTypes,
       Counterfactuals
     }
   },
@@ -129,6 +136,9 @@ export default {
       return this.problems.map(problem => {
         return { start: problem.range[0], end: problem.range[1], style: `border-bottom: 1px SOLID ${ProblemTypes[problem.type].color}; background-color: ${ProblemTypes[problem.type].lightColor}` }
       })
+    },
+    registeredProblemTypes() {
+      return Object.values(this.ProblemTypes).filter(problemType => problemType.displayAsRegistered)
     },
     problemsCategorized() {
       const categories = {...ProblemTypes}
@@ -164,6 +174,9 @@ article.content {
   padding: 20px;
   margin-bottom: 0;
 }
+#legend { margin-left: 10px; }
+.legend-entry { margin: 0 5px; }
+.legend-color { width: 12px; height: 12px; display: inline-block; border: 1px SOLID #000; }
 small { font-style: italic; padding-left: 10px; }
 h1 { width: 70%; }
 .empty { background-color: #f9f9f9; padding: 20px; text-align: center; }
