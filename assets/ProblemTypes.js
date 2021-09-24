@@ -75,20 +75,6 @@ const ProblemTypes = {
             { type: 'bad', text: 'It was dark out and the roads were wet.' },
         ]
     },
-    FRAMING: { // 🟣
-        displayAsRegistered: false,
-        isExperimental: true,
-        name: 'Framing',
-        id: 'FRAMING',
-        what: 'Determines if an article includes thematic framing',
-        icon: 'image-filter-frames',
-        color: 'rgba(116, 77, 168, 1)',
-        lightColor: 'rgba(116, 77, 168, 0.2)',
-        issue: 'Article lacks thematic framing',
-        explain: 'Readers who encounter episodic frames tend to hold individuals responsible for negative outcomes and put less pressure on public leaders to make changes.',
-        fix: '',
-        examples: []
-    },
     ACCIDENT: { // 🟠
         displayAsRegistered: true,
         name: 'Accident',
@@ -104,7 +90,28 @@ const ProblemTypes = {
             { type: 'good', text: 'The car crash has left two injured.' },
             { type: 'bad', text: 'The accident has left two injured.' },
         ]
-    }
+    },
+    FRAMING: { // 🟣
+        displayAsRegistered: true,
+        isExperimental: true,
+        name: 'Framing',
+        id: 'FRAMING',
+        what: 'Determines if an article includes thematic framing',
+        icon: 'image-filter-frames',
+        color: 'rgba(116, 77, 168, 1)',
+        lightColor: 'rgba(116, 77, 168, 0.2)',
+        issue: 'Article lacks thematic framing',
+        explain: 'Readers who encounter episodic frames tend to hold individuals responsible for negative outcomes and put less pressure on public leaders to make changes.',
+        fix: 'Include at least 3 thematic elements.',
+        examples: [
+            { type: 'good', text: 'Number of car crashes in recent months' },
+            { type: 'good', text: 'Discussion of road design (width, # lanes, speed limit, turn radius, speedbumps, presence of sidewalks)' },
+            { type: 'good', text: 'Quotes from experts, like engineers or public safety officers' },
+            { type: 'good', text: 'Comments from public officials or police/traffic enforcement' },
+            { type: 'good', text: 'Mentions of safety initiatives like Vision Zero' },
+            { type: 'good', text: 'Statistics from NHTSA, WHO, CDC, and other organizations' },
+        ]
+    },
 }
 
 export default ProblemTypes

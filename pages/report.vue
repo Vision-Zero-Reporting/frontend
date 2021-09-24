@@ -42,7 +42,7 @@
                   <p class="card-header-title">
                     <b-icon :icon="category.icon" />
                     <span>{{category.name}}</span>
-                    <small>{{category.problems.length}} {{category.problems.length == 1 ? 'issue' : 'issues'}}</small>
+                    <small>{{category.count}} {{category.count == 1 ? 'issue' : 'issues'}}</small>
                   </p>
                   <a class="card-header-icon">
                     <b-tag type="is-warning" v-if="category.isExperimental">
@@ -59,7 +59,7 @@
 
                 <section>
                   <label>Sentences</label>
-                  <ol>
+                  <ol v-if="category.problems.length">
                     <li v-for="problem in category.problems" :key="problem">
                       <q>{{problem.sentence}}</q>
                       <b-tag type="is-warning is-light" v-if="problem.details && category.id == 'COUNTER'">
@@ -67,6 +67,9 @@
                       </b-tag>
                     </li>
                   </ol>
+                  <ul v-else>
+                    <li>None found.</li> <!-- for Framing reporter -->
+                  </ul>
                 </section>
 
                 <section>
@@ -160,6 +163,18 @@ export default {
         categories[problem.type].count += 1
         categories[problem.type].problems.push(problem)
       })
+
+      // There needs to be at least three thematic elements for
+      // the "framing" report not to trigger
+      if(categories['FRAMING'].problems.length < 3) {
+        if(categories['FRAMING'].problems.length === 0) { // make sure the reporter shows up even if there are no thematic phrases
+          categories['FRAMING'].count = 1
+          categories['FRAMING'].problems = []
+        }
+      }
+      else {
+        delete categories['FRAMING']
+      }
 
       delete categories.OBJECTP
       return Object.values(categories)
