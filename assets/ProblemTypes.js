@@ -53,6 +53,7 @@ const ProblemTypes = {
     },
     COUNTER: { // 🟡
         displayAsRegistered: false,
+        isExperimental: true,
         name: 'Counterfactual',
         id: 'COUNTER',
         what: 'Identifies presence of counterfactual statements which obscure the systemic nature of crashes and increase likelihood of victim blaming',
@@ -66,6 +67,7 @@ const ProblemTypes = {
     },
     FRAMING: { // 🟣
         displayAsRegistered: false,
+        isExperimental: true,
         name: 'Framing',
         id: 'FRAMING',
         what: 'Determines if an article includes thematic framing',

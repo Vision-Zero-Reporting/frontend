@@ -41,6 +41,7 @@
             <h4 class="title is-5">
               <b-icon :icon="category.icon" />
               {{category.name}}
+              <b-tag type="is-warning" v-if="category.isExperimental">Experimental</b-tag>
             </h4>
             <h5 class="subtitle is-6">{{category.issue}}. {{category.explain}}</h5>
 
