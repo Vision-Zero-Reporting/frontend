@@ -15,6 +15,12 @@
         v-model="body"
       />
     </article>
+    <div id="legend">
+      <span class="legend-entry" v-for="problemType in registeredProblemTypes" :key="problemType.id">
+        <span class="legend-color" :style="{ 'background-color': problemType.lightColor, 'border-color': problemType.color }"></span>
+        <span>{{problemType.name}}</span>
+      </span>
+    </div>
     <small>* Not all highlights will be shown above if there are overlapping issues</small>
 
     <hr />
@@ -23,50 +29,62 @@
       <h2 class="title is-4"><b-icon :icon="statusIcon" /> Problems</h2>
       <h3 class="subtitle is-6">Article analysis is complete and displayed below</h3>
 
-      <nav class="level is-mobile">
-        <div class="level-item has-text-centered" v-for="category in problemsCategorized" :key="category.name" :style="{ 'background-color': category.count ? category.lightColor : '#f5f5f5' }">
-          <div>
-            <p class="title">{{category.count || '0'}}</p>
-            <p class="heading">
-              {{category.id}}
-            </p>
-          </div>
-        </div>
-      </nav>
-
       <b-progress v-if="isLoading"></b-progress>
       <div v-else>
         <ol v-if="problems.length">
           <div class="problem-list" v-for="category in problemsCategorizedNonEmpty" :key="category.name">
-            <h4 class="title is-5">
-              <b-icon :icon="category.icon" />
-              {{category.name}}
-            </h4>
-            <h5 class="subtitle is-6">{{category.issue}}. {{category.explain}}</h5>
+            <b-collapse class="card" animation="slide" aria-id="contentIdForA11y3">
+              <template #trigger="props">
+                <div
+                  class="card-header"
+                  role="button"
+                  aria-controls="contentIdForA11y3">
+                  <p class="card-header-title">
+                    <b-icon :icon="category.icon" />
+                    <span>{{category.name}}</span>
+                    <small>{{category.count}} {{category.count == 1 ? 'issue' : 'issues'}}</small>
+                  </p>
+                  <a class="card-header-icon">
+                    <b-tag type="is-warning" v-if="category.isExperimental">
+                      <b-icon icon="flask-outline" size="is-small" />
+                      Experimental
+                    </b-tag>
+                    <b-icon :icon="props.open ? 'menu-down' : 'menu-up'" />
+                  </a>
+                </div>
+              </template>
 
-            <label>Sentences</label>
-            <ol>
-              <li v-for="problem in category.problems" :key="problem">
-                <q>{{problem.sentence}}</q>
-                <b-tag type="is-warning is-light" v-if="problem.details && category.id == 'COUNTER'">
-                  {{Counterfactuals[problem.details].name}}
-                </b-tag>
-              </li>
-            </ol>
+              <div class="card-content">
+                <h5 class="subtitle is-6">{{category.issue}}. {{category.explain}}</h5>
 
-            <br />
+                <section>
+                  <label>Sentences</label>
+                  <ol v-if="category.problems.length">
+                    <li v-for="problem in category.problems" :key="problem">
+                      <q>{{problem.sentence}}</q>
+                      <b-tag type="is-warning is-light" v-if="problem.details && category.id == 'COUNTER'">
+                        {{Counterfactuals[problem.details].name}}
+                      </b-tag>
+                    </li>
+                  </ol>
+                  <ul v-else>
+                    <li>None found.</li> <!-- for Framing reporter -->
+                  </ul>
+                </section>
 
-            <label>How to fix</label>
-            <p>{{category.fix}}</p>
+                <section>
+                  <label>How to fix</label>
+                  <p>{{category.fix}}</p>
+                </section>
 
-            <br />
-
-            <div v-if="category.examples">
-              <label>Examples</label>
-              <ul>
-                <li v-for="example in category.examples" :key="example.text" class="example" :class="example.type">{{example.text}}</li>
-              </ul>
-            </div>
+                <section v-if="category.examples">
+                  <label>Examples</label>
+                  <ul>
+                    <li v-for="example in category.examples" :key="example.text" class="example" :class="example.type">{{example.text}}</li>
+                  </ul>
+                </section>
+              </div>
+            </b-collapse>
           </div>
           <!-- <problem-entry v-for="problem in problems" :key="problem" :problem="problem" :body="body" /> -->
         </ol>
@@ -98,6 +116,7 @@ export default {
       title: '',
       body: '',
       problems: [],
+      ProblemTypes,
       Counterfactuals
     }
   },
@@ -129,6 +148,9 @@ export default {
         return { start: problem.range[0], end: problem.range[1], style: `border-bottom: 1px SOLID ${ProblemTypes[problem.type].color}; background-color: ${ProblemTypes[problem.type].lightColor}` }
       })
     },
+    registeredProblemTypes() {
+      return Object.values(this.ProblemTypes).filter(problemType => problemType.displayAsRegistered)
+    },
     problemsCategorized() {
       const categories = {...ProblemTypes}
       Object.values(categories).forEach(category => {
@@ -141,6 +163,18 @@ export default {
         categories[problem.type].count += 1
         categories[problem.type].problems.push(problem)
       })
+
+      // There needs to be at least three thematic elements for
+      // the "framing" report not to trigger
+      if(categories['FRAMING'].problems.length < 3) {
+        if(categories['FRAMING'].problems.length === 0) { // make sure the reporter shows up even if there are no thematic phrases
+          categories['FRAMING'].count = 1
+          categories['FRAMING'].problems = []
+        }
+      }
+      else {
+        delete categories['FRAMING']
+      }
 
       delete categories.OBJECTP
       return Object.values(categories)
@@ -163,6 +197,9 @@ article.content {
   padding: 20px;
   margin-bottom: 0;
 }
+#legend { margin-left: 10px; }
+.legend-entry { margin: 0 5px; }
+.legend-color { width: 12px; height: 12px; display: inline-block; border: 1px SOLID #000; }
 small { font-style: italic; padding-left: 10px; }
 h1 { width: 70%; }
 .empty { background-color: #f9f9f9; padding: 20px; text-align: center; }
@@ -170,27 +207,28 @@ h1 { width: 70%; }
 div.level-item { background-color: #e5e5e5; }
 p.title { font-size: 1.2em; }
 
-.problem-list { margin: 60px 0 0 20px; }
+.problem-list .card {
+  margin-bottom: 20px;
+  box-shadow: none !important;
+  border: 1px SOLID #ddd;
+}
+.card-header-title span:not([class^="icon"]) {
+  margin-left: 4px;
+}
+.card-header-title small { font-weight: normal; font-style: normal; }
 .problem-list h5.subtitle { border-bottom: 0.75rem; }
-.problem-list ol { margin-left: 40px; }
+.problem-list ol { margin-left: 15px; }
 .problem-list q {
   padding: 3px;
   background-color: #f2f2f2;
   font-style: italic;
 }
 
-ol li {
-  margin: 8px 0;
+.card-content section {
+  padding-left: 15px;
+  margin-top: 15px;
 }
-
-li.example::before {
-  color: #444;
-  margin: 0 12px;
-}
-li.good::before { content: '\2713' }
-li.bad::before { content: '\2A2F' }
-
-label {
+.card-content section label {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
@@ -198,5 +236,20 @@ label {
   color: #777;
   display: inline-block;
   margin-bottom: 6px;
+  position: relative;
+  left: -15px;
 }
+
+ol li {
+  margin: 6px 0;
+}
+
+li.example::before {
+  color: #444;
+  margin: 0 6px 0 0;
+}
+li.good::before { content: '\2713' }
+li.bad::before { content: '\2A2F' }
+
+
 </style>

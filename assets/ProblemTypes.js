@@ -33,7 +33,7 @@ const ProblemTypes = {
     },
     OBJECT: { // 🟢
         displayAsRegistered: true,
-        name: 'Object-based language',
+        name: 'Object',
         id: 'OBJECT',
         what: 'Determines if actors are described by object-based language rather than person-based language',
         icon: 'package-variant',
@@ -52,7 +52,8 @@ const ProblemTypes = {
         ]
     },
     COUNTER: { // 🟡
-        displayAsRegistered: false,
+        displayAsRegistered: true,
+        isExperimental: true,
         name: 'Counterfactual',
         id: 'COUNTER',
         what: 'Identifies presence of counterfactual statements which obscure the systemic nature of crashes and increase likelihood of victim blaming',
@@ -61,21 +62,18 @@ const ProblemTypes = {
         lightColor: 'rgba(244, 220, 42, 0.2)',
         issue: 'Distracting counterfactual',
         explain: 'Readers place more blame on victims when articles use more counterfactual statements. Counterfactuals also obscure the systemic nature of incidents and place unreasonable burden on individuals.',
-        fix: '',
-        examples: []
-    },
-    FRAMING: { // 🟣
-        displayAsRegistered: false,
-        name: 'Framing',
-        id: 'FRAMING',
-        what: 'Determines if an article includes thematic framing',
-        icon: 'image-filter-frames',
-        color: 'rgba(116, 77, 168, 1)',
-        lightColor: 'rgba(116, 77, 168, 0.2)',
-        issue: 'Article lacks thematic framing',
-        explain: 'Readers who encounter episodic frames tend to hold individuals responsible for negative outcomes and put less pressure on public leaders to make changes.',
-        fix: '',
-        examples: []
+        fix: 'Remove the counterfactual statements.',
+        examples: [
+            { type: 'bad', text: 'The crash caused road closures and traffic delays.' },
+            { type: 'bad', text: 'Impairment was not an issue.' },
+            { type: 'bad', text: 'The bicyclist was not wearing a helmet.' },
+            { type: 'bad', text: 'The pedestrian was wearing dark clothes.' },
+            { type: 'bad', text: 'The biker was not wearing protective equipment.' },
+            { type: 'bad', text: 'The pedestrian did not use a crosswalk.' },
+            { type: 'bad', text: 'The man was in the roadway.' },
+            { type: 'bad', text: 'The driver didn\'t see the pedestrian.' },
+            { type: 'bad', text: 'It was dark out and the roads were wet.' },
+        ]
     },
     ACCIDENT: { // 🟠
         displayAsRegistered: true,
@@ -87,12 +85,33 @@ const ProblemTypes = {
         lightColor: 'rgba(238, 180, 23, 0.2)',
         issue: 'Article uses the word "accident"',
         explain: 'The word "accident" distracts from the preventable nature of car crashes, and implies inevitability and faultlessness for this systemic problem.',
-        fix: 'Prefer the words crash, collision, or incident',
+        fix: 'Prefer the words crash, collision, or incident.',
         examples: [
             { type: 'good', text: 'The car crash has left two injured.' },
             { type: 'bad', text: 'The accident has left two injured.' },
         ]
-    }
+    },
+    FRAMING: { // 🟣
+        displayAsRegistered: true,
+        isExperimental: true,
+        name: 'Framing',
+        id: 'FRAMING',
+        what: 'Determines if an article includes thematic framing',
+        icon: 'image-filter-frames',
+        color: 'rgba(116, 77, 168, 1)',
+        lightColor: 'rgba(116, 77, 168, 0.2)',
+        issue: 'Article lacks thematic framing',
+        explain: 'Readers who encounter episodic frames tend to hold individuals responsible for negative outcomes and put less pressure on public leaders to make changes.',
+        fix: 'Include at least 3 thematic elements.',
+        examples: [
+            { type: 'good', text: 'Number of car crashes in recent months' },
+            { type: 'good', text: 'Discussion of road design (width, # lanes, speed limit, turn radius, speedbumps, presence of sidewalks)' },
+            { type: 'good', text: 'Quotes from experts, like engineers or public safety officers' },
+            { type: 'good', text: 'Comments from public officials or police/traffic enforcement' },
+            { type: 'good', text: 'Mentions of safety initiatives like Vision Zero' },
+            { type: 'good', text: 'Statistics from NHTSA, WHO, CDC, and other organizations' },
+        ]
+    },
 }
 
 export default ProblemTypes
