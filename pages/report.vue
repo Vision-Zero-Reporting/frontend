@@ -29,51 +29,55 @@
       <h2 class="title is-4"><b-icon :icon="statusIcon" /> Problems</h2>
       <h3 class="subtitle is-6">Article analysis is complete and displayed below</h3>
 
-      <nav class="level is-mobile">
-        <div class="level-item has-text-centered" v-for="category in problemsCategorized" :key="category.name" :style="{ 'background-color': category.count ? category.lightColor : '#f5f5f5' }">
-          <div>
-            <p class="title">{{category.count || '0'}}</p>
-            <p class="heading">
-              {{category.id}}
-            </p>
-          </div>
-        </div>
-      </nav>
-
       <b-progress v-if="isLoading"></b-progress>
       <div v-else>
         <ol v-if="problems.length">
           <div class="problem-list" v-for="category in problemsCategorizedNonEmpty" :key="category.name">
-            <h4 class="title is-5">
-              <b-icon :icon="category.icon" />
-              {{category.name}}
-              <b-tag type="is-warning" v-if="category.isExperimental">Experimental</b-tag>
-            </h4>
-            <h5 class="subtitle is-6">{{category.issue}}. {{category.explain}}</h5>
+            <b-collapse class="card" animation="slide" aria-id="contentIdForA11y3">
+              <template #trigger="props">
+                <div
+                  class="card-header"
+                  role="button"
+                  aria-controls="contentIdForA11y3">
+                  <p class="card-header-title">
+                    <b-icon :icon="category.icon" />
+                    <span>{{category.name}}</span>
+                    <small>{{category.problems.length}} {{category.problems.length == 1 ? 'issue' : 'issues'}}</small>
+                  </p>
+                  <a class="card-header-icon">
+                    <b-tag type="is-warning" v-if="category.isExperimental">Experimental</b-tag>
+                    <b-icon :icon="props.open ? 'menu-down' : 'menu-up'" />
+                  </a>
+                </div>
+              </template>
 
-            <label>Sentences</label>
-            <ol>
-              <li v-for="problem in category.problems" :key="problem">
-                <q>{{problem.sentence}}</q>
-                <b-tag type="is-warning is-light" v-if="problem.details && category.id == 'COUNTER'">
-                  {{Counterfactuals[problem.details].name}}
-                </b-tag>
-              </li>
-            </ol>
+              <div class="card-content">
+                <h5 class="subtitle is-6">{{category.issue}}. {{category.explain}}</h5>
+                <label>Sentences</label>
+                <ol>
+                  <li v-for="problem in category.problems" :key="problem">
+                    <q>{{problem.sentence}}</q>
+                    <b-tag type="is-warning is-light" v-if="problem.details && category.id == 'COUNTER'">
+                      {{Counterfactuals[problem.details].name}}
+                    </b-tag>
+                  </li>
+                </ol>
 
-            <br />
+                <br />
 
-            <label>How to fix</label>
-            <p>{{category.fix}}</p>
+                <label>How to fix</label>
+                <p>{{category.fix}}</p>
 
-            <br />
+                <br />
 
-            <div v-if="category.examples">
-              <label>Examples</label>
-              <ul>
-                <li v-for="example in category.examples" :key="example.text" class="example" :class="example.type">{{example.text}}</li>
-              </ul>
-            </div>
+                <div v-if="category.examples">
+                  <label>Examples</label>
+                  <ul>
+                    <li v-for="example in category.examples" :key="example.text" class="example" :class="example.type">{{example.text}}</li>
+                  </ul>
+                </div>
+              </div>
+            </b-collapse>
           </div>
           <!-- <problem-entry v-for="problem in problems" :key="problem" :problem="problem" :body="body" /> -->
         </ol>
@@ -184,7 +188,15 @@ h1 { width: 70%; }
 div.level-item { background-color: #e5e5e5; }
 p.title { font-size: 1.2em; }
 
-.problem-list { margin: 60px 0 0 20px; }
+.problem-list .card {
+  margin-bottom: 20px;
+  box-shadow: none !important;
+  border: 1px SOLID #ddd;
+}
+.card-header-title span:not([class^="icon"]) {
+  margin-left: 4px;
+}
+.card-header-title small { font-weight: normal; font-style: normal; }
 .problem-list h5.subtitle { border-bottom: 0.75rem; }
 .problem-list ol { margin-left: 40px; }
 .problem-list q {
