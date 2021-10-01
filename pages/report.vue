@@ -211,11 +211,6 @@ h1 { width: 70%; }
 div.level-item { background-color: #e5e5e5; }
 p.title { font-size: 1.2em; }
 
-.problem-list .card {
-  margin-bottom: 20px;
-  box-shadow: none !important;
-  border: 1px SOLID #ddd;
-}
 .card-header-title span:not([class^="icon"]) {
   margin-left: 4px;
 }

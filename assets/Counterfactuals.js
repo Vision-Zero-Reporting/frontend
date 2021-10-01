@@ -21,7 +21,7 @@ const Counterfactuals = {
         name: 'VRU in roadway'
     },
     COUNTER_DIDNT_SEE: {
-        name: 'Unable to see'
+        name: 'Driver didn\'t see'
     },
     COUNTER_ENVIRONMENTAL_FACTOR: {
         name: 'Environmental'
