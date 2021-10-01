@@ -20,3 +20,11 @@ a {
 a.navbar-item, nav a {
     border-bottom: none;
 }
+
+footer.page {
+    border-top: 1px SOLID #ddd;
+    font-size: 90%;
+}
+footer.page ol {
+    padding: 0px 15px;
+}

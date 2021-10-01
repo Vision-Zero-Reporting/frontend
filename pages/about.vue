@@ -13,9 +13,11 @@
             <p>We developed Vision Zero Reporting, a natural language processing tool to identify editorial anti-patterns in crash reporting. The software delivers a report of all the problems detected in a news article, and provides recommendations to fix them. News reporters can use our scanner to fix problems before publication, and news agencies and readers can use the scanner after publication to understand if the reporting is fairly written.</p>
         </section>
 
-        <footer>
-            <p>1. "Road traffic injuries", World Health Organization (<a href="https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries" target="_blank">https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries</a></p>
-            <p>2. "Mortality Among Teenagers Aged 12-19 Years: United States, 1999-2006", CDC (<a href="https://www.cdc.gov/nchs/products/databriefs/db37.htm" target="_blank">https://www.cdc.gov/nchs/products/databriefs/db37.htm</a>)</p>
+        <footer class="page">
+            <ol>
+                <li>"Road traffic injuries", World Health Organization (<a href="https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries" target="_blank">https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries</a></li>
+                <li>"Mortality Among Teenagers Aged 12-19 Years: United States, 1999-2006", CDC (<a href="https://www.cdc.gov/nchs/products/databriefs/db37.htm" target="_blank">https://www.cdc.gov/nchs/products/databriefs/db37.htm</a>)</li>
+            </ol>
         </footer>
     </article>
 </template>
@@ -25,10 +27,3 @@ export default {
     name: 'About'
 }
 </script>
-
-
-<style scoped>
-footer {
-    border-top: 1px SOLID #ddd;
-}
-</style>
