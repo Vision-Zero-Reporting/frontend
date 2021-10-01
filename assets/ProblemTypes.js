@@ -54,7 +54,7 @@ const ProblemTypes = {
     COUNTER: { // 🟡
         displayAsRegistered: true,
         isExperimental: true,
-        name: 'Counterfactual',
+        name: 'Counterfactuals',
         id: 'COUNTER',
         what: 'Identifies presence of counterfactual statements which obscure the systemic nature of crashes and increase likelihood of victim blaming',
         icon: 'clipboard-alert',

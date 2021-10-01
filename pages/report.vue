@@ -55,7 +55,11 @@
               </template>
 
               <div class="card-content">
-                <h5 class="subtitle is-6">{{category.issue}}. {{category.explain}}</h5>
+                <h5 class="subtitle is-6">
+                  {{category.issue}}.
+                  {{category.explain}}
+                  <nuxt-link to="/issues">[Learn more about {{category.name.toLowerCase()}}]</nuxt-link>
+                </h5>
 
                 <section>
                   <label>Sentences</label>
