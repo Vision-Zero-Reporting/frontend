@@ -3,12 +3,10 @@
         <h1 class='title is-2'>About Vision Zero Reporting</h1>
         <h2 class="subtitle is-4">The way we report car crashes <em>matters</em></h2>
         <section class="content">
-            <h2 class='subtitle is-5'>Context</h2>
-            <p>The World Health Organization describes traffic deaths as a preventable health epidemic. Car crashes claim the lives of 1.3 million people each year. The majority of road traffic deaths are vulnerable road users (VRU): pedestrians, bicyclists, and motorcyclists.<sup>[1]</sup> In the U.S., motor vehicle related incidents are the leading cause of death of teenagers, 12-19 years.<sup>[2]</sup></p>
-        </section>
-        <section class="content">
             <h2 class='subtitle is-5'>The problem</h2>
-            <p>...</p>
+            <p>The World Health Organization describes traffic deaths as a preventable health epidemic. Car crashes claim the lives of 1.3 million people each year. The majority of road traffic deaths are vulnerable road users (VRU): pedestrians, bicyclists, and motorcyclists.<sup>[1]</sup> In the U.S., motor vehicle related incidents are the leading cause of death of teenagers, 12-19 years.<sup>[2]</sup></p>
+            <p>Leading causes of crashes include distracted driving, speeding, reckless driving, tailgating, driving under the influence of drugs, poor road design, among others. By all means, car crashes are preventable incidents caused by well-known, solvable systemic problems.</p>
+            <p>Media coverage wields significant power to effect change: media decides which stories warrant attention and how to frame the discussion. So why does local media almost always report these tragic stories as isolated incidents, failing to draw attention to the underlying factors and similarities?</p>
         </section>
         <section class="content">
             <h2 class='subtitle is-5'>The solution</h2>
