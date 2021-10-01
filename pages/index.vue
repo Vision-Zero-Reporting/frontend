@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style scoped>
-s { color: #bbb; }
+s { color: #bbb; font-size: 80%; }
 ins { text-decoration: none; }
 
 mark { padding: 1px; }
