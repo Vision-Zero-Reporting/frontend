@@ -20,7 +20,19 @@
                 </p>
             </header>
             <div class="card-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet ullamcorper ligula, a ornare ante. Integer finibus tellus nec risus scelerisque, in ornare mauris efficitur. Mauris interdum nisi nibh, non interdum mauris rhoncus at. Vivamus nec urna rhoncus, luctus ipsum feugiat, bibendum risus. Sed euismod efficitur justo nec gravida. Pellentesque id nunc id diam porttitor tristique. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris dictum volutpat orci pellentesque venenatis. </p>
+                <p>Focus identifies who the subject of the sentence is, and hence who is at the center of attention. Readers assign more blame to the focus of the sentence. News articles that cover crashes between vehicles and vulnerable road users place the focus of the sentences on the VRU over 70% of the time.</p>
+                <p>This difference is illustrated below, with the focus (subject) underlined:</p>
+                <ul>
+                    <li><u>A pedestrian</u> was struck by an SUV.</li>
+                    <li><u>An SUV</u> struck a pedestrian.</li>
+                </ul>
+                <footer class="page">
+                    <label>See also:</label>
+                    <ul>
+                        <li>Iacobucci, Evan, et al. “Editorial Patterns in Bicyclist and Pedestrian Crash Reporting - Kelcie Ralph, Evan Iacobucci, Calvin G. Thigpen, Tara Goddard, 2019.” SAGE Journals, 8 Feb. 2019, https://journals.sagepub.com/doi/abs/10.1177/0361198119825637.</li>
+                        <li>Niemi, L., and L. Young. When and Why We See Victims as Responsible: The Impact of Ideology on Attitudes toward Victims. Personality and Social Psychology Bulletin, Vol. 42, No. 9, 2016, pp. 1227-1242.</li>
+                    </ul>
+                </footer>
             </div>
         </div>
         <div class="card content">
@@ -30,8 +42,37 @@
                 </p>
             </header>
             <div class="card-content">
-                <p>Ut non rhoncus ipsum. Proin id nibh ac libero mollis gravida. Morbi faucibus turpis a sagittis sollicitudin. Ut a tincidunt justo, non fringilla magna. Fusce vitae arcu non tortor feugiat faucibus. Sed quis metus ipsum. Aliquam nec eros lacus. Fusce dapibus lacinia tortor. Donec quis justo nisl. Sed et tellus massa. Maecenas quis suscipit lorem. Vivamus a lacinia ante. Maecenas fringilla sed tortor nec volutpat. </p>
-                <p>Proin lorem est, pellentesque ut sodales et, rhoncus id dolor. Etiam egestas mi eros, sed lacinia eros venenatis sollicitudin. Nam maximus risus arcu, eget iaculis risus maximus vel. Morbi neque est, accumsan non lacinia eget, dictum vitae dolor. Mauris eu consequat elit, id scelerisque est. Mauris et accumsan nunc. Ut feugiat risus felis, in interdum sem facilisis in. Nam a ornare sapien. In efficitur dolor et tortor scelerisque ultrices. Quisque faucibus velit sed posuere accumsan. Aliquam tincidunt velit nec felis lacinia aliquet vitae sed tellus. </p>
+                <p>Agency discovers issues with agentive vs. non-agentive sentences. Research demonstrates that readers place more blame on victims when reading non-agentive sentences, i.e. sentences that don't include the perpetrator or one doing the action.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Sentence</td>
+                            <td>Classification</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A pedestrian was struck.</td>
+                            <td>Non-agentive</td>
+                        </tr>
+                        <tr>
+                            <td>A driver struck a pedestrian.</td>
+                            <td>Agentive</td>
+                        </tr>
+                        <tr>
+                            <td>A pedestrian was struck by a driver.</td>
+                            <td>Agentive</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Readers identify agents as having ability to cause harm, which helps share responsibility for a mishap. Ensure that all sentences that discuss crashes include an agent.</p>
+                <footer class="page">
+                    <label>See also:</label>
+                    <ul>
+                        <li>Fausey, C. M., and L. Boroditsky. Subtle Linguistic Cues Influence Perceived Blame and Financial Liability. Psychonomic Bulletin &amp; Review, Vol. 17, No. 5, 2010, pp. 644-650.</li>
+                        <li>Coates, L., and A. Wade. Telling It Like It Isn't: Obscuring Perpetrator Responsibility for Violent Crime. Discourse &amp; Society, Vol. 15, No. 5, 2004, pp. 499-526.</li>
+                    </ul>
+                </footer>
             </div>
         </div>
         <div class="card content">
@@ -41,8 +82,25 @@
                 </p>
             </header>
             <div class="card-content">
-                <p>Morbi at eros in arcu condimentum pharetra. Curabitur et eros at erat vestibulum volutpat. Aenean semper posuere ultricies. Phasellus et gravida nisi. Praesent in porttitor ante. Suspendisse suscipit, ante vel efficitur iaculis, nisi quam dapibus risus, eu semper libero urna nec urna. In dictum lorem sed accumsan ultrices. Etiam porta accumsan ante, lobortis tincidunt nisi auctor quis. </p>
-                <p>Vestibulum luctus molestie massa vel consequat. Aenean et dolor nulla. Etiam non lacus dictum, rutrum sapien eu, ornare diam. Mauris ornare, quam nec rutrum bibendum, nibh purus aliquam risus, et faucibus erat nunc at erat. Aliquam convallis dolor non nibh porta, eu scelerisque nunc lobortis. Ut imperdiet lobortis arcu ut bibendum. Nam varius, mauris scelerisque porta pellentesque, velit nibh lacinia est, quis cursus mi leo in nulla. </p>
+                <p>Object-based reference deals with how reporters and readers refer to entities. This gives rise to the dichotomy: object-based language vs. people-based language.</p>
+                <p>Research shows that when referring to drivers, language is usually object-based instead, giving agency to cars, traffic, etc. On the other hand, vulnerable road users are nearly always referenced in human terms: pedestrian, bicyclist, person, man, woman.</p>
+                <p>Giving agency to objects instead of people obscures who the actors are, and tends to shift blame toward the victims.</p>
+                <ul>
+                    <li>A bicyclist was hit by an SUV. &rarr; A bicyclist was hit by <em>the driver</em> of an SUV.</li>
+                    <li>The car jumped the curb. &rarr; The <em>driver</em> drove over the curb.</li>
+                    <li>The automobile remained at the scene. &rarr; The <em>driver</em> remained at the scene.</li>
+                </ul>
+                <p>Additionally, using object-based language personifies objects in downright weird ways:</p>
+                <ul>
+                    <li>The vehicle fled the scene.</li>
+                    <li>The automobile co-operated with police investigators.</li>
+                </ul>
+                <footer class="page">
+                    <label>See also:</label>
+                    <ul>
+                        <li>Walker, I. Road Users' Perceptions of Other Road Users: Do Different Transport Modes Invoke Qualitatively Different Concepts in Observers? Advances in Transportation Studies, Vol. A6, 2005, pp. 25-33.</li>
+                    </ul>
+                </footer>
             </div>
         </div>
         <div class="card content">
@@ -53,9 +111,17 @@
             </header>
             <div class="card-content">
                 <p>Quisque vitae mauris a eros eleifend blandit. Vestibulum non ligula sit amet diam tristique ornare quis non purus. In et quam elementum, viverra sapien at, mattis justo. Etiam ex tellus, posuere ac libero nec, pharetra vulputate justo. Donec pellentesque sagittis dui, et convallis urna. Quisque sagittis lectus felis, sed cursus nisi egestas vel. Suspendisse malesuada malesuada purus id malesuada. Aenean congue sem non sollicitudin iaculis. Aliquam eu nisl id justo pretium sagittis. Morbi eget sapien vitae lacus faucibus placerat. Nulla sit amet orci sed odio tempus mollis nec non tortor. Pellentesque risus dui, dignissim sed lectus quis, rhoncus ultrices velit. Pellentesque viverra leo at lacus euismod, eget tincidunt velit laoreet. Nullam feugiat, massa ut eleifend bibendum, neque libero rutrum augue, ut rhoncus nisl sem vitae felis. Sed mi ligula, sodales vel semper et, posuere et dui. Morbi imperdiet, justo varius hendrerit pulvinar, massa augue pellentesque nunc, sit amet ultricies nisi nulla vitae risus. </p>
+                <footer class="page">
+                    <label>See also:</label>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </footer>
             </div>
         </div>
-        <div class="card content">
+        <div class="card content"> <!-- Counterfactuals -->
             <header class="card-header">
                 <p class="card-header-title">
                     <a name="counterfactuals" href="#counterfactuals"><h3 class="title is-5"><b-icon icon="clipboard-alert" /> Counterfactuals</h3></a>
@@ -146,7 +212,7 @@
                 </footer>
             </div>
         </div>
-        <div class="card content">
+        <div class="card content"> <!-- Accident -->
             <header class="card-header">
                 <p class="card-header-title">
                     <a name="accident" href="#accident"><h3 class="title is-5"><b-icon icon="car-emergency" /> Accident</h3></a>
@@ -172,13 +238,15 @@
                 <ul>
                     <li>The Associated Press recommends avoiding the word "accident" if negligence is claimed or proven, as of 2016.</li>
                     <li>The NYPD no longer uses the word "accident" to describe car crashes, and has renamed its Accident Investigation Squad to the Collision Investigation Squad, as of 2013.</li>
+                    <li>The British Medical Journal (BMJ) has banned the word "accident", as of 2001.</li>
                 </ul>
                 <p>The tool is context-aware and does not punish uses of the word "accident" if it's part of a direct quotation or a proper noun, such as investigative bodies (e.g. the Boston Accident Reconstruction Unit).</p>
                 <footer class="page">
                     <label>See also:</label>
                     <ul>
-                        <li><a href="https://twitter.com/hashtag/crashnotaccident" target="_blank">#CrashNotAccident on Twitter</a></li>
-                        <li>Aaron, Brad, and Ben Fried. “Ray Kelly: NYPD Will Retire ‘Accident’ and ‘Dead or Likely to Die’ Rule.” Streetsblog New York City, 11 Mar. 2013, https://nyc.streetsblog.org/2013/03/11/ray-kelly-nypd-will-retire-accident-and-dead-or-likely-to-die-rule/. </li>
+                        <li><a href="https://twitter.com/hashtag/crashnotaccident" target="_blank">#CrashNotAccident on <b-icon icon="twitter" size="is-small" /> Twitter</a></li>
+                        <li>Aaron, Brad, and Ben Fried. “Ray Kelly: NYPD Will Retire ‘Accident’ and ‘Dead or Likely to Die’ Rule.” Streetsblog New York City, 11 Mar. 2013, https://nyc.streetsblog.org/2013/03/11/ray-kelly-nypd-will-retire-accident-and-dead-or-likely-to-die-rule/.</li>
+                        <li>Davis, Ronald M, and Barry Pless. “BMJ Bans ‘Accidents.’” The BMJ, British Medical Journal Publishing Group, 2 June 2001, https://www.bmj.com/content/322/7298/1320.full.</li>
                         <li>Schmitt, Angie, et al. “Associated Press Cautions Journalists That Crashes Aren't Always ‘Accidents.’” Streetsblog USA, 4 Apr. 2016, https://usa.streetsblog.org/2016/04/04/associated-press-cautions-journalists-that-crashes-arent-always-accidents/.</li>
                         <li>Schmitt, Angie, et al. “It's Time for the AP to Nix the Term ‘Accident’ to Describe Car Collisions.” Streetsblog USA, 11 Dec. 2013, https://usa.streetsblog.org/2013/12/11/its-time-for-the-ap-to-nix-the-term-accident-to-describe-car-collisions/.</li>
                         <li>Smith, Bryant W. “Human Error as a Cause of Vehicle Crashes.” Center for Internet and Society, 18 Dec. 2013, https://cyberlaw.stanford.edu/blog/2013/12/human-error-cause-vehicle-crashes.</li>
@@ -224,7 +292,10 @@ nav a:last-child::after {
 }
 table {
     font-size: 90%;
+    width: auto !important;
+    margin: auto;
 }
+thead { font-weight: bold; }
 .card-header-title a { border-bottom: none; }
 .card-header-title h3 { margin-bottom: 0; }
 </style>
