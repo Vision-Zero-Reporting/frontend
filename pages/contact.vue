@@ -3,7 +3,7 @@
         <h1 class='title is-2'>Contact us</h1>
         <h2 class="subtitle is-4">Get in touch</h2>
         <section class="content">
-            <form name="contact" method="POST" netlify>
+            <form name="contact" method="POST" action="/success/" netlify>
                 <p>
                     <label>Full name:
                         <input type="text" name="name" class="input" />
