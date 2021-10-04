@@ -14,8 +14,11 @@
         <nuxt-link to="/issues" class="navbar-item">
           Issues
         </nuxt-link>
-        <nuxt-link to="/partners" class="navbar-item">
+        <!-- <nuxt-link to="/partners" class="navbar-item">
           Partners
+        </nuxt-link> -->
+        <nuxt-link to="/contact" class="navbar-item">
+          Contact
         </nuxt-link>
         <nuxt-link to="/about" class="navbar-item">
           About

@@ -12,3 +12,27 @@ a[href]:not([href^="https://visionzeroreporting.com"]):not([href^="#"]):not([hre
     background-size: contain;
     display: inline-block;
 }
+
+a {
+    color: hsl(217, 71%, 53%);
+    border-bottom: 1px dashed hsl(217, 72%, 42%);
+}
+a.navbar-item, nav a {
+    border-bottom: none;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: none !important;
+    border: 1px SOLID #ddd;
+}
+
+.content ul { margin-top: 0; }
+
+footer.page {
+    border-top: 1px SOLID #ddd;
+    font-size: 90%;
+}
+footer.page ol {
+    padding: 0px 15px;
+}
