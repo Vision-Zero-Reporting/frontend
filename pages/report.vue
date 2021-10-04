@@ -6,28 +6,62 @@
     </b-message>
 
     <h1 class="title is-2">Report</h1>
-    <article class="content">
-      <h2 class='title is-4'>{{title}}</h2>
-      <highlightable-input 
-        ref="highligher"
-        highlight-style="background-color:yellow" 
-        :highlight="highlight"
-        v-model="body"
-      />
-    </article>
-    <div id="legend">
-      <span class="legend-entry" v-for="problemType in registeredProblemTypes" :key="problemType.id">
-        <span class="legend-color" :style="{ 'background-color': problemType.lightColor, 'border-color': problemType.color }"></span>
-        <span>{{problemType.name}}</span>
-      </span>
-    </div>
-    <small>* Not all highlights will be shown above if there are overlapping issues</small>
 
-    <hr />
+    <section id='overview' class='primary'>
+      <div class="columns">
+        <!-- <div class="column is-2">
+          <div id="grade">
+            <label>A</label>
+            <span>Great!</span>
+          </div>
+        </div> -->
+        <div class="column">
+          <table id="details-table">
+            <tr>
+              <th width="50%">Type:</th>
+              <td>Manual entry</td>
+            </tr>
+            <tr>
+              <th>Report generated:</th>
+              <td>{{new Date().toLocaleString()}}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="column is-3">
+          <b-button @click="reportError" type="is-text" icon-left="alert-outline">
+            Report an error
+          </b-button>
+          <b-button @click="printReport" type="is-text" icon-left="printer">
+            Print this report
+          </b-button>
+        </div>
+      </div>
+    </section>
 
-    <section id='problems'>
-      <h2 class="title is-4"><b-icon :icon="statusIcon" /> Problems</h2>
-      <h3 class="subtitle is-6">Article analysis is complete and displayed below</h3>
+    <section id='article' class='primary'>
+      <h2 class="title is-4">Article</h2>
+      <article class="content">
+        <h2 class='title is-4'>{{title}}</h2>
+        <highlightable-input 
+          ref="highligher"
+          highlight-style="background-color:yellow" 
+          :highlight="highlight"
+          v-model="body"
+        />
+      </article>
+      <div id="legend">
+        <span class="legend-entry" v-for="problemType in registeredProblemTypes" :key="problemType.id">
+          <span class="legend-color" :style="{ 'background-color': problemType.lightColor, 'border-color': problemType.color }"></span>
+          <span>{{problemType.name}}</span>
+        </span>
+      </div>
+      <small>* Not all highlights will be shown above if there are overlapping issues</small>
+    </section>
+
+    <section id='problems' class='primary'>
+      <h2 class="title is-4">
+        <!-- <b-icon :icon="statusIcon" /> -->
+      Problems</h2>
 
       <b-progress v-if="isLoading"></b-progress>
       <div v-else>
@@ -136,6 +170,14 @@ export default {
         .finally(() => {
           this.isLoading = false
         })
+    },
+    printReport() {
+      // TODO: black-and-white printing
+      // TODO: expand all collapsibles before printing
+      window.print()
+    },
+    reportError() {
+      this.$router.push('/contact')
     }
   },
   mounted() {
@@ -196,6 +238,27 @@ export default {
 </script>
 
 <style scoped>
+section.primary { margin: 40px 0; }
+#overview {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#grade {
+  font-size: 2em;
+  text-align: center;
+  border: 2px SOLID rgba(0,0,0,0.3);
+  padding: 10px;
+}
+#grade label {}
+#grade span {
+  display: block;
+  font-size: 0.5em;
+  text-transform: uppercase;
+}
+#details-table { margin: 10px; }
+
 article.content {
   border: 2px SOLID #ddd;
   padding: 20px;
@@ -249,6 +312,4 @@ li.example::before {
 }
 li.good::before { content: '\2713' }
 li.bad::before { content: '\2A2F' }
-
-
 </style>
