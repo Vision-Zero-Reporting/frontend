@@ -13,7 +13,7 @@
             <a href="#accident">Accident</a>
         </nav>
 
-        <div class="card content">
+        <div class="card content"> <!-- Focus -->
             <header class="card-header">
                 <p class="card-header-title">
                     <a name="focus" href="#focus"><h3 class="title is-5"><b-icon icon="eye" /> Focus</h3></a>
@@ -35,7 +35,7 @@
                 </footer>
             </div>
         </div>
-        <div class="card content">
+        <div class="card content"> <!-- Agency -->
             <header class="card-header">
                 <p class="card-header-title">
                     <a name="agency" href="#agency"><h3 class="title is-5"><b-icon icon="account-child" /> Agency</h3></a>
@@ -75,7 +75,7 @@
                 </footer>
             </div>
         </div>
-        <div class="card content">
+        <div class="card content"> <!-- Object-based reference -->
             <header class="card-header">
                 <p class="card-header-title">
                     <a name="object" href="#object"><h3 class="title is-5"><b-icon icon="package-variant" /> Object-based reference</h3></a>
@@ -103,20 +103,98 @@
                 </footer>
             </div>
         </div>
-        <div class="card content">
+        <div class="card content"> <!-- Framing -->
             <header class="card-header">
                 <p class="card-header-title">
                     <a name="framing" href="#framing"><h3 class="title is-5"><b-icon icon="image-filter-frames" /> Framing</h3></a>
                 </p>
             </header>
             <div class="card-content">
-                <p>Quisque vitae mauris a eros eleifend blandit. Vestibulum non ligula sit amet diam tristique ornare quis non purus. In et quam elementum, viverra sapien at, mattis justo. Etiam ex tellus, posuere ac libero nec, pharetra vulputate justo. Donec pellentesque sagittis dui, et convallis urna. Quisque sagittis lectus felis, sed cursus nisi egestas vel. Suspendisse malesuada malesuada purus id malesuada. Aenean congue sem non sollicitudin iaculis. Aliquam eu nisl id justo pretium sagittis. Morbi eget sapien vitae lacus faucibus placerat. Nulla sit amet orci sed odio tempus mollis nec non tortor. Pellentesque risus dui, dignissim sed lectus quis, rhoncus ultrices velit. Pellentesque viverra leo at lacus euismod, eget tincidunt velit laoreet. Nullam feugiat, massa ut eleifend bibendum, neque libero rutrum augue, ut rhoncus nisl sem vitae felis. Sed mi ligula, sodales vel semper et, posuere et dui. Morbi imperdiet, justo varius hendrerit pulvinar, massa augue pellentesque nunc, sit amet ultricies nisi nulla vitae risus. </p>
+                <p>Media framing is a significant factor in how people and communities interpret, understand, and respond to information. There are two major types of framing:</p>
+                <ol>
+                    <li><em>episodic</em> &ndash; incidents are reported as isolated events</li>
+                    <li><em>thematic</em> &ndash; events are compared, and underlying factors are explored</li>
+                </ol>
+                <!-- <div id='article-examples' class="columns">
+                    <div class="column">
+                        <span>Episodic</span>
+                        <article class="example">
+                            <h3>Pedestrian hit, killed by vehicle on Dan Ryan</h3>
+                            <h4>by Chicago Tribune staff</h4>
+                            <p>Pedestrian hit, killed by vehicle on Dan Ryan</p>
+                            <p>Traffic in the northbound lanes of the Dan Ryan Expressway north of 35th Street the evening of March 21, 2018, after a pedestrian was hit and killed by a vehicle on the expressway.</p>
+                            <p>A person was hit and killed by a vehicle Wednesday evening while in traffic on the Dan Ryan Expressway near 33rd Street, police said.</p>
+                            <p>The person was in traffic in the northbound lanes of the expressway near 33rd Street about 8:15 p.m. when they were hit by a vehicle and killed, said an Illinois State Police sergeant.</p>
+                            <p>All regular northbound lanes were closed to traffic as of about 9:15 p.m., with vehicles getting past on the right shoulder, he said.</p>
+                            <p>Check back for updates.</p>
+                        </article>
+                    </div>
+                    <div class="column">
+                        <span>Thematic</span>
+                        <article class="example">
+                            <h3>Residents claim speeding drivers are causing more crashes along Lee Blvd</h3>
+                            <h4>by Briana Fernandez</h4>
+                            <p>LEE COUNTY, Fla. — Right along Lee Boulevard between Gunnery Road and Sunshine Boulevard, residents claim to have noticed more crashes than usual because of drivers texting and driving or going over the 45 mph speed limit.</p>
+                            
+                            <p>“Within the last 2 months I’ve had three different accidents that have happened. Wednesday there was an accident and within two seconds later it would’ve been in the front of my house. On Saturday, there was an accident right behind me where they hit the electrical box,” said resident, Tina Heckler.</p>
+                            
+                            <p>Heckler has lived along that stretch of road for more than three years, but she said that she’s seen Lee Boulevard turn into a racetrack lately right in front of her house.</p>
+                            
+                            <p>“I love living where I am, but I just want people to be more aware when they are driving, it’s not a racetrack between Sunshine and Gunnery. There’s a lot of racing, whether it’s one car, two cars, or sometimes it’s a whole pack of motorcycles,” said Heckler.</p>
+                            
+                            <p>NBC2 reached out to the Lee County Sheriff’s Office for information on speed safety and crash numbers, but have yet to hear back.</p>
+                            
+                            <p>* The Lee County Department of Transportation recently made some turn-lane improvements on Lee Blvd at Gunnery Rd in each direction</p>
+                            
+                            <p>* For example, this means that the lanes were extended for motorists making left turns, so now the turn lanes can fully contain any waiting motorists rather than those motorists potentially spilling into the through-lanes during heavy traffic times. That type of situation can be cause for congestion – or sometimes crashes, if unaware motorists come up on stopped motorists in the through-lanes who are waiting to get into turn lanes.That’s why the county took action and extended the left-turn lanes to allow more motorists to queue up. Lee DOT is working east of Sunshine on design of a traffic signal at Joan Avenue.</p>
+                            
+                            <p>* That type of situation can be cause for congestion – or sometimes crashes, if unaware motorists come up on stopped motorists in the through-lanes who are waiting to get into turn lanes.</p>
+                            
+                            <p>* That’s why the county took action and extended the left-turn lanes to allow more motorists to queue up.</p>
+                            
+                            <p>*Lee DOT is working east of Sunshine on design of a traffic signal at Joan Avenue.</p>
+                            
+                            <p>“Lee DOT constantly monitors its busy thoroughfares and has ongoing projects throughout the county to make adjustments,” officials said.</p>
+                        </article>
+                    </div>
+                </div> -->
+
+                <p>Articles should include a number of thematic phrases to help contextualize the incident and provide possible remediations:</p>
+                <ul>
+                    <li>
+                        Road design
+                        <ul>
+                            <li>Number of lanes</li>
+                            <li>Lane width</li>
+                            <li>Presence of sidewalks &amp; crosswalks</li>
+                            <li>Lighting conditions</li>
+                            <li>Speed limit</li>
+                            <li>Speedbumps</li>
+                            <li>Turn radius</li>
+                            <li>Road signage</li>
+                        </ul>
+                    </li>
+                    <li>Statistics</li>
+                    <li>Expert commentary</li>
+                    <li>Resident input</li>
+                    <li>
+                        Local response &amp; initiatives
+                        <ul>
+                            <li>City Council / Town Board comments</li>
+                            <li>Department of Transportation</li>
+                            <li>Department of Public Works</li>
+                            <li>Adoption of Vision Zero</li>
+                            <li>Adoption of Complete Streets</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <p>One study found that only about 1 in 20 articles about car crashes employed thematic elements, such as road design or crash statistics. These thematic elements are vital to remind readers that car crashes aren't random events, but natural byproducts of our built environment and the choices people make. Furthermore, readers are more likely to recognize and support preventative measures and solutions when presented with thematic articles.</p>
                 <footer class="page">
                     <label>See also:</label>
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>Goddard, Tara, et al. “Does News Coverage of Traffic Crashes Affect Perceived Blame and Preferred Solutions? Evidence from an Experiment.” ResearchGate, Transportation Research Interdisciplinary Perspectives, Nov. 2019, https://www.researchgate.net/publication/337279845_Does_news_coverage_of_traffic_crashes_affect_perceived_blame_and_preferred_solutions_Evidence_from_an_experiment.</li>
+                        <li>Ewing, R., and E. Dumbaugh. The Built Environment and Traffic Safety: A Review of Empirical Evidence. Journal of Planning Literature, Vol. 23, No. 4, 2009, pp. 347-367.</li>
                     </ul>
                 </footer>
             </div>
@@ -298,4 +376,20 @@ table {
 thead { font-weight: bold; }
 .card-header-title a { border-bottom: none; }
 .card-header-title h3 { margin-bottom: 0; }
+
+#article-examples {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+#article-examples span {
+    background-color: #eee;
+    padding: 5px 10px;
+    display: block;
+    text-align: center;
+    position: sticky;
+}
+article.example {
+    font-family: serif;
+    line-height: 100%;
+}
 </style>
