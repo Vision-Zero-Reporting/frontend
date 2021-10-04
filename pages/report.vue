@@ -260,7 +260,7 @@ section.primary { margin: 40px 0; }
 #details-table { margin: 10px; }
 
 article.content {
-  border: 2px SOLID #ddd;
+  border: 1px SOLID #ddd;
   padding: 20px;
   margin-bottom: 0;
 }
