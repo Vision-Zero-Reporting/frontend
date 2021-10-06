@@ -29,49 +29,49 @@
 
 <script>
 export default {
-    name: 'ArticleCapture',
-    data() {
-        return {
-            selectedTabIndex: 0,
-            url: '',
-            title: '',
-            body: '',
-            errorMessage: ''
-        }
-    },
-    methods: {
-        submitButtonClick() {
-            // if the user provided a URL, we need to fetch the content
-            if(this.$data.selectedTabIndex === 1) {
-                // this.$axios.get(this.$data.url)
-                //     .then(response => {
-                //         const articleData = unfluff(response.data)
-                //         console.log(articleData)
-                //     })
-                //     .catch(error => {
-                //         console.error(error)
-                //     })
-            }
-            else { // user manually entered title and body
-                const { title, body } = this.$data
-                this.goToReportPage(title, body)
-            }
-        },
-        goToReportPage(title, body) {
-            if(title && body) {
-                this.$router.push({ path: 'report', query: { title , body } })
-            }
-        }
+  name: 'ArticleCapture',
+  data() {
+    return {
+      selectedTabIndex: 0,
+      url: '',
+      title: '',
+      body: '',
+      errorMessage: ''
     }
+  },
+  methods: {
+    submitButtonClick() {
+      // if the user provided a URL, we need to fetch the content
+      if(this.$data.selectedTabIndex === 1) {
+        // this.$axios.get(this.$data.url)
+        //     .then(response => {
+        //         const articleData = unfluff(response.data)
+        //         console.log(articleData)
+        //     })
+        //     .catch(error => {
+        //         console.error(error)
+        //     })
+      }
+      else { // user manually entered title and body
+        const { title, body } = this.$data
+        this.goToReportPage(title, body)
+      }
+    },
+    goToReportPage(title, body) {
+      if(title && body) {
+        this.$router.push({ path: 'report', query: { title , body } })
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
 .article-capture-container {
-    padding: 20px;
-    border-radius: 20px;
-    background-color: #f9f9f9;
-    width: 60%;
-    margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  width: 60%;
+  margin: auto;
 }
 </style>

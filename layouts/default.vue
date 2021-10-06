@@ -36,8 +36,8 @@
 <script>
 export default {
   head() {
-    const pageTitle = this.$route.name.substr(0,1).toUpperCase() + this.$route.name.substr(1); // $route.name refers to file name, not component name
-    
+    const pageTitle = this.$route.name.substr(0,1).toUpperCase() + this.$route.name.substr(1) // $route.name refers to file name, not component name
+
     return {
       title: `Vision Zero Reporting - ${pageTitle}`
     }

@@ -135,25 +135,25 @@
                             <h3>Residents claim speeding drivers are causing more crashes along Lee Blvd</h3>
                             <h4>by Briana Fernandez</h4>
                             <p>LEE COUNTY, Fla. — Right along Lee Boulevard between Gunnery Road and Sunshine Boulevard, residents claim to have noticed more crashes than usual because of drivers texting and driving or going over the 45 mph speed limit.</p>
-                            
+
                             <p>“Within the last 2 months I’ve had three different accidents that have happened. Wednesday there was an accident and within two seconds later it would’ve been in the front of my house. On Saturday, there was an accident right behind me where they hit the electrical box,” said resident, Tina Heckler.</p>
-                            
+
                             <p>Heckler has lived along that stretch of road for more than three years, but she said that she’s seen Lee Boulevard turn into a racetrack lately right in front of her house.</p>
-                            
+
                             <p>“I love living where I am, but I just want people to be more aware when they are driving, it’s not a racetrack between Sunshine and Gunnery. There’s a lot of racing, whether it’s one car, two cars, or sometimes it’s a whole pack of motorcycles,” said Heckler.</p>
-                            
+
                             <p>NBC2 reached out to the Lee County Sheriff’s Office for information on speed safety and crash numbers, but have yet to hear back.</p>
-                            
+
                             <p>* The Lee County Department of Transportation recently made some turn-lane improvements on Lee Blvd at Gunnery Rd in each direction</p>
-                            
+
                             <p>* For example, this means that the lanes were extended for motorists making left turns, so now the turn lanes can fully contain any waiting motorists rather than those motorists potentially spilling into the through-lanes during heavy traffic times. That type of situation can be cause for congestion – or sometimes crashes, if unaware motorists come up on stopped motorists in the through-lanes who are waiting to get into turn lanes.That’s why the county took action and extended the left-turn lanes to allow more motorists to queue up. Lee DOT is working east of Sunshine on design of a traffic signal at Joan Avenue.</p>
-                            
+
                             <p>* That type of situation can be cause for congestion – or sometimes crashes, if unaware motorists come up on stopped motorists in the through-lanes who are waiting to get into turn lanes.</p>
-                            
+
                             <p>* That’s why the county took action and extended the left-turn lanes to allow more motorists to queue up.</p>
-                            
+
                             <p>*Lee DOT is working east of Sunshine on design of a traffic signal at Joan Avenue.</p>
-                            
+
                             <p>“Lee DOT constantly monitors its busy thoroughfares and has ongoing projects throughout the county to make adjustments,” officials said.</p>
                         </article>
                     </div>
@@ -188,7 +188,7 @@
                         </ul>
                     </li>
                 </ul>
-                
+
                 <p>One study found that only about 1 in 20 articles about car crashes employed thematic elements, such as road design or crash statistics. These thematic elements are vital to remind readers that car crashes aren't random events, but natural byproducts of our built environment and the choices people make. Furthermore, readers are more likely to recognize and support preventative measures and solutions when presented with thematic articles.</p>
                 <footer class="page">
                     <label>See also:</label>
@@ -341,12 +341,12 @@
 import Counterfactuals from '../assets/Counterfactuals'
 
 export default {
-    name: 'Issues',
-    data() {
-        return {
-            counterfactuals: Object.values(Counterfactuals)
-        }
+  name: 'Issues',
+  data() {
+    return {
+      counterfactuals: Object.values(Counterfactuals)
     }
+  }
 }
 </script>
 

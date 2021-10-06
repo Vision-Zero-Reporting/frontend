@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "lint": "eslint --ext .js,.vue .",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
@@ -16,7 +17,9 @@
     "vue-highlightable-input": "^1.0.9"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-vue": "^7.19.1",
     "prettier": "^2.3.2"
   }
 }

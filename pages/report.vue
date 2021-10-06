@@ -42,9 +42,9 @@
       <h2 class="title is-4">Article</h2>
       <article class="content">
         <h2 class='title is-4'>{{title}}</h2>
-        <highlightable-input 
+        <highlightable-input
           ref="highligher"
-          highlight-style="background-color:yellow" 
+          highlight-style="background-color:yellow"
           :highlight="highlight"
           v-model="body"
         />
@@ -135,15 +135,15 @@
         </div>
       </div>
     </section>
-    
+
   </div>
 </template>
 
 <script>
 import ProblemTypes from '../assets/ProblemTypes'
 import Counterfactuals from '../assets/Counterfactuals'
-import HighlightableInput from "vue-highlightable-input"
-import getGrade from "../assets/Grade"
+import HighlightableInput from 'vue-highlightable-input'
+import getGrade from '../assets/Grade'
 
 export default {
   name: 'Report',
@@ -161,7 +161,7 @@ export default {
   },
   methods: {
     getReport() {
-      this.$axios.post(`/report`, { title: this.title, body: this.body })
+      this.$axios.post('/report', { title: this.title, body: this.body })
         .then(response => {
           this.problems = response.data.problems
         })
