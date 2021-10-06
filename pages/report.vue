@@ -28,9 +28,9 @@
           </table>
         </div>
         <div class="column is-3">
-          <b-button @click="reportError" type="is-text" icon-left="alert-outline">
+          <!-- <b-button @click="reportError" type="is-text" icon-left="alert-outline">
             Report an error
-          </b-button>
+          </b-button> -->
           <b-button @click="printReport" type="is-text" icon-left="printer">
             Print this report
           </b-button>
