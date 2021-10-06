@@ -11,8 +11,23 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: 'Improving the way car crashes are reported in local media by using natural language processing to identify editorial anti-patterns that obscure the preventable nature of crashes.' },
+      { name: 'format-detection', content: 'telephone=no' },
+
+      // Facebook meta
+      { property: 'og:url', content: 'https://visionzeroreporting.com/' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Vision Zero Reporting' },
+      { property: 'og:description', content: 'Improving the way car crashes are reported in local media by using natural language processing to identify editorial anti-patterns that obscure the preventable nature of crashes.' },
+      { property: 'og:image', content: 'https://visionzeroreporting.com/preview.png' },
+
+      // Twitter meta
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { property: 'twitter:domain', content: 'visionzeroreporting.com' },
+      { property: 'twitter:url', content: 'https://visionzeroreporting.com/' },
+      { name: 'twitter:title', content: 'Vision Zero Reporting' },
+      { name: 'twitter:description', content: 'Improving the way car crashes are reported in local media by using natural language processing to identify editorial anti-patterns that obscure the preventable nature of crashes.' },
+      { name: 'twitter:image', content: 'https://visionzeroreporting.com/preview.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
