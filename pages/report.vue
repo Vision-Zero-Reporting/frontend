@@ -9,12 +9,12 @@
 
     <section id='overview' class='primary'>
       <div class="columns">
-        <!-- <div class="column is-2">
-          <div id="grade">
-            <label>A</label>
-            <span>Great!</span>
+        <div class="column is-2">
+          <div id="grade" :data-grade="grade.letter">
+            <label>{{grade.letter}}</label>
+            <span>{{grade.score}} pts</span>
           </div>
-        </div> -->
+        </div>
         <div class="column">
           <table id="details-table">
             <tr>
@@ -28,9 +28,9 @@
           </table>
         </div>
         <div class="column is-3">
-          <b-button @click="reportError" type="is-text" icon-left="alert-outline">
+          <!-- <b-button @click="reportError" type="is-text" icon-left="alert-outline">
             Report an error
-          </b-button>
+          </b-button> -->
           <b-button @click="printReport" type="is-text" icon-left="printer">
             Print this report
           </b-button>
@@ -42,9 +42,9 @@
       <h2 class="title is-4">Article</h2>
       <article class="content">
         <h2 class='title is-4'>{{title}}</h2>
-        <highlightable-input 
+        <highlightable-input
           ref="highligher"
-          highlight-style="background-color:yellow" 
+          highlight-style="background-color:yellow"
           :highlight="highlight"
           v-model="body"
         />
@@ -135,14 +135,15 @@
         </div>
       </div>
     </section>
-    
+
   </div>
 </template>
 
 <script>
 import ProblemTypes from '../assets/ProblemTypes'
 import Counterfactuals from '../assets/Counterfactuals'
-import HighlightableInput from "vue-highlightable-input"
+import HighlightableInput from 'vue-highlightable-input'
+import getGrade from '../assets/Grade'
 
 export default {
   name: 'Report',
@@ -160,7 +161,7 @@ export default {
   },
   methods: {
     getReport() {
-      this.$axios.post(`/report`, { title: this.title, body: this.body })
+      this.$axios.post('/report', { title: this.title, body: this.body })
         .then(response => {
           this.problems = response.data.problems
         })
@@ -225,6 +226,10 @@ export default {
       delete categories.OBJECTP
       return Object.values(categories)
     },
+    grade() {
+      if(this.isLoading) return { letter: '-', score: 0 }
+      return getGrade(this.problems)
+    },
     problemsCategorizedNonEmpty() {
       return this.problemsCategorized.filter(category => category.count)
     },
@@ -251,11 +256,22 @@ section.primary { margin: 40px 0; }
   border: 2px SOLID rgba(0,0,0,0.3);
   padding: 10px;
 }
-#grade label {}
+#grade[data-grade="A+"] { color: #4ec83d; border-color: #4ec83d; background-color: #dbf4d7; }
+#grade[data-grade="A"]  { color: #8cd544; border-color: #8cd544; background-color: #e6f6d5; }
+#grade[data-grade="B"]  { color: #cee04c; border-color: #cee04c; background-color: #f3f7d4; }
+#grade[data-grade="C"]  { color: #eac556; border-color: #eac556; background-color: #f9efd2; }
+#grade[data-grade="D"]  { color: #f39861; border-color: #f39861; background-color: #fbe0d0; }
+#grade[data-grade="F"]  { color: #fa6e6e; border-color: #fa6e6e; background-color: #fdcece; }
+
+#grade label {
+  font-weight: bold;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.5)
+}
 #grade span {
   display: block;
   font-size: 0.5em;
-  text-transform: uppercase;
+  font-weight: normal;
+  color: #000 !important;
 }
 #details-table { margin: 10px; }
 

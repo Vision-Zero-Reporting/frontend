@@ -8,6 +8,10 @@ Set the following environment variables, either by using the command line, or by
 
 Environment variables should be prefixed with `NUXT_ENV_` during the build phase.
 
+## Branding
+ * Font: Gadugi (bold)
+ * Colors: https://colorhunt.co/palette/0a1931185adbffc947efefef
+
 ## Build Setup
 
 ```bash

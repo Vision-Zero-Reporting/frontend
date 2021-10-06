@@ -4,7 +4,7 @@
       <template #brand>
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
           <img
-            src="~/assets/logo.png"
+            src="~/assets/TextLogo.png"
             alt="Vision Zero Reporting logo"
           >
         </b-navbar-item>
@@ -17,9 +17,9 @@
         <!-- <nuxt-link to="/partners" class="navbar-item">
           Partners
         </nuxt-link> -->
-        <nuxt-link to="/contact" class="navbar-item">
+        <!-- <nuxt-link to="/contact" class="navbar-item">
           Contact
-        </nuxt-link>
+        </nuxt-link> -->
         <nuxt-link to="/about" class="navbar-item">
           About
         </nuxt-link>
@@ -35,7 +35,13 @@
 
 <script>
 export default {
+  head() {
+    const pageTitle = this.$route.name.substr(0,1).toUpperCase() + this.$route.name.substr(1) // $route.name refers to file name, not component name
 
+    return {
+      title: `Vision Zero Reporting - ${pageTitle}`
+    }
+  }
 }
 </script>
 

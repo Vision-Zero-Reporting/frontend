@@ -19,17 +19,17 @@
 
 <script>
 export default {
-    name: 'Partners',
-    data() {
-        return {
-            partners: [
-                { name: 'New York Times', monthlyReaders: '1.4 million', commitmentLetterLink: '' },
-                { name: 'Washington Post', monthlyReaders: '1.2 million', commitmentLetterLink: '' },
-                { name: 'Eastern Herald', monthlyReaders: '', commitmentLetterLink: '' },
-                { name: 'Postwestern Sentinel', monthlyReaders: '400k', commitmentLetterLink: '' },
-            ]
-        }
+  name: 'Partners',
+  data() {
+    return {
+      partners: [
+        { name: 'New York Times', monthlyReaders: '1.4 million', commitmentLetterLink: '' },
+        { name: 'Washington Post', monthlyReaders: '1.2 million', commitmentLetterLink: '' },
+        { name: 'Eastern Herald', monthlyReaders: '', commitmentLetterLink: '' },
+        { name: 'Postwestern Sentinel', monthlyReaders: '400k', commitmentLetterLink: '' },
+      ]
     }
+  }
 }
 </script>
 
