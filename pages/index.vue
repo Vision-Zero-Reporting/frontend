@@ -37,8 +37,10 @@
 import ArticleCapture from '../components/ArticleCapture.vue'
 
 export default {
-  name: 'HomePage',
-
+  name: 'Home',
+  head: {
+    title: 'Vision Zero Reporting - Improved car crash reporting to tell the whole story'
+  },
   components: {
     ArticleCapture
   },
