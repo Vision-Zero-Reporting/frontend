@@ -4,7 +4,7 @@
       <template #brand>
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
           <img
-            src="~/assets/logo.png"
+            src="~/assets/TextLogo.png"
             alt="Vision Zero Reporting logo"
           >
         </b-navbar-item>
