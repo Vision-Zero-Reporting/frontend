@@ -18,12 +18,16 @@
         <div class="column">
           <table id="details-table">
             <tr>
-              <th width="50%">Type:</th>
-              <td>Manual entry</td>
+              <th width="35%">Report generated:</th>
+              <td>{{new Date().toLocaleString()}}</td>
             </tr>
             <tr>
-              <th>Report generated:</th>
-              <td>{{new Date().toLocaleString()}}</td>
+              <th>Entry method:</th>
+              <td>{{this.article.url ? `URL` : 'Manual'}}</td>
+            </tr>
+            <tr v-if="this.article.url">
+              <th>URL:</th>
+              <td>{{this.article.url}}</td>
             </tr>
           </table>
         </div>
@@ -41,12 +45,12 @@
     <section id='article' class='primary'>
       <h2 class="title is-4">Article</h2>
       <article class="content">
-        <h2 class='title is-4'>{{title}}</h2>
+        <h2 class='title is-4'>{{article.title}}</h2>
         <highlightable-input
           ref="highligher"
           highlight-style="background-color:yellow"
           :highlight="highlight"
-          v-model="body"
+          v-model="article.body"
         />
       </article>
       <div id="legend">
@@ -152,8 +156,11 @@ export default {
     return {
       isLoading: true,
       isError: '',
-      title: '',
-      body: '',
+      article: {
+        url: '',
+        title: '',
+        body: ''
+      },
       problems: [],
       ProblemTypes,
       Counterfactuals
@@ -161,15 +168,28 @@ export default {
   },
   methods: {
     getReport() {
-      this.$axios.post('/report', { title: this.title, body: this.body })
+      const reportBody = this.article.url ? { url: this.article.url } : { title: this.article.title, body: this.article.body }
+      let body = ''
+      this.$axios.post('/report', reportBody)
         .then(response => {
           this.problems = response.data.problems
+          // If URL was used, these fields need to be populated
+          this.$set(this.article, 'title', response.data.title)
+          this.$set(this.article, 'body', response.data.body)
+          // UNKNOWN: for some reason setting `this.article.body` as shown above is not working reactively,
+          // so the body is saved for later, and set in the .finally() clause;
+          body = response.data.body
         })
         .catch(error => {
           this.isError = error.message
         })
         .finally(() => {
+          this.article.body = body
           this.isLoading = false
+
+          if(this.article.url && !this.article.body) {
+            this.isError = 'It looks like we were unable to extract the article content from the requested URL. You can go back and manually enter the content.'
+          }
         })
     },
     printReport() {
@@ -182,8 +202,11 @@ export default {
     }
   },
   mounted() {
-    this.title = this.$route.query.title
-    this.body = this.$route.query.body
+    this.article = {
+      url: this.$route.query.url || '',
+      title: this.$route.query.title || '',
+      body: this.$route.query.body || ''
+    }
     this.getReport()
     this.$refs.highligher.$el.setAttribute('contenteditable', 'false')
   },
@@ -192,7 +215,11 @@ export default {
       if(this.problems.length === 0) return [ { start: 0, end: 1, style: 'border: 0px solid #000' } ]
 
       return this.problems.map(problem => {
-        return { start: problem.range[0], end: problem.range[1], style: `border-bottom: 1px SOLID ${ProblemTypes[problem.type].color}; background-color: ${ProblemTypes[problem.type].lightColor}` }
+        return {
+          start: problem.range[0],
+          end: problem.range[1],
+          style: `border-bottom: 1px SOLID ${ProblemTypes[problem.type].color}; background-color: ${ProblemTypes[problem.type].lightColor}`
+        }
       })
     },
     registeredProblemTypes() {
