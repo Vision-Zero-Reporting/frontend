@@ -169,7 +169,7 @@ export default {
   methods: {
     getReport() {
       const reportBody = this.article.url ? { url: this.article.url } : { title: this.article.title, body: this.article.body }
-      let body = '';
+      let body = ''
       this.$axios.post('/report', reportBody)
         .then(response => {
           this.problems = response.data.problems
@@ -178,7 +178,7 @@ export default {
           this.$set(this.article, 'body', response.data.body)
           // UNKNOWN: for some reason setting `this.article.body` as shown above is not working reactively,
           // so the body is saved for later, and set in the .finally() clause;
-          body = response.data.body;
+          body = response.data.body
         })
         .catch(error => {
           this.isError = error.message
