@@ -13,96 +13,6 @@
             <a href="#accident">Accident</a>
         </nav>
 
-        <div class="card content"> <!-- Focus -->
-            <header class="card-header">
-                <p class="card-header-title">
-                    <a name="focus" href="#focus"><h3 class="title is-5"><b-icon icon="eye" /> Focus</h3></a>
-                </p>
-            </header>
-            <div class="card-content">
-                <p>Focus identifies who the subject of the sentence is, and hence who is at the center of attention. Readers assign more blame to the focus of the sentence. News articles that cover crashes between vehicles and vulnerable road users place the focus of the sentences on the VRU over 70% of the time.</p>
-                <p>This difference is illustrated below, with the focus (subject) underlined:</p>
-                <ul>
-                    <li><u>A pedestrian</u> was struck by an SUV.</li>
-                    <li><u>An SUV</u> struck a pedestrian.</li>
-                </ul>
-                <footer class="page">
-                    <label>See also:</label>
-                    <ul>
-                        <li>Iacobucci, Evan, et al. “Editorial Patterns in Bicyclist and Pedestrian Crash Reporting - Kelcie Ralph, Evan Iacobucci, Calvin G. Thigpen, Tara Goddard, 2019.” SAGE Journals, 8 Feb. 2019, https://journals.sagepub.com/doi/abs/10.1177/0361198119825637.</li>
-                        <li>Niemi, L., and L. Young. When and Why We See Victims as Responsible: The Impact of Ideology on Attitudes toward Victims. Personality and Social Psychology Bulletin, Vol. 42, No. 9, 2016, pp. 1227-1242.</li>
-                    </ul>
-                </footer>
-            </div>
-        </div>
-        <div class="card content"> <!-- Agency -->
-            <header class="card-header">
-                <p class="card-header-title">
-                    <a name="agency" href="#agency"><h3 class="title is-5"><b-icon icon="account-child" /> Agency</h3></a>
-                </p>
-            </header>
-            <div class="card-content">
-                <p>Agency discovers issues with agentive vs. non-agentive sentences. Research demonstrates that readers place more blame on victims when reading non-agentive sentences, i.e. sentences that don't include the perpetrator or one doing the action.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Sentence</td>
-                            <td>Classification</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>A pedestrian was struck.</td>
-                            <td>Non-agentive</td>
-                        </tr>
-                        <tr>
-                            <td>A driver struck a pedestrian.</td>
-                            <td>Agentive</td>
-                        </tr>
-                        <tr>
-                            <td>A pedestrian was struck by a driver.</td>
-                            <td>Agentive</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>Readers identify agents as having ability to cause harm, which helps share responsibility for a mishap. Ensure that all sentences that discuss crashes include an agent.</p>
-                <footer class="page">
-                    <label>See also:</label>
-                    <ul>
-                        <li>Fausey, C. M., and L. Boroditsky. Subtle Linguistic Cues Influence Perceived Blame and Financial Liability. Psychonomic Bulletin &amp; Review, Vol. 17, No. 5, 2010, pp. 644-650.</li>
-                        <li>Coates, L., and A. Wade. Telling It Like It Isn't: Obscuring Perpetrator Responsibility for Violent Crime. Discourse &amp; Society, Vol. 15, No. 5, 2004, pp. 499-526.</li>
-                    </ul>
-                </footer>
-            </div>
-        </div>
-        <div class="card content"> <!-- Object-based reference -->
-            <header class="card-header">
-                <p class="card-header-title">
-                    <a name="object" href="#object"><h3 class="title is-5"><b-icon icon="package-variant" /> Object-based reference</h3></a>
-                </p>
-            </header>
-            <div class="card-content">
-                <p>Object-based reference deals with how reporters and readers refer to entities. This gives rise to the dichotomy: object-based language vs. people-based language.</p>
-                <p>Research shows that when referring to drivers, language is usually object-based instead, giving agency to cars, traffic, etc. On the other hand, vulnerable road users are nearly always referenced in human terms: pedestrian, bicyclist, person, man, woman.</p>
-                <p>Giving agency to objects instead of people obscures who the actors are, and tends to shift blame toward the victims.</p>
-                <ul>
-                    <li>A bicyclist was hit by an SUV. &rarr; A bicyclist was hit by <em>the driver</em> of an SUV.</li>
-                    <li>The car jumped the curb. &rarr; The <em>driver</em> drove over the curb.</li>
-                    <li>The automobile remained at the scene. &rarr; The <em>driver</em> remained at the scene.</li>
-                </ul>
-                <p>Additionally, using object-based language personifies objects in downright weird ways:</p>
-                <ul>
-                    <li>The vehicle fled the scene.</li>
-                    <li>The automobile co-operated with police investigators.</li>
-                </ul>
-                <footer class="page">
-                    <label>See also:</label>
-                    <ul>
-                        <li>Walker, I. Road Users' Perceptions of Other Road Users: Do Different Transport Modes Invoke Qualitatively Different Concepts in Observers? Advances in Transportation Studies, Vol. A6, 2005, pp. 25-33.</li>
-                    </ul>
-                </footer>
-            </div>
-        </div>
         <div class="card content"> <!-- Framing -->
             <header class="card-header">
                 <p class="card-header-title">
@@ -330,6 +240,96 @@
                         <li>Smith, Bryant W. “Human Error as a Cause of Vehicle Crashes.” Center for Internet and Society, 18 Dec. 2013, https://cyberlaw.stanford.edu/blog/2013/12/human-error-cause-vehicle-crashes.</li>
                         <li>Stewart, Alan E., and Janice Harris Lord. “Motor Vehicle Crash versus Accident: A Change in Terminology Is Necessary.” Wiley Online Library, John Wiley &amp; Sons, Ltd, 30 June 2005, https://onlinelibrary.wiley.com/doi/abs/10.1023/A%3A1016260130224.</li>
                         <li>Zender, James F. “Accident vs. Crash.” Psychology Today, Sussex Publishers, 3 Feb. 2017, https://www.psychologytoday.com/us/blog/the-new-normal/201702/accident-vs-crash.</li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+        <div class="card content"> <!-- Object-based reference -->
+            <header class="card-header">
+                <p class="card-header-title">
+                    <a name="object" href="#object"><h3 class="title is-5"><b-icon icon="package-variant" /> Object-based reference</h3></a>
+                </p>
+            </header>
+            <div class="card-content">
+                <p>Object-based reference deals with how reporters and readers refer to entities. This gives rise to the dichotomy: object-based language vs. people-based language.</p>
+                <p>Research shows that when referring to drivers, language is usually object-based instead, giving agency to cars, traffic, etc. On the other hand, vulnerable road users are nearly always referenced in human terms: pedestrian, bicyclist, person, man, woman.</p>
+                <p>Giving agency to objects instead of people obscures who the actors are, and tends to shift blame toward the victims.</p>
+                <ul>
+                    <li>A bicyclist was hit by an SUV. &rarr; A bicyclist was hit by <em>the driver</em> of an SUV.</li>
+                    <li>The car jumped the curb. &rarr; The <em>driver</em> drove over the curb.</li>
+                    <li>The automobile remained at the scene. &rarr; The <em>driver</em> remained at the scene.</li>
+                </ul>
+                <p>Additionally, using object-based language personifies objects in downright weird ways:</p>
+                <ul>
+                    <li>The vehicle fled the scene.</li>
+                    <li>The automobile co-operated with police investigators.</li>
+                </ul>
+                <footer class="page">
+                    <label>See also:</label>
+                    <ul>
+                        <li>Walker, I. Road Users' Perceptions of Other Road Users: Do Different Transport Modes Invoke Qualitatively Different Concepts in Observers? Advances in Transportation Studies, Vol. A6, 2005, pp. 25-33.</li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+        <div class="card content"> <!-- Agency -->
+            <header class="card-header">
+                <p class="card-header-title">
+                    <a name="agency" href="#agency"><h3 class="title is-5"><b-icon icon="account-child" /> Agency</h3></a>
+                </p>
+            </header>
+            <div class="card-content">
+                <p>Agency discovers issues with agentive vs. non-agentive sentences. Research demonstrates that readers place more blame on victims when reading non-agentive sentences, i.e. sentences that don't include the perpetrator or one doing the action.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Sentence</td>
+                            <td>Classification</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A pedestrian was struck.</td>
+                            <td>Non-agentive</td>
+                        </tr>
+                        <tr>
+                            <td>A driver struck a pedestrian.</td>
+                            <td>Agentive</td>
+                        </tr>
+                        <tr>
+                            <td>A pedestrian was struck by a driver.</td>
+                            <td>Agentive</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Readers identify agents as having ability to cause harm, which helps share responsibility for a mishap. Ensure that all sentences that discuss crashes include an agent.</p>
+                <footer class="page">
+                    <label>See also:</label>
+                    <ul>
+                        <li>Fausey, C. M., and L. Boroditsky. Subtle Linguistic Cues Influence Perceived Blame and Financial Liability. Psychonomic Bulletin &amp; Review, Vol. 17, No. 5, 2010, pp. 644-650.</li>
+                        <li>Coates, L., and A. Wade. Telling It Like It Isn't: Obscuring Perpetrator Responsibility for Violent Crime. Discourse &amp; Society, Vol. 15, No. 5, 2004, pp. 499-526.</li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+        <div class="card content"> <!-- Focus -->
+            <header class="card-header">
+                <p class="card-header-title">
+                    <a name="focus" href="#focus"><h3 class="title is-5"><b-icon icon="eye" /> Focus</h3></a>
+                </p>
+            </header>
+            <div class="card-content">
+                <p>Focus identifies who the subject of the sentence is, and hence who is at the center of attention. Readers assign more blame to the focus of the sentence. News articles that cover crashes between vehicles and vulnerable road users place the focus of the sentences on the VRU over 70% of the time.</p>
+                <p>This difference is illustrated below, with the focus (subject) underlined:</p>
+                <ul>
+                    <li><u>A pedestrian</u> was struck by an SUV.</li>
+                    <li><u>An SUV</u> struck a pedestrian.</li>
+                </ul>
+                <footer class="page">
+                    <label>See also:</label>
+                    <ul>
+                        <li>Iacobucci, Evan, et al. “Editorial Patterns in Bicyclist and Pedestrian Crash Reporting - Kelcie Ralph, Evan Iacobucci, Calvin G. Thigpen, Tara Goddard, 2019.” SAGE Journals, 8 Feb. 2019, https://journals.sagepub.com/doi/abs/10.1177/0361198119825637.</li>
+                        <li>Niemi, L., and L. Young. When and Why We See Victims as Responsible: The Impact of Ideology on Attitudes toward Victims. Personality and Social Psychology Bulletin, Vol. 42, No. 9, 2016, pp. 1227-1242.</li>
                     </ul>
                 </footer>
             </div>
