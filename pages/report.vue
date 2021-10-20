@@ -90,12 +90,11 @@
 <script>
 import ProblemTypes from '../assets/ProblemTypes'
 import Counterfactuals from '../assets/Counterfactuals'
-import HighlightableInput from 'vue-highlightable-input'
 import ReportSummary from '../components/ReportSummary.vue'
 
 export default {
   name: 'Report',
-  components: { HighlightableInput, ReportSummary },
+  components: { ReportSummary },
   data() {
     return {
       isLoading: true,

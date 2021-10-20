@@ -15,7 +15,7 @@
           ref="highlighter"
           highlight-style="background-color:yellow"
           :highlight="highlights"
-          v-model="article.body"
+          v-model="highlighterBody"
         />
         <highlight-legend />
       </div>
@@ -121,6 +121,12 @@ export default {
     }
   },
   computed: {
+    highlighterBody() {
+      // This computed value is made to avoid a vue/no-mutating-props with the highlighter v-model
+      // The above eslint error was never a real problem, because contenteditable=false, so the
+      // two-way data binding to the prop never actually exists
+      return this.article.body
+    },
     highlightsVisibleBtnIcon() {
       return this.highlightsVisible ? 'eye' : 'eye-off'
     },
