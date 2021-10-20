@@ -7,65 +7,10 @@
 
     <h1 class="title is-2">Report</h1>
 
-    <section id='overview' class='primary'>
-      <div class="columns">
-        <div class="column is-2">
-          <div id="grade" :data-grade="grade.letter">
-            <label>{{grade.letter}}</label>
-            <span>{{grade.score}} pts</span>
-          </div>
-        </div>
-        <div class="column">
-          <table id="details-table">
-            <tr>
-              <th width="35%">Report generated:</th>
-              <td>{{new Date().toLocaleString()}}</td>
-            </tr>
-            <tr>
-              <th>Entry method:</th>
-              <td>{{this.article.url ? `URL` : 'Manual'}}</td>
-            </tr>
-            <tr v-if="this.article.url">
-              <th>URL:</th>
-              <td>{{this.article.url}}</td>
-            </tr>
-          </table>
-        </div>
-        <div class="column is-3">
-          <!-- <b-button @click="reportError" type="is-text" icon-left="alert-outline">
-            Report an error
-          </b-button> -->
-          <b-button @click="printReport" type="is-text" icon-left="printer">
-            Print this report
-          </b-button>
-        </div>
-      </div>
-    </section>
-
-    <section id='article' class='primary'>
-      <h2 class="title is-4">Article</h2>
-      <article class="content">
-        <h2 class='title is-4'>{{article.title}}</h2>
-        <highlightable-input
-          ref="highligher"
-          highlight-style="background-color:yellow"
-          :highlight="highlight"
-          v-model="article.body"
-        />
-      </article>
-      <div id="legend">
-        <span class="legend-entry" v-for="problemType in registeredProblemTypes" :key="problemType.id">
-          <span class="legend-color" :style="{ 'background-color': problemType.lightColor, 'border-color': problemType.color }"></span>
-          <span>{{problemType.name}}</span>
-        </span>
-      </div>
-      <small>* Not all highlights will be shown above if there are overlapping issues</small>
-    </section>
+    <report-summary :article="article" :problems="problems" />
 
     <section id='problems' class='primary'>
-      <h2 class="title is-4">
-        <!-- <b-icon :icon="statusIcon" /> -->
-      Problems</h2>
+      <h2 class="title is-4">Problems</h2>
 
       <b-progress v-if="isLoading"></b-progress>
       <div v-else>
@@ -128,7 +73,6 @@
               </div>
             </b-collapse>
           </div>
-          <!-- <problem-entry v-for="problem in problems" :key="problem" :problem="problem" :body="body" /> -->
         </ol>
         <div v-else class="empty">
           <h3 class="title is-5">
@@ -146,12 +90,11 @@
 <script>
 import ProblemTypes from '../assets/ProblemTypes'
 import Counterfactuals from '../assets/Counterfactuals'
-import HighlightableInput from 'vue-highlightable-input'
-import getGrade from '../assets/Grade'
+import ReportSummary from '../components/ReportSummary.vue'
 
 export default {
   name: 'Report',
-  components: { HighlightableInput },
+  components: { ReportSummary },
   data() {
     return {
       isLoading: true,
@@ -192,14 +135,6 @@ export default {
           }
         })
     },
-    printReport() {
-      // TODO: black-and-white printing
-      // TODO: expand all collapsibles before printing
-      window.print()
-    },
-    reportError() {
-      this.$router.push('/contact')
-    }
   },
   mounted() {
     this.article = {
@@ -208,23 +143,8 @@ export default {
       body: this.$route.query.body || ''
     }
     this.getReport()
-    this.$refs.highligher.$el.setAttribute('contenteditable', 'false')
   },
   computed: {
-    highlight() {
-      if(this.problems.length === 0) return [ { start: 0, end: 1, style: 'border: 0px solid #000' } ]
-
-      return this.problems.map(problem => {
-        return {
-          start: problem.range[0],
-          end: problem.range[1],
-          style: `border-bottom: 1px SOLID ${ProblemTypes[problem.type].color}; background-color: ${ProblemTypes[problem.type].lightColor}`
-        }
-      })
-    },
-    registeredProblemTypes() {
-      return Object.values(this.ProblemTypes).filter(problemType => problemType.displayAsRegistered)
-    },
     problemsCategorized() {
       const categories = {...ProblemTypes}
       Object.values(categories).forEach(category => {
@@ -233,7 +153,6 @@ export default {
       })
 
       this.problems.forEach(problem => {
-        if(problem.type == 'OBJECTP') problem.type = 'OBJECT' // count OBJECTP and OBJECT as same category
         categories[problem.type].count += 1
         categories[problem.type].problems.push(problem)
       })
@@ -253,17 +172,8 @@ export default {
       delete categories.OBJECTP
       return Object.values(categories)
     },
-    grade() {
-      if(this.isLoading) return { letter: '-', score: 0 }
-      return getGrade(this.problems)
-    },
     problemsCategorizedNonEmpty() {
       return this.problemsCategorized.filter(category => category.count)
-    },
-    statusIcon() {
-      if(this.isLoading) return 'loading'
-      if(this.problems.length) return 'alert-circle-outline'
-      return 'check-outline'
     }
   }
 }
@@ -277,39 +187,6 @@ section.primary { margin: 40px 0; }
   border-radius: 5px;
 }
 
-#grade {
-  font-size: 2em;
-  text-align: center;
-  border: 2px SOLID rgba(0,0,0,0.3);
-  padding: 10px;
-}
-#grade[data-grade="A+"] { color: #4ec83d; border-color: #4ec83d; background-color: #dbf4d7; }
-#grade[data-grade="A"]  { color: #8cd544; border-color: #8cd544; background-color: #e6f6d5; }
-#grade[data-grade="B"]  { color: #cee04c; border-color: #cee04c; background-color: #f3f7d4; }
-#grade[data-grade="C"]  { color: #eac556; border-color: #eac556; background-color: #f9efd2; }
-#grade[data-grade="D"]  { color: #f39861; border-color: #f39861; background-color: #fbe0d0; }
-#grade[data-grade="F"]  { color: #fa6e6e; border-color: #fa6e6e; background-color: #fdcece; }
-
-#grade label {
-  font-weight: bold;
-  text-shadow: 1px 1px 0px rgba(0,0,0,0.5)
-}
-#grade span {
-  display: block;
-  font-size: 0.5em;
-  font-weight: normal;
-  color: #000 !important;
-}
-#details-table { margin: 10px; }
-
-article.content {
-  border: 1px SOLID #ddd;
-  padding: 20px;
-  margin-bottom: 0;
-}
-#legend { margin-left: 10px; }
-.legend-entry { margin: 0 5px; }
-.legend-color { width: 12px; height: 12px; display: inline-block; border: 1px SOLID #000; }
 small { font-style: italic; padding-left: 10px; }
 h1 { width: 70%; }
 .empty { background-color: #f9f9f9; padding: 20px; text-align: center; }
