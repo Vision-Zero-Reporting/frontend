@@ -51,7 +51,7 @@
         <p>Another road design element is mentioned: five lanes are provided for vehicles, but <strong>no facilities are provided to bicyclists</strong>. Combined with frequent curb cuts and long crosswalk distances, fatal crashes on this road are not unforeseeable, but expected. <strong>This is a road designed for cars, not people</strong>.</p>
         <p>The article is contextualized by <strong>referencing national trends</strong>. What happened on this road is happening all across the United States: roads are becoming increasingly dangerous for pedestrians and bicyclists, and that's by design.</p>
         <p>The article <strong>brings the message down to the local level</strong>. A small amount of research is done to <strong>discuss related efforts by the local government</strong>, such as street studies, safety initiatives, and results of a resident survey showing overwhelming support for safer roads.</p>
-        <p>Finally, minor editorial patterns are fixed, such as using the word <strong>crash, not accident</strong> (<nuxt-link to="/issues">learn why</nuxt-link>), eliminating the usage of object-based language in favor of <strong>person-based language</strong> (car vs. driver), and eliminating focus on the bicyclist.</p>
+        <p>Finally, minor editorial patterns are fixed, such as using the word <strong>crash, not accident</strong> (<nuxt-link :to="{ path: '/issues', hash: 'accident' }">learn why</nuxt-link>), eliminating the usage of object-based language in favor of <strong>person-based language</strong> (car vs. driver), and eliminating focus on the bicyclist.</p>
       </div>
     </div>
 

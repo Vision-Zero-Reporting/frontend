@@ -16,7 +16,7 @@
         <div class="card content"> <!-- Framing -->
             <header class="card-header">
                 <p class="card-header-title">
-                    <a name="framing" href="#framing"><h3 class="title is-5"><b-icon icon="image-filter-frames" /> Framing</h3></a>
+                    <a id="framing" name="framing" href="#framing"><h3 class="title is-5"><b-icon icon="image-filter-frames" /> Framing</h3></a>
                 </p>
             </header>
             <div class="card-content">
@@ -112,7 +112,7 @@
         <div class="card content"> <!-- Counterfactuals -->
             <header class="card-header">
                 <p class="card-header-title">
-                    <a name="counterfactuals" href="#counterfactuals"><h3 class="title is-5"><b-icon icon="clipboard-alert" /> Counterfactuals</h3></a>
+                    <a id="counterfactuals" name="counterfactuals" href="#counterfactuals"><h3 class="title is-5"><b-icon icon="clipboard-alert" /> Counterfactuals</h3></a>
                 </p>
             </header>
             <div class="card-content">
@@ -203,7 +203,7 @@
         <div class="card content"> <!-- Accident -->
             <header class="card-header">
                 <p class="card-header-title">
-                    <a name="accident" href="#accident"><h3 class="title is-5"><b-icon icon="car-emergency" /> Accident</h3></a>
+                    <a id="accident" name="accident" href="#accident"><h3 class="title is-5"><b-icon icon="car-emergency" /> Accident</h3></a>
                 </p>
             </header>
             <div class="card-content">
@@ -247,7 +247,7 @@
         <div class="card content"> <!-- Object-based reference -->
             <header class="card-header">
                 <p class="card-header-title">
-                    <a name="object" href="#object"><h3 class="title is-5"><b-icon icon="package-variant" /> Object-based reference</h3></a>
+                    <a id="object" name="object" href="#object"><h3 class="title is-5"><b-icon icon="package-variant" /> Object-based reference</h3></a>
                 </p>
             </header>
             <div class="card-content">
@@ -275,7 +275,7 @@
         <div class="card content"> <!-- Agency -->
             <header class="card-header">
                 <p class="card-header-title">
-                    <a name="agency" href="#agency"><h3 class="title is-5"><b-icon icon="account-child" /> Agency</h3></a>
+                    <a id="agency" name="agency" href="#agency"><h3 class="title is-5"><b-icon icon="account-child" /> Agency</h3></a>
                 </p>
             </header>
             <div class="card-content">
@@ -315,7 +315,7 @@
         <div class="card content"> <!-- Focus -->
             <header class="card-header">
                 <p class="card-header-title">
-                    <a name="focus" href="#focus"><h3 class="title is-5"><b-icon icon="eye" /> Focus</h3></a>
+                    <a id="focus" name="focus" href="#focus"><h3 class="title is-5"><b-icon icon="eye" /> Focus</h3></a>
                 </p>
             </header>
             <div class="card-content">
