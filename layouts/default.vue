@@ -23,6 +23,9 @@
         <nuxt-link to="/about" class="navbar-item">
           About
         </nuxt-link>
+        <a class="navbar-item" href="https://twitter.com/ZeroReporting" target="_blank">
+          <b-icon icon="twitter" size="is-small" type="is-info" />
+        </a>
       </template>
     </b-navbar>
 
