@@ -11,8 +11,8 @@ const thresholds = [
   [1.00, Grades.AA],
   [0.9, Grades.A],
   [0.8, Grades.B],
-  [0.7, Grades.C],
-  [0.6, Grades.D],
+  [0.65, Grades.C],
+  [0.5, Grades.D],
   [-Infinity, Grades.F],
 ]
 

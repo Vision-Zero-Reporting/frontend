@@ -27,41 +27,16 @@
       <table width="100%">
         <thead>
           <tr>
-            <th width="15%">Impact</th>
-            <th width="65%">Audit</th>
-            <th width="20%">Score</th>
+            <th width="10%">Impact</th>
+            <th width="70%">Audit</th>
+            <th width="10%">Score</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Good</td>
-            <td>Framing</td>
-            <td><score :value="currentScores.FRAMING" :max="MaxScores.FRAMING" /></td>
-          </tr>
-          <tr>
-            <td>Good</td>
-            <td>Counterfactuals</td>
-            <td><score :value="currentScores.COUNTER" :max="MaxScores.COUNTER" /></td>
-          </tr>
-          <tr>
-            <td>Good</td>
-            <td>Accident</td>
-            <td><score :value="currentScores.ACCIDENT" :max="MaxScores.ACCIDENT" /></td>
-          </tr>
-          <tr>
-            <td>Good</td>
-            <td>Object-based reference</td>
-            <td><score :value="currentScores.OBJECT" :max="MaxScores.OBJECT" /></td>
-          </tr>
-          <tr>
-            <td>Good</td>
-            <td>Agency</td>
-            <td><score :value="currentScores.AGENCY" :max="MaxScores.AGENCY" /></td>
-          </tr>
-          <tr>
-            <td>Good</td>
-            <td>Focus</td>
-            <td><score :value="currentScores.FOCUS" :max="MaxScores.FOCUS" /></td>
+          <tr v-for="key in Object.keys(currentScores)" :key="key">
+            <td>{{impact[key]}}</td>
+            <td>{{key | firstCap}}</td>
+            <td><score :value="currentScores[key]" :max="MaxScores[key]" /></td>
           </tr>
         </tbody>
         <tfoot>
@@ -123,6 +98,14 @@ export default {
         OBJECT: 0,
         AGENCY: 0,
         FOCUS: 0
+      },
+      impact: {
+        FRAMING: 'High',
+        COUNTER: 'High',
+        ACCIDENT: 'Med',
+        OBJECT: 'Med',
+        AGENCY: 'Low',
+        FOCUS: 'Low'
       }
     }
   },
@@ -195,6 +178,8 @@ export default {
 #grade[data-grade="C"]  { color: #eac556; }
 #grade[data-grade="D"]  { color: #f39861; }
 #grade[data-grade="F"]  { color: #fa6e6e; }
+
+td.bad { background-color: rgba(200, 0, 0, 0.05); }
 
 article {
   background-color: #f9f9f9;
