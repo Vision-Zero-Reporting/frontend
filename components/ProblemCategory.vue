@@ -28,6 +28,7 @@
       </h5>
 
       <section>
+        <label>Identified elements</label>
         <highlightable-input
           ref="highlighter"
           highlight-style="background-color:yellow"
@@ -54,24 +55,34 @@
         <p>{{category.fix}}</p>
       </section>
 
-      <section v-if="category.examples">
-        <label>Examples</label>
-        <ul>
-          <li v-for="example in category.examples" :key="example.text" class="example" :class="example.type">{{example.text}}</li>
-        </ul>
-      </section>
+      <div v-if="category.id == 'FRAMING'">
+        <section>
+          <label>Details</label>
+          <framing-details :problems="category.problems" />
+        </section>
+      </div>
+      <div v-else>
+        <section v-if="category.examples">
+          <label>Examples</label>
+          <ul>
+            <li v-for="example in category.examples" :key="example.text" class="example" :class="example.type">{{example.text}}</li>
+          </ul>
+        </section>
+      </div>
+
     </div>
   </b-collapse>
 </template>
 
 <script>
 import HighlightableInput from 'vue-highlightable-input'
+import FramingDetails from '../components/FramingDetails.vue'
 // import Counterfactuals from '../assets/Counterfactuals'
 
 export default {
   name: 'ProblemCategory',
   props: ['category', 'article'],
-  components: { HighlightableInput },
+  components: { HighlightableInput, FramingDetails },
   data() {
     return {
       // Counterfactuals
