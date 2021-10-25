@@ -72,30 +72,42 @@
                 <p>Articles should include a number of thematic phrases to help contextualize the incident and provide possible remediations:</p>
                 <ul>
                     <li>
-                        Road design
+                        <b-icon icon="road-variant" /> Road design
                         <ul>
+                            <li>Speed limit</li>
                             <li>Number of lanes</li>
                             <li>Lane width</li>
-                            <li>Presence of sidewalks &amp; crosswalks</li>
+                            <li>Presence of sidewalks, crosswalks, bike lanes</li>
                             <li>Lighting conditions</li>
-                            <li>Speed limit</li>
                             <li>Speedbumps</li>
                             <li>Turn radius</li>
                             <li>Road signage</li>
+                            <li>etc.</li>
                         </ul>
                     </li>
-                    <li>Statistics</li>
-                    <li>Expert commentary</li>
-                    <li>Resident input</li>
                     <li>
-                        Local response &amp; initiatives
-                        <ul>
-                            <li>City Council / Town Board comments</li>
-                            <li>Department of Transportation</li>
-                            <li>Department of Public Works</li>
-                            <li>Adoption of Vision Zero</li>
-                            <li>Adoption of Complete Streets</li>
-                        </ul>
+                      <b-icon icon="trending-up" /> Statistics &amp; trends
+                      <ul>
+                        <li>Recent crashes locally</li>
+                        <li>Statewide and national trends</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <b-icon icon="comment-quote" /> Quotes
+                      <ul>
+                        <li>Local residents</li>
+                        <li>Elected officials</li>
+                        <li>Transportation safety experts</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <b-icon icon="shield-car" /> Safety initiatives
+                      <ul>
+                        <li>Vision Zero</li>
+                        <li>Complete Streets</li>
+                        <li>DWI checkpoints</li>
+                        <li>High-visibility enforcement</li>
+                      </ul>
                     </li>
                 </ul>
 
