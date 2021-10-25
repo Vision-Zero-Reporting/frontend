@@ -3,7 +3,8 @@
         <h1 class='title is-2'>Contact us</h1>
         <h2 class="subtitle is-4">Get in touch</h2>
         <section class="content">
-            <form name="contact" method="POST" action="/success/" netlify>
+          For questions, feedback, or assistance, email us at <a href="mailto:visionzeroreporting@gmail.com">visionzeroreporting@gmail.com</a>
+            <!-- <form name="contact" method="POST" action="/success/" netlify>
                 <p>
                     <label>Full name:
                         <input type="text" name="name" class="input" />
@@ -44,7 +45,7 @@
                     <button type="submit" class="button is-info is-pulled-right">Submit</button>
                 </p>
                 <div style="clear:both;"></div>
-            </form>
+            </form> -->
         </section>
     </article>
 </template>

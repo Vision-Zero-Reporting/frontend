@@ -17,9 +17,9 @@
         <!-- <nuxt-link to="/partners" class="navbar-item">
           Partners
         </nuxt-link> -->
-        <!-- <nuxt-link to="/contact" class="navbar-item">
+        <nuxt-link to="/contact" class="navbar-item">
           Contact
-        </nuxt-link> -->
+        </nuxt-link>
         <nuxt-link to="/about" class="navbar-item">
           About
         </nuxt-link>
