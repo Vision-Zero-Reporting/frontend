@@ -14,7 +14,7 @@
 
       <b-progress v-if="isLoading"></b-progress>
       <div v-else>
-        <ol v-if="problems.length">
+        <ol v-if="problemsCategorizedNonEmpty.length">
           <div class="problem-list" v-for="category in problemsCategorizedNonEmpty" :key="category.name">
             <problem-category :category="category" :article="article" />
           </div>

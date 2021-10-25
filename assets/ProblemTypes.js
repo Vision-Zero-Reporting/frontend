@@ -9,7 +9,7 @@ const ProblemTypes = {
     color: 'rgba(116, 77, 168, 1)',
     lightColor: 'rgba(116, 77, 168, 0.2)',
     issue: 'Article lacks thematic framing',
-    explain: 'Readers who encounter episodic frames tend to hold individuals responsible for negative outcomes and put less pressure on public leaders to make changes.',
+    explain: 'Thematic framing helps contextualize a car crash and draw attention to the bigger picture. By including thematic elements such as road design, statistics and trends, quotes, and safety initiatives, readers are more likely to understand that car crashes are foreseeable and preventable.',
     fix: 'Include at least 3 thematic elements.',
     examples: [
       { type: 'good', text: 'Number of car crashes in recent months' },

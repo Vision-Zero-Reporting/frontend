@@ -17,7 +17,7 @@ const thresholds = [
 ]
 
 const MaxScores = {
-  FRAMING: 9, // must be multiple of 3
+  FRAMING: 20, // must be multiple of 4
   COUNTER: 6,
   ACCIDENT: 4,
   OBJECT: 4,
@@ -33,11 +33,11 @@ function getGrade(problems) {
   currentScores.FRAMING = 0
 
   // Compute the points:
-  //  1. Framing elements are worth 3 points
+  //  1. Framing elements are worth 4 points
   //  2. Counterfactuals are penalty of 2 points
   //  3. Accident, object, agency, and focus are penalty of 1 point
   for(const problem of problems) {
-    if(problem.type === 'FRAMING') currentScores.FRAMING += 3
+    if(problem.type === 'FRAMING') currentScores.FRAMING += 4
     else if(problem.type === 'COUNTER') currentScores.COUNTER -= 2
     else currentScores[problem.type] -= 1
   }
