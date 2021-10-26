@@ -10,7 +10,7 @@ const ProblemTypes = {
     lightColor: 'rgba(116, 77, 168, 0.2)',
     issue: 'Article lacks thematic framing',
     explain: 'Thematic framing helps contextualize a car crash and draw attention to the bigger picture. By including thematic elements such as road design, statistics and trends, quotes, and safety initiatives, readers are more likely to understand that car crashes are foreseeable and preventable.',
-    fix: 'Include at least 3 thematic elements.',
+    fix: 'Include at least 5 thematic elements.',
     examples: [
       { type: 'good', text: 'Number of car crashes in recent months' },
       { type: 'good', text: 'Discussion of road design (width, # lanes, speed limit, turn radius, speedbumps, presence of sidewalks)' },

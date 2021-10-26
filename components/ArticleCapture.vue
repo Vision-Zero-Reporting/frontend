@@ -60,4 +60,5 @@ export default {
   width: 60%;
   margin: auto;
 }
+.b-tabs { margin-bottom: 0; }
 </style>

@@ -103,7 +103,7 @@ export default {
 
       // There needs to be at least three thematic elements for
       // the "framing" report not to trigger
-      if(categories['FRAMING'].problems.length < 3) {
+      if(categories['FRAMING'].problems.length < 5) {
         if(categories['FRAMING'].problems.length === 0) { // make sure the reporter shows up even if there are no thematic phrases
           categories['FRAMING'].count = 1
           categories['FRAMING'].problems = []

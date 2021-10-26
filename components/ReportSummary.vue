@@ -28,7 +28,8 @@
         <thead>
           <tr>
             <th width="10%">Impact</th>
-            <th width="70%">Audit</th>
+            <th width="10%">Audit</th>
+            <th width="60%"></th>
             <th width="10%">Score</th>
           </tr>
         </thead>
@@ -36,11 +37,23 @@
           <tr v-for="key in Object.keys(currentScores)" :key="key">
             <td>{{impact[key]}}</td>
             <td>{{key | firstCap}}</td>
+            <td class="scoring-message">
+              <small v-if="currentScores[key] !== MaxScores[key]">
+                <a @click="scrollToKey(key)">
+                  <b-icon icon="alert" size="is-small" type="is-warning" />
+                  Needs fixing
+                </a>
+              </small>
+              <small v-else>
+                 <!-- No action needed -->
+              </small>
+            </td>
             <td><score :value="currentScores[key]" :max="MaxScores[key]" /></td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
+            <th></th>
             <th></th>
             <th></th>
             <th><score :value="scoreSum" :max="MaxScore" /></th>
@@ -85,7 +98,7 @@ export default {
   components: { Score, HighlightableInput, HighlightLegend },
   data() {
     return {
-      highlightsVisible: true,
+      highlightsVisible: false,
       reportDate: new Date().toLocaleString(),
       MaxScore,
       MaxScores,
@@ -110,7 +123,13 @@ export default {
     }
   },
   mounted() {
-    this.highlightsVisible = false
+    // Enable highlights by default; note that we don't just set this
+    // to `true` because the $ref.el needs to have contenteditable
+    // set to false; see `toggleHighlights()` for details
+    this.toggleHighlights()
+    setTimeout(() => { // `toggleHighlights()` focuses the button; for initial page load, unfocus it
+      document.activeElement.blur()
+    }, 1)
   },
   watch: {
     problems() {
@@ -143,6 +162,13 @@ export default {
     },
   },
   methods: {
+    scrollToKey(key) {
+      // `scrollTo()` is used instead of a hash because a nuxt-link with
+      // a hash was overwriting the query parameters for article title and body
+      const sectionElem = document.querySelector(`#${key}`)
+      const elmTop = sectionElem.getBoundingClientRect().top + window.scrollY
+      window.scrollTo(0, elmTop)
+    },
     printReport() {
       // TODO: black-and-white printing
       // TODO: expand all collapsibles before printing
@@ -194,7 +220,8 @@ article {
 
 table { border: 1px SOLID #ddd; border-left: none; border-right: none; }
 th,td { padding: 10px; }
-th:nth-child(3), td:nth-child(3) { text-align: right; }
+th:nth-child(4), td:nth-child(4) { text-align: right; }
+.scoring-message a { color: #777; border-bottom: none; }
 
 #actions { padding-top: 10px; }
 

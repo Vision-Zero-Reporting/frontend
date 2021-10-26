@@ -10,8 +10,22 @@
 
     <hr />
 
-    <h2 class="title is-4">Example</h2>
-    <h3 class="subtitle is-5">Take a look at the before and after of a <em>real news article</em> below</h3>
+    <h2 class="title is-4">Examples</h2>
+    <div class="columns examples">
+      <div class="column" v-for="example in examples" :key="example.title">
+        <div class="example">
+          <h3 class="title is-5">{{example.title}}</h3>
+          <p>{{example.preview}}</p>
+          <b-button size="is-small" type="is-info" outlined @click="viewExample(example.title, example.body)">View example &raquo;</b-button>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <h2 class="title is-4">In-depth review</h2>
+    <h3 class="subtitle is-5">See the difference between episodic and thematic articles of the same incident (<em>real news article</em>)</h3>
+    <br />
     <div class="columns content">
       <div class="column">
         <article>
@@ -40,7 +54,7 @@
           <p>The speed limit on Central Avenue is 40 mph; a collision between a vehicle and a bicyclist or pedestrian at 40 mph gives at least a 85% chance of death.</p>
           <p>The roadway is 5 lanes wide, but there are no bike lanes on Central Avenue. Since the crash took place in the evening, it is possible for lack of street illumination to have contributed to the incident. These factors, combined with frequent curb cuts and long crosswalk distances, calls into question the safety for road users not in a vehicle.</p>
           <p>This fatality follows national trends of increased pedestrian and bicyclist deaths. Annual pedestrian fatalities have increased approximately 50% in just the past decade, from 4109 in 2009, to 6184 in 2019, erasing about 20 years worth of prior progress in reducing fatalities. Bicycling has likewise seen increases in injuries and deaths.</p>
-          <p>Neither the 2010 "Central Avenue Corridor Inventory Study" nor 2019 comprehensive plan mention safety measures along Central Ave., although other roadway studies have suggested lowering speed limits to 30 mph, adding crosswalks and signalized intersections. According to the comprehensive plan, "The Town has also seen improvements in many of its transportation corridors. Central Avenue has undergone an extensive corridor improvement process that has since reshaped and improved how that transit corridor functions.", but it is unclear if any of the referenced improvements include road safety measures. But safety is clearly on the minds of Colonie residents: a Siena College Research Institute (SCRI) Survey conducted in March of 2017 show the top two supported initiatives for inclusion for inclusion in the 2019 comprehensive plan are (1) The construction of new sidewalks along main roads (85% support), and (2) Designing local roads to slow speeds (81%).</p>
+          <p>Neither the 2010 "Central Avenue Corridor Inventory Study" nor 2019 comprehensive plan mention safety measures along Central Ave., although other roadway studies have suggested lowering speed limits to 30 mph, adding crosswalks and signalized intersections. According to the comprehensive plan, "The Town has also seen improvements in many of its transportation corridors. Central Avenue has undergone an extensive corridor improvement process that has since reshaped and improved how that transit corridor functions.", but it is unclear if any of the referenced improvements include road safety measures. But safety is clearly on the minds of Colonie residents: a Siena College Research Institute (SCRI) Survey conducted in March of 2017 show the top two supported initiatives for inclusion in the 2019 comprehensive plan are (1) The construction of new sidewalks along main roads (85% support), and (2) Designing local roads to slow speeds (81%).</p>
         </article>
       </div>
       <div class="column is-one-third commentary">
@@ -55,7 +69,7 @@
       </div>
     </div>
 
-    <hr />
+    <br />
 
   </div>
 </template>
@@ -63,10 +77,33 @@
 <script>
 import ArticleCapture from '../components/ArticleCapture.vue'
 
+const examples = [
+  {
+    title: 'Boy, 9, dies after being struck by vehicle near Las Vegas school',
+    preview: 'A 9-year-old boy riding his bicycle was killed Friday afternoon after he was hit by an SUV near a south Las Vegas Valley middle school, police said. The boy was hit about 2:35 p.m. in a residential neighborhood behind Silvestri Junior High School, near East Silverado Ranch Boulevard and ...',
+    body: 'A 9-year-old boy riding his bicycle was killed Friday afternoon after he was hit by an SUV near a south Las Vegas Valley middle school, police said. The boy was hit about 2:35 p.m. in a residential neighborhood behind Silvestri Junior High School, near East Silverado Ranch Boulevard and South Maryland Parkway. He was riding his bike north in the southbound lanes of Jack Leavitt Street when a dark-colored Toyota SUV turned right from Riverdance Avenue and hit him, Metropolitan Police Department traffic Sgt. Paul McCullough said. The boy died at Sunrise Hospital and Medical Center. "In this case here, we\'ve got a young kid. Perfect angel, as we expect all of our children to be, and just very sad circumstances," McCullough said. The SUV stopped at a stop sign and then turned right, hitting the boy in the process. The driver wasn\'t expecting to see the bicycle while turning, he said. The driver had her child in the car at the time of the crash. She was cooperative with police, and officers didn\'t think she was impaired or driving fast, McCullough said. "Obviously, under these circumstances, she\'s very distraught and upset," he said. McCullough didn\'t know whether the boy was wearing a helmet, but he was thought to be riding alone. It wasn\'t immediately clear who was at fault in the crash, but McCullough said the crash was preventable, regardless, as it happened in a residential neighborhood with a child riding a bicycle near a school. A small, black bike with pegs stood next to the SUV, which had its front passenger door swung open. Pink clothes were piled on the ground just behind the front driver\'s side tire left by a person who tried to help the boy, McCullough said. Several children in the neighborhood saw the crash or the aftermath, he said. "Our prayers to the families for those involved and for the folks that had to witness this," McCullough said. Police closed the intersection while they investigated. They expected it to remain closed until Friday night. The Clark County coroner\'s office will release the boy\'s identity once his family is notified.'
+  },
+  {
+    title: 'Fifth pedestrian, cyclist dies in Stockton after being hit by car in less than a month',
+    preview: 'Five people have been killed in less than a month while walking or riding their bike in Stockton. "That is a lot," said Joe Silva, spokesman for the Stockton Police Department. "What\'s unique about these traffic fatalities, is there\'s really no correlation between any of them ...',
+    body: 'Five people have been killed in less than a month while walking or riding their bike in Stockton. "That is a lot," said Joe Silva, spokesman for the Stockton Police Department. "What\'s unique about these traffic fatalities, is there\'s really no correlation between any of them because they\'re occurring in different parts of the city, different parts of the day." Silva says a 23-year-old woman was the fifth person to die Saturday morning after she was struck by a vehicle while riding her bicycle on Tam O\'Shanter Drive and Hammertown Drive. "The driver of that vehicle did the right thing. He stopped immediately, waited for first responders and law enforcement to arrive, and he cooperated with the investigation," Silva explained. Stockton police wants to remind not just drivers, but also pedestrians and cyclists to be aware of their surroundings at all times. "What we want people to do is just use common sense," Silva said. "If you\'re going to cross the street, you have to find a nearby crosswalk and always look both directions before you cross the street, and if there is heavy traffic, just wait." Silva said the department is concerned with the number of deadly traffic accidents that have occurred in recent weeks. "This week, and in the coming weeks we will be doing some public service announcements on our social media - just reminding people to be vigilant," Silva added.'
+  },
+  {
+    title: 'State police: Rome man killed when motorcycle hits SUV in town of Western',
+    preview: 'A Rome man was killed in an accident at the intersection of State Route 46 and Main Street in the town of Western on Thursday evening, state police said in a statement. A 2011 Chevrolet Traverse was heading north on state Route 46, attempting to make a left turn onto Main Street, when it was hit ...',
+    body: 'A Rome man was killed in an accident at the intersection of State Route 46 and Main Street in the town of Western on Thursday evening, state police said in a statement. A 2011 Chevrolet Traverse was heading north on state Route 46, attempting to make a left turn onto Main Street, when it was hit from behind by a 2013 Suzuki motorcycle, the statement said. The driver of the Traverse, 44-year-old Earl D. Turner from Kentucky, was injured in the crash. The motorcyclist, 67-year-old Mehdi Tayefeh of Rome, was transported to Rome Memorial Hospital, where he was pronounced dead, police said.'
+  }
+]
+
 export default {
   name: 'Home',
   head: {
     title: 'Vision Zero Reporting - Improved car crash reporting to tell the whole story'
+  },
+  data() {
+    return {
+      examples
+    }
   },
   components: {
     ArticleCapture
@@ -75,11 +112,8 @@ export default {
     goToReportPage(title, body) {
       this.$router.push({ path: 'report', query: { title , body } })
     },
-    tryExample1() {
-      this.goToReportPage('Queens crash leaves one injured', 'A 35-year-old woman was hit by a car in Queens on Saturday, August 28th. The woman was run over at about 5:50 a.m. by a grey or silver SUV at the intersection of Hillside Avenue and Queens Boulevard in the Jamaica neighborhood of Queens. The driver fled the scene. Surveillance video found online shows the victim, unsteady on her feet, falling over onto Queens Boulevard. Moments later, the video shows an SUV running over the pedestrian, pulling her under its wheels. The driver kept going. The unidentified woman was transported to Jamaica Hospital in critical condition. The accident is under investigation. Alcohol does not appear to be a factor.')
-    },
-    tryExample2() {
-      this.goToReportPage('Bensonhurst accident kills one', 'A bicyclist was hit and killed by a car in the Bensonhurst area on Friday morning, August 27th. The fatal accident happened at the intersection of 16th Avenue and 85th Street around 10:04 a.m. According to local authorities, the woman was attempting to cross at the intersection when she was struck. Police and EMTs responded to the scene and transported Pan to Maimonides Medical Center. She was pronounced deceased a short time later. A preliminary investigation determined that the victim was crossing 16th Avenue when the pickup struck her while making a left turn. The 36-year-old male driver of the truck has not been arrested at this time.')
+    viewExample(title, body) {
+      this.goToReportPage(title, body)
     }
   }
 }
@@ -90,8 +124,13 @@ s { color: #bbb; font-size: 80%; }
 ins { text-decoration: none; }
 
 .columns { border-bottom: 1px SOLID #ddd; border-left: none; border-right: none; }
+.columns.examples { border: none; }
 .column article { font-family: serif; }
 .column.commentary { background-color: #eee; font-size: 90%; }
+
+h2, h3.subtitle.is-5 { text-align: center; }
+.example { font-size: 90% !important; }
+.example h3 { margin-bottom: 5px; }
 
 mark { padding: 1px; }
 mark.focus { background-color: rgba(214, 81, 41, 0.3); }
