@@ -1,7 +1,7 @@
 
 /* Apply an "external" icon next to any external link
    Reference: https://christianoliff.com/blog/styling-external-links-with-an-icon-in-css/ */
-a[href]:not([href^="https://visionzeroreporting.com"]):not([href^="#"]):not([href^="/"]):not([class="navbar-item"])::after {
+a[href]:not([href^="https://visionzeroreporting.com"]):not([href^="#"]):not([href^="/"]):not([class="navbar-item"]):not([class="no-external"])::after {
     content: "";
     width: 11px;
     height: 11px;

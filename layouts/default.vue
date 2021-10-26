@@ -30,6 +30,10 @@
 
     <Nuxt />
 
+    <footer>
+      &copy; Vision Zero Reporting&trade; 2021. All rights reserved.
+      <a class="no-external" href="mailto:visionzeroreporting@gmail.com"><b-icon icon="email" size="is-small" /> Email us</a> or <a class="no-external" href="https://twitter.com/ZeroReporting" target="_blank"><b-icon icon="twitter" size="is-small" /> follow us on Twitter</a>
+    </footer>
   </div>
 </template>
 
@@ -47,6 +51,11 @@ export default {
 
 <style scoped>
 .container { max-width: 900px !important; }
+footer {
+  font-size: 0.8em;
+  padding: 10px 0;
+}
+footer a { border: none; }
 a.nuxt-link-exact-active {
   font-weight: bold;
   text-decoration: underline;
