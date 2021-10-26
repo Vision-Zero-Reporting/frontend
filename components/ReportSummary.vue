@@ -85,7 +85,7 @@ export default {
   components: { Score, HighlightableInput, HighlightLegend },
   data() {
     return {
-      highlightsVisible: true,
+      highlightsVisible: false,
       reportDate: new Date().toLocaleString(),
       MaxScore,
       MaxScores,
@@ -110,7 +110,10 @@ export default {
     }
   },
   mounted() {
-    this.highlightsVisible = false
+    // Enable highlights by default; note that we don't just set this
+    // to `true` because the $ref.el needs to have contenteditable
+    // set to false; see `toggleHighlights()` for details
+    this.toggleHighlights()
   },
   watch: {
     problems() {
