@@ -2,6 +2,7 @@
   <b-collapse class="card" animation="slide" aria-id="contentIdForA11y3">
     <template #trigger="props">
       <div
+        :id="category.id"
         class="card-header"
         role="button"
         aria-controls="contentIdForA11y3">
