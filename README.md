@@ -12,6 +12,19 @@ Environment variables should be prefixed with `NUXT_ENV_` during the build phase
  * Font: Gadugi (bold)
  * Colors: https://colorhunt.co/palette/0a1931185adbffc947efefef
 
+## Quality control
+**Website**  
+ * [W3C HTML Validator](https://validator.w3.org/) - Validates HTML
+ * [W3C CSS Validator](http://jigsaw.w3.org/css-validator/) - Validates CSS
+ * [GTMetrix](https://gtmetrix.com/) - Site speed and recommendations
+ * [Nibbler](http://nibbler.silktide.com/en_US) - Complete site analysis, including experience, marketing, technology, and accessibility
+ * [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/u/0/#url=https%3A%2F%2Fbiaggeo.com) - Structured data analysis
+ 
+**Security**  
+ * [Observatory](https://observatory.mozilla.org/analyze.html?host=biaggeo.com) - Mozilla security audit tool
+ * [Security Headers](https://securityheaders.io/?followRedirects=on&hide=on&q=biaggeo.com) - Security audit tool
+ * [HSTS Preload](https://hstspreload.org/?domain=biaggeo.com) - Domain added to Google's HSTS preload list
+
 ## Build Setup
 
 ```bash
