@@ -6,7 +6,7 @@
         <nav>
             On this page:
             <a href="#framing">Framing</a>
-            <a href="#counterfactuals">Counterfactuals</a>
+            <a href="#counterfactual">Counterfactual</a>
             <a href="#accident">Accident</a>
             <a href="#object">Object-based reference</a>
             <a href="#agency">Agency</a>
@@ -124,7 +124,7 @@
         <div class="card content"> <!-- Counterfactuals -->
             <header class="card-header">
                 <p class="card-header-title">
-                    <a id="counterfactuals" name="counterfactuals" href="#counterfactuals"><h3 class="title is-5"><b-icon icon="clipboard-alert" /> Counterfactuals</h3></a>
+                    <a id="counterfactual" name="counterfactual" href="#counterfactual"><h3 class="title is-5"><b-icon icon="clipboard-alert" /> Counterfactual</h3></a>
                 </p>
             </header>
             <div class="card-content">
