@@ -6,7 +6,7 @@
         <nav>
             On this page:
             <a href="#framing">Framing</a>
-            <a href="#counterfactuals">Counterfactuals</a>
+            <a href="#counterfactual">Counterfactual</a>
             <a href="#accident">Accident</a>
             <a href="#object">Object-based reference</a>
             <a href="#agency">Agency</a>
@@ -124,7 +124,7 @@
         <div class="card content"> <!-- Counterfactuals -->
             <header class="card-header">
                 <p class="card-header-title">
-                    <a id="counterfactuals" name="counterfactuals" href="#counterfactuals"><h3 class="title is-5"><b-icon icon="clipboard-alert" /> Counterfactuals</h3></a>
+                    <a id="counterfactual" name="counterfactual" href="#counterfactual"><h3 class="title is-5"><b-icon icon="clipboard-alert" /> Counterfactual</h3></a>
                 </p>
             </header>
             <div class="card-content">
@@ -136,10 +136,10 @@
                     <li>shift blame onto victims, and</li>
                     <li>absolve actors of irresponsible behavior</li>
                 </ol>
+
                 <p>Our system is designed to detect a number of counterfactual statements in the following categories:</p>
-                <ul>
-                    <li v-for="counter in counterfactuals" :key="counter">{{counter.name}}</li>
-                </ul>
+                <CounterfactualDetails />
+
                 <p>Counterfactuals typically correspond directly with the absence of thematic elements. The good news is that it's often easy to improve news reporting by observing these relationships:</p>
                 <table>
                     <thead>
@@ -150,7 +150,7 @@
                             </td>
                             <td width="5%">&rarr;</td>
                             <td width="30%">
-                                Critical comments<br/>
+                                Critical analysis<br/>
                                 <small>Let's spend a minute to examine this</small>
                             </td>
                             <td width="5%">&rarr;</td>
@@ -167,12 +167,12 @@
                             </td>
                             <td></td>
                             <td>
-                                The last sentence is likely to invoke feelings of blame: <em>what a dumb cyclist &mdash; he should have been wearing a helmet!</em> But wearing a helmet wouldn't have changed the outcome of him being struck. This article makes only factual statements, but there are many things <em>not</em> being said:
+                                The last sentence is likely to evoke feelings of blame: <em>he should have been wearing a helmet!</em> But wearing a helmet wouldn't have changed the outcome of him being struck. This article makes only factual statements, but there are many things <em>not</em> being said:
                                 <ul>
+                                    <li>Is there a safe, protected bike lane provided so bicyclists don't need to share the road with 4,000 lb machines?</li>
+                                    <li>Is this a popular biking area? If so, are public officials aware of bicyclist safety issues?</li>
                                     <li>Was the driver paying attention?</li>
                                     <li>Did the driver provide enough buffer space when passing?</li>
-                                    <li>What is the road design where this took place?</li>
-                                    <li>Is this a popular biking area?</li>
                                 </ul>
                             </td>
                             <td></td>
@@ -186,12 +186,12 @@
                             </td>
                             <td></td>
                             <td>
-                                The last sentence is likely to invoke feelings of blame: <em>serves her right &mdash; this is what happens when you don't use a crosswalk!</em> The author is certainly sticking to facts, but we should also ask:
+                                The last sentence is likely to evoke feelings of blame: <em>this is what happens when you don't use a crosswalk!</em> The author is certainly sticking to facts, but we should also ask:
                                 <ul>
                                     <li>Is the nearest crosswalk within reasonable walking distance?</li>
-                                    <li>What is the speed limit at the scene of the incident? Does it provide drivers with enough time to react to changing conditions?</li>
+                                    <li>What is the speed limit at the scene of the incident? Does it provide drivers with enough time to react to pedestrians entering the street to cross?</li>
                                     <li>Have there been similar pedestrian-vehicle conflicts in the past? If so, has it led to change?</li>
-                                    <li>What is the land-use in this area? E.g. is it just a state highway, or does it have schools, restaurants, shops, etc.?</li>
+                                    <li>What is the land-use in this area? Does it have schools, restaurants, shops, etc. that people frequently access on foot or bike?</li>
                                 </ul>
                             </td>
                             <td></td>
@@ -350,15 +350,11 @@
 </template>
 
 <script>
-import Counterfactuals from '../assets/Counterfactuals'
+import CounterfactualDetails from '../components/CounterfactualDetails.vue'
 
 export default {
   name: 'Issues',
-  data() {
-    return {
-      counterfactuals: Object.values(Counterfactuals)
-    }
-  }
+  components: { CounterfactualDetails }
 }
 </script>
 

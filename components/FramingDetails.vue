@@ -165,6 +165,14 @@
               </ul>
             </div>
           </div>
+          <div class="initiative">
+            <h4 class="title is-5">DWI checkpoints</h4>
+            <h5 class="subtitle is-6">DWI checkpoints are set up to catch drivers under the influence. Does your local police department conduct these checkpoints? How often do they occur?</h5>
+          </div>
+          <div class="initiative">
+            <h4 class="title is-5">High-visibility enforcement</h4>
+            <h5 class="subtitle is-6">Conspicuous presence of traffic enforcement sends a signal to motorists to obey the rules of the road, and that traffic safety is taken seriously. Does your local police department have a high-visibility enforcement program?</h5>
+          </div>
         </b-tab-item>
     </b-tabs>
   </div>
