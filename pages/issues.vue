@@ -137,9 +137,24 @@
                     <li>absolve actors of irresponsible behavior</li>
                 </ol>
                 <p>Our system is designed to detect a number of counterfactual statements in the following categories:</p>
-                <ul>
-                    <li v-for="counter in counterfactuals" :key="counter">{{counter.name}}</li>
-                </ul>
+                <table width="100%">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Name</th>
+                      <th>Example</th>
+                      <th>Effect</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="counter in counterfactuals" :key="counter">
+                      <td><b-icon :icon="counter.icon" /></td>
+                      <td>{{counter.name}}</td>
+                      <td>{{counter.example}}</td>
+                      <td>{{counter.effect}}</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <p>Counterfactuals typically correspond directly with the absence of thematic elements. The good news is that it's often easy to improve news reporting by observing these relationships:</p>
                 <table>
                     <thead>
