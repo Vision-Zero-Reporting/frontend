@@ -136,25 +136,10 @@
                     <li>shift blame onto victims, and</li>
                     <li>absolve actors of irresponsible behavior</li>
                 </ol>
+
                 <p>Our system is designed to detect a number of counterfactual statements in the following categories:</p>
-                <table width="100%">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>Name</th>
-                      <th>Example</th>
-                      <th>Effect</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="counter in counterfactuals" :key="counter">
-                      <td><b-icon :icon="counter.icon" /></td>
-                      <td>{{counter.name}}</td>
-                      <td>{{counter.example}}</td>
-                      <td>{{counter.effect}}</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <CounterfactualDetails />
+
                 <p>Counterfactuals typically correspond directly with the absence of thematic elements. The good news is that it's often easy to improve news reporting by observing these relationships:</p>
                 <table>
                     <thead>
@@ -365,15 +350,11 @@
 </template>
 
 <script>
-import Counterfactuals from '../assets/Counterfactuals'
+import CounterfactualDetails from '../components/CounterfactualDetails.vue'
 
 export default {
   name: 'Issues',
-  data() {
-    return {
-      counterfactuals: Object.values(Counterfactuals)
-    }
-  }
+  components: { CounterfactualDetails }
 }
 </script>
 

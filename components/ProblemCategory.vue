@@ -62,6 +62,12 @@
           <framing-details :problems="category.problems" />
         </section>
       </div>
+      <div v-if="category.id == 'COUNTER'">
+        <section>
+          <label>Details</label>
+          <CounterfactualDetails />
+        </section>
+      </div>
       <div v-else>
         <section v-if="category.examples">
           <label>Examples</label>
@@ -78,16 +84,14 @@
 <script>
 import HighlightableInput from 'vue-highlightable-input'
 import FramingDetails from '../components/FramingDetails.vue'
-// import Counterfactuals from '../assets/Counterfactuals'
+import CounterfactualDetails from '../components/CounterfactualDetails.vue'
 
 export default {
   name: 'ProblemCategory',
   props: ['category', 'article'],
-  components: { HighlightableInput, FramingDetails },
+  components: { HighlightableInput, FramingDetails, CounterfactualDetails },
   data() {
-    return {
-      // Counterfactuals
-    }
+    return {}
   },
   mounted() {
     this.$refs.highlighter.$el.setAttribute('contenteditable', 'false')
