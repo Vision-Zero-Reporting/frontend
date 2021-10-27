@@ -62,7 +62,7 @@
           <framing-details :problems="category.problems" />
         </section>
       </div>
-      <div v-if="category.id == 'COUNTER'">
+      <div v-else-if="category.id == 'COUNTER'">
         <section>
           <label>Details</label>
           <CounterfactualDetails />
