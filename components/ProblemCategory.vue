@@ -25,7 +25,7 @@
       <h5 class="subtitle is-6">
         {{category.issue}}.
         {{category.explain}}
-        <nuxt-link :to="{ path: '/issues', hash: category.name.toLowerCase() }">[Learn more about {{category.name.toLowerCase()}}]</nuxt-link>
+        <nuxt-link :to="{ path: '/issues', hash: category.name.toLowerCase() }">[Learn more about {{category.name.toLowerCase()}} issues]</nuxt-link>
       </h5>
 
       <section>
