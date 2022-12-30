@@ -20,9 +20,9 @@
         </nuxt-link> -->
         <nuxt-link to="/contact" class="navbar-item">Contact</nuxt-link>
         <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
-        <a class="navbar-item" href="https://twitter.com/ZeroReporting" target="_blank">
+        <!-- <a class="navbar-item" href="https://twitter.com/ZeroReporting" target="_blank">
           <b-icon icon="twitter" size="is-small" type="is-info" />
-        </a>
+        </a> -->
       </template>
     </b-navbar>
 
@@ -32,7 +32,7 @@
 
     <footer>
       &copy; Vision Zero Reporting&trade; 2021. All rights reserved.
-      <a class="no-external" href="mailto:visionzeroreporting@gmail.com"><b-icon icon="email" size="is-small" /> Email us</a> or <a class="no-external" href="https://twitter.com/ZeroReporting" target="_blank"><b-icon icon="twitter" size="is-small" /> follow us on Twitter</a>
+      <a class="no-external" href="mailto:visionzeroreporting@gmail.com"><b-icon icon="email" size="is-small" /> Email us</a> for support or questions.<!--<a class="no-external" href="https://twitter.com/ZeroReporting" target="_blank"><b-icon icon="twitter" size="is-small" /> follow us on Twitter</a>-->
     </footer>
   </div>
 </template>
