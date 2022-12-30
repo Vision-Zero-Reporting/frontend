@@ -111,10 +111,12 @@ export default {
   methods: {
     submitArticle(url, title, body) {
       const requestBody = url ? { url } : { title, body }
-      this.$axios.post('/report', requestBody)
+      if (url || (title && body)) {
+        this.$axios.post('/report', requestBody)
         .then(response => {
           this.$router.push({ path: 'queue', query: { uuid: response.data.uuid }})
         })
+      }
     },
   }
 }
