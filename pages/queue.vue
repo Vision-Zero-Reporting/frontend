@@ -64,7 +64,9 @@ export default {
     status() {
       if (this.completed) return JobStatus.Completed
       if (this.started) return JobStatus.Started
-      if (!this.started) return JobStatus.Waiting
+      // if (!this.started) return JobStatus.Waiting
+      // return JobStatus.Failed // TODO: implement a failed error state
+      return JobStatus.Waiting
     },
     statusData() {
       return InfoByStatus[this.status] || {}
@@ -73,11 +75,12 @@ export default {
   mounted() {
     this.uuid = this.$route.query.uuid
 
-    this.$once("hook:beforeDestroy", () => {
+    this.$once('hook:beforeDestroy', () => {
       this.eventSource.close()
       clearTimeout(this.redirectTimer)
     })
 
+    // eslint-disable-next-line no-undef
     this.eventSource = new EventSource(`${process.env.baseURL}/events/${this.uuid}`)
     this.eventSource.addEventListener(this.uuid, (response) => {
       const json = JSON.parse(response.data)
