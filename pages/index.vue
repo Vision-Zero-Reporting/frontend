@@ -16,7 +16,7 @@
         <div class="example">
           <h3 class="title is-5">{{example.title}}</h3>
           <p>{{example.preview}}</p>
-          <b-button size="is-small" type="is-info" outlined @click="viewExample(example.title, example.body)">View example &raquo;</b-button>
+          <b-button size="is-small" type="is-info" outlined @click="submitArticle(null, example.title, example.body)">View example &raquo;</b-button>
         </div>
       </div>
     </div>
@@ -109,12 +109,13 @@ export default {
     ArticleCapture
   },
   methods: {
-    goToReportPage(title, body) {
-      this.$router.push({ path: 'report', query: { title , body } })
+    submitArticle(url, title, body) {
+      const requestBody = url ? { url } : { title, body }
+      this.$axios.post('/report', requestBody)
+        .then(response => {
+          this.$router.push({ path: 'queue', query: { uuid: response.data.uuid }})
+        })
     },
-    viewExample(title, body) {
-      this.goToReportPage(title, body)
-    }
   }
 }
 </script>

@@ -42,11 +42,12 @@ export default {
       this.goToReportPage(url, title, body)
     },
     goToReportPage(url, title, body) {
-      const query = url ? { url } : { title, body }
-
-      if(url || (title && body)) {
-        this.$router.push({ path: 'report', query })
-      }
+      // TODO: clean up this duplicate code also in `index.vue`
+      const requestBody = url ? { url } : { title, body }
+      this.$axios.post('/report', requestBody)
+        .then(response => {
+          this.$router.push({ path: 'queue', query: { uuid: response.data.uuid }})
+        })
     }
   }
 }

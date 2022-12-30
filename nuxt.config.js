@@ -60,7 +60,9 @@ export default {
   ],
 
   // Environment variables: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env
-  env: {},
+  env: {
+    baseURL: process.env.baseUrl
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
