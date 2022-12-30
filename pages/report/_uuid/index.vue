@@ -33,15 +33,16 @@
 </template>
 
 <script>
-import ProblemTypes from '../assets/ProblemTypes'
-import ReportSummary from '../components/ReportSummary.vue'
-import ProblemCategory from '../components/ProblemCategory.vue'
+import ProblemTypes from '../../../assets/ProblemTypes'
+import ReportSummary from '../../../components/ReportSummary.vue'
+import ProblemCategory from '../../../components/ProblemCategory.vue'
 
 export default {
   name: 'Report',
   components: { ReportSummary, ProblemCategory },
   data() {
     return {
+      uuid: '',
       isLoading: true,
       isError: '',
       article: {
@@ -55,38 +56,33 @@ export default {
   },
   methods: {
     getReport() {
-      const reportBody = this.article.url ? { url: this.article.url } : { title: this.article.title, body: this.article.body }
-      let body = ''
-      this.$axios.post('/report', reportBody)
-        .then(response => {
-          this.problems = response.data.problems
-          // If URL was used, these fields need to be populated
-          this.$set(this.article, 'title', response.data.title)
-          this.$set(this.article, 'body', response.data.body)
-          // UNKNOWN: for some reason setting `this.article.body` as shown above is not working reactively,
-          // so the body is saved for later, and set in the .finally() clause;
-          body = response.data.body
-        })
-        .catch(error => {
-          this.isError = error.message
-        })
-        .finally(() => {
-          this.article.body = body
-          this.isLoading = false
 
-          if(this.article.url && !this.article.body) {
-            this.isError = 'It looks like we were unable to extract the article content from the requested URL. You can go back and manually enter the content.'
-          }
-        })
     },
   },
   mounted() {
-    this.article = {
-      url: this.$route.query.url || '',
-      title: this.$route.query.title || '',
-      body: this.$route.query.body || ''
-    }
-    this.getReport()
+    this.uuid = this.$route.params.uuid
+    let body = ''
+    this.$axios.get(`/report/${this.uuid}`)
+      .then(response => {
+        this.problems = response.data.problems
+        // If URL was used, these fields need to be populated
+        this.$set(this.article, 'title', response.data.title)
+        this.$set(this.article, 'body', response.data.body)
+        // UNKNOWN: for some reason setting `this.article.body` as shown above is not working reactively,
+        // so the body is saved for later, and set in the .finally() clause;
+        body = response.data.body
+      })
+      .catch(error => {
+        this.isError = error.message
+      })
+      .finally(() => {
+        this.article.body = body
+        this.isLoading = false
+
+        if(this.article.url && !this.article.body) {
+          this.isError = 'It looks like we were unable to extract the article content from the requested URL. You can go back and manually enter the content.'
+        }
+      })
   },
   computed: {
     problemsCategorized() {
