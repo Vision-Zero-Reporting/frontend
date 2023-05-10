@@ -12,9 +12,9 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.30.2",
-    "nuxt": "^2.15.7",
+    "nuxt": "^2.16.3",
     "nuxt-buefy": "^0.4.25",
-    "vue-highlightable-input": "^1.0.9"
+    "vue2-input-highlighter": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
