@@ -86,7 +86,7 @@
 import Score from './Score'
 import { getGrade, MaxScore, MaxScores } from '../assets/Grade'
 import ProblemTypes from '../assets/ProblemTypes'
-import HighlightableInput from 'vue-highlightable-input'
+import HighlightableInput from 'vue2-input-highlighter'
 import HighlightLegend from './HighlightLegend'
 
 export default {
@@ -156,7 +156,7 @@ export default {
         return {
           start: problem.range[0],
           end: problem.range[1],
-          style: `border-bottom: 1px SOLID ${ProblemTypes[problem.type].color}; background-color: ${ProblemTypes[problem.type].lightColor}`
+          classList: ['problem', ProblemTypes[problem.type].id]
         }
       })
     },

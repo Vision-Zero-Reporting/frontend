@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import HighlightableInput from 'vue-highlightable-input'
+import HighlightableInput from 'vue2-input-highlighter'
 import FramingDetails from '../components/FramingDetails.vue'
 import CounterfactualDetails from '../components/CounterfactualDetails.vue'
 
@@ -110,7 +110,7 @@ export default {
         return {
           start: problem.range[0],
           end: problem.range[1],
-          style: 'border-bottom: 2px SOLID #222; color: #222; font-size: 110%; font-style: italic;'
+          classList: ['problem', this.$props.category.id]
         }
       })
     },

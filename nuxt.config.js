@@ -73,7 +73,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [ // See: https://stackoverflow.com/questions/56690294/vuejs-nuxtjs-unexpected-token-export
-      'vue-highlightable-input'
+      'vue2-input-highlighter'
     ]
   }
 }
