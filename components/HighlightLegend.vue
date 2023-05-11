@@ -1,7 +1,7 @@
 <template>
   <div id="legend">
     <span class="legend-entry" v-for="problemType in registeredProblemTypes" :key="problemType.id">
-      <span class="legend-color" :style="{ 'background-color': problemType.lightColor, 'border-color': problemType.color }"></span>
+      <span class="legend-color" :style="{ 'background-color': `var(--highlight-${problemType.id.toLowerCase()})`, 'border-color': `var(--color-${problemType.id.toLowerCase()})` }"></span>
       <span>{{problemType.name}}</span>
     </span><br />
     <small>* Not all highlights will be shown above if there are overlapping issues</small>

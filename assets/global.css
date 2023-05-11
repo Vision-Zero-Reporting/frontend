@@ -1,3 +1,18 @@
+:root {
+  --color-framing: rgb(116, 77, 168);
+  --color-counter: rgb(244, 220, 42);
+  --color-accident: rgb(238, 180, 23);
+  --color-object: rgb(73, 194, 25);
+  --color-agency: rgb(31, 179, 224);
+  --color-focus: rgb(214, 81, 41);
+
+  --highlight-framing: rgba(116, 77, 168, 0.2);
+  --highlight-counter: rgba(244, 220, 42, 0.2);
+  --highlight-accident: rgba(238, 180, 23, 0.2);
+  --highlight-object: rgba(73, 194, 25, 0.2);
+  --highlight-agency: rgba(31, 179, 224, 0.2);
+  --highlight-focus: rgba(214, 81, 41, 0.2);
+}
 
 /* Apply an "external" icon next to any external link
    Reference: https://christianoliff.com/blog/styling-external-links-with-an-icon-in-css/ */
@@ -35,4 +50,42 @@ footer.page {
 }
 footer.page ol {
     padding: 0px 15px;
+}
+
+/* Hotfix for vue2-input-highlighter@1.1.0 */
+div[contenteditable="false"] { height: 100% !important; }
+
+span.problem {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+span.FRAMING {
+  background-color: var(--highlight-framing) !important;
+  border-bottom-color: var(--color-framing) !important;
+}
+
+span.COUNTER {
+  background-color: var(--highlight-counter) !important;
+  border-bottom-color: var(--color-counter) !important;
+}
+
+span.ACCIDENT {
+  background-color: var(--highlight-accident) !important;
+  border-bottom-color: var(--color-accident) !important;
+}
+
+span.OBJECT {
+  background-color: var(--highlight-object) !important;
+  border-bottom-color: var(--color-object) !important;
+}
+
+span.AGENCY {
+  background-color: var(--highlight-agency) !important;
+  border-bottom-color: var(--color-agency) !important;
+}
+
+span.FOCUS {
+  background-color: var(--highlight-focus) !important;
+  border-bottom-color: var(--color-focus) !important;
 }

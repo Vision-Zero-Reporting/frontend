@@ -14,7 +14,7 @@
         </nav>
 
         <div class="card content"> <!-- Framing -->
-            <header class="card-header">
+            <header class="card-header card-framing">
                 <p class="card-header-title">
                     <a id="framing" name="framing" href="#framing"><h3 class="title is-5"><b-icon icon="image-filter-frames" /> Framing</h3></a>
                 </p>
@@ -122,7 +122,7 @@
             </div>
         </div>
         <div class="card content"> <!-- Counterfactuals -->
-            <header class="card-header">
+            <header class="card-header card-counter">
                 <p class="card-header-title">
                     <a id="counterfactual" name="counterfactual" href="#counterfactual"><h3 class="title is-5"><b-icon icon="clipboard-alert" /> Counterfactual</h3></a>
                 </p>
@@ -213,7 +213,7 @@
             </div>
         </div>
         <div class="card content"> <!-- Accident -->
-            <header class="card-header">
+            <header class="card-header card-accident">
                 <p class="card-header-title">
                     <a id="accident" name="accident" href="#accident"><h3 class="title is-5"><b-icon icon="car-emergency" /> Accident</h3></a>
                 </p>
@@ -257,7 +257,7 @@
             </div>
         </div>
         <div class="card content"> <!-- Object-based reference -->
-            <header class="card-header">
+            <header class="card-header card-object">
                 <p class="card-header-title">
                     <a id="object" name="object" href="#object"><h3 class="title is-5"><b-icon icon="package-variant" /> Object-based reference</h3></a>
                 </p>
@@ -285,7 +285,7 @@
             </div>
         </div>
         <div class="card content"> <!-- Agency -->
-            <header class="card-header">
+            <header class="card-header card-agency">
                 <p class="card-header-title">
                     <a id="agency" name="agency" href="#agency"><h3 class="title is-5"><b-icon icon="account-child" /> Agency</h3></a>
                 </p>
@@ -325,7 +325,7 @@
             </div>
         </div>
         <div class="card content"> <!-- Focus -->
-            <header class="card-header">
+            <header class="card-header card-focus">
                 <p class="card-header-title">
                     <a id="focus" name="focus" href="#focus"><h3 class="title is-5"><b-icon icon="eye" /> Focus</h3></a>
                 </p>
@@ -382,6 +382,17 @@ table {
     margin: auto;
 }
 thead { font-weight: bold; }
+.card-header {
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+.card-framing { border-left-color: var(--color-framing); }
+.card-counter { border-left-color: var(--color-counter); }
+.card-accident { border-left-color: var(--color-accident); }
+.card-object { border-left-color: var(--color-object); }
+.card-agency { border-left-color: var(--color-agency); }
+.card-focus { border-left-color: var(--color-focus); }
+
 .card-header-title a { border-bottom: none; }
 .card-header-title h3 { margin-bottom: 0; }
 
