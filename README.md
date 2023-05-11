@@ -18,12 +18,12 @@ Environment variables should be prefixed with `NUXT_ENV_` during the build phase
  * [W3C CSS Validator](http://jigsaw.w3.org/css-validator/) - Validates CSS
  * [GTMetrix](https://gtmetrix.com/) - Site speed and recommendations
  * [Nibbler](http://nibbler.silktide.com/en_US) - Complete site analysis, including experience, marketing, technology, and accessibility
- * [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/u/0/#url=https%3A%2F%2Fbiaggeo.com) - Structured data analysis
+ * [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/u/0/#url=https%3A%2F%2Fvisionzeroreporting.com) - Structured data analysis
  
 **Security**  
- * [Observatory](https://observatory.mozilla.org/analyze.html?host=biaggeo.com) - Mozilla security audit tool
- * [Security Headers](https://securityheaders.io/?followRedirects=on&hide=on&q=biaggeo.com) - Security audit tool
- * [HSTS Preload](https://hstspreload.org/?domain=biaggeo.com) - Domain added to Google's HSTS preload list
+ * [Observatory](https://observatory.mozilla.org/analyze/visionzeroreporting.com) - Mozilla security audit tool
+ * [Security Headers](https://securityheaders.io/?followRedirects=on&hide=on&q=visionzeroreporting.com) - Security audit tool
+ * [HSTS Preload](https://hstspreload.org/?domain=visionzeroreporting.com) - Domain added to Google's HSTS preload list
 
 ## Build Setup
 
