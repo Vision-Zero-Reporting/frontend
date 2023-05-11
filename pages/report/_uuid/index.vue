@@ -7,7 +7,11 @@
 
     <h1 class="title is-2">Report</h1>
 
-    <report-summary :article="article" :problems="problems" />
+    <report-summary
+      :article="article"
+      :problems="problems"
+      :score="score"
+    />
 
     <section id='problems' class='primary'>
       <h2 class="title is-4">Problems</h2>
@@ -16,7 +20,10 @@
       <div v-else>
         <ol v-if="problemsCategorizedNonEmpty.length">
           <div class="problem-list" v-for="category in problemsCategorizedNonEmpty" :key="category.name">
-            <problem-category :category="category" :article="article" />
+            <problem-category
+              :category="category"
+              :article="article"
+            />
           </div>
         </ol>
         <div v-else class="empty">
@@ -51,13 +58,12 @@ export default {
         body: ''
       },
       problems: [],
+      score: {},
       ProblemTypes,
     }
   },
   methods: {
-    getReport() {
-
-    },
+    getReport() {},
   },
   mounted() {
     this.uuid = this.$route.params.uuid
@@ -65,6 +71,7 @@ export default {
     this.$axios.get(`/report/${this.uuid}`)
       .then(response => {
         this.problems = response.data.problems
+        this.score = response.data.score
         // If URL was used, these fields need to be populated
         this.$set(this.article, 'title', response.data.title)
         this.$set(this.article, 'body', response.data.body)
