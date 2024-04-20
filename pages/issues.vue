@@ -14,11 +14,13 @@
         </nav>
 
         <div class="card content"> <!-- Framing -->
-            <header class="card-header card-framing">
+            <div class="card-header card-framing">
                 <p class="card-header-title">
-                    <a id="framing" name="framing" href="#framing"><h3 class="title is-5"><b-icon icon="image-filter-frames" /> Framing</h3></a>
+                    <a id="framing" name="framing" href="#framing">
+                        <b-icon icon="image-filter-frames" /> Framing
+                    </a>
                 </p>
-            </header>
+            </div>
             <div class="card-content">
                 <p>Media framing is a significant factor in how people and communities interpret, understand, and respond to information. There are two major types of framing:</p>
                 <ol>
@@ -122,11 +124,13 @@
             </div>
         </div>
         <div class="card content"> <!-- Counterfactuals -->
-            <header class="card-header card-counter">
+            <div class="card-header card-counter">
                 <p class="card-header-title">
-                    <a id="counterfactual" name="counterfactual" href="#counterfactual"><h3 class="title is-5"><b-icon icon="clipboard-alert" /> Counterfactual</h3></a>
+                    <a id="counterfactual" name="counterfactual" href="#counterfactual">
+                        <b-icon icon="clipboard-alert" /> Counterfactual
+                    </a>
                 </p>
-            </header>
+            </div>
             <div class="card-content">
                 <p>Counterfactuals are true statements which tend to imply that outcomes would be changed <em>if only</em> people had acted differently. They place a greater burden on the individuals involved, rather than the systemic nature of the underlying situation. Research demonstrates that the presence of counterfactual statements shifts blame toward the victim.</p>
                 <p>Because car crashes are greatly influenced by systemic factors, such as road design, societal norms and expectations, planning, enforcement, etc., reducing and eliminating counterfactual statements is critical to getting past victim-blaming to achieve comprehensive safety.</p>
@@ -138,7 +142,7 @@
                 </ol>
 
                 <p>Our system is designed to detect a number of counterfactual statements in the following categories:</p>
-                <CounterfactualDetails />
+                <!-- <CounterfactualDetails /> -->
 
                 <p>Counterfactuals typically correspond directly with the absence of thematic elements. The good news is that it's often easy to improve news reporting by observing these relationships:</p>
                 <table>
@@ -213,11 +217,13 @@
             </div>
         </div>
         <div class="card content"> <!-- Accident -->
-            <header class="card-header card-accident">
+            <div class="card-header card-accident">
                 <p class="card-header-title">
-                    <a id="accident" name="accident" href="#accident"><h3 class="title is-5"><b-icon icon="car-emergency" /> Accident</h3></a>
+                    <a id="accident" name="accident" href="#accident">
+                        <b-icon icon="car-emergency" /> Accident
+                    </a>
                 </p>
-            </header>
+            </div>
             <div class="card-content">
                 <blockquote cite="https://www.merriam-webster.com/dictionary/accident">
                     <h3 class="title is-4">accident</h3>
@@ -257,11 +263,13 @@
             </div>
         </div>
         <div class="card content"> <!-- Object-based reference -->
-            <header class="card-header card-object">
+            <div class="card-header card-object">
                 <p class="card-header-title">
-                    <a id="object" name="object" href="#object"><h3 class="title is-5"><b-icon icon="package-variant" /> Object-based reference</h3></a>
+                    <a id="object" name="object" href="#object">
+                        <b-icon icon="package-variant" /> Object-based reference
+                    </a>
                 </p>
-            </header>
+            </div>
             <div class="card-content">
                 <p>Object-based reference deals with how reporters and readers refer to entities. This gives rise to the dichotomy: object-based language vs. people-based language.</p>
                 <p>Research shows that when referring to drivers, language is usually object-based instead, giving agency to cars, traffic, etc. On the other hand, vulnerable road users are nearly always referenced in human terms: pedestrian, bicyclist, person, man, woman.</p>
@@ -285,11 +293,13 @@
             </div>
         </div>
         <div class="card content"> <!-- Agency -->
-            <header class="card-header card-agency">
+            <div class="card-header card-agency">
                 <p class="card-header-title">
-                    <a id="agency" name="agency" href="#agency"><h3 class="title is-5"><b-icon icon="account-child" /> Agency</h3></a>
+                    <a id="agency" name="agency" href="#agency">
+                        <b-icon icon="account-child" /> Agency
+                    </a>
                 </p>
-            </header>
+            </div>
             <div class="card-content">
                 <p>Agency discovers issues with agentive vs. non-agentive sentences. Research demonstrates that readers place more blame on victims when reading non-agentive sentences, i.e. sentences that don't include the perpetrator or one doing the action.</p>
                 <table>
@@ -325,11 +335,13 @@
             </div>
         </div>
         <div class="card content"> <!-- Focus -->
-            <header class="card-header card-focus">
+            <div class="card-header card-focus">
                 <p class="card-header-title">
-                    <a id="focus" name="focus" href="#focus"><h3 class="title is-5"><b-icon icon="eye" /> Focus</h3></a>
+                    <a id="focus" name="focus" href="#focus">
+                        <b-icon icon="eye" /> Focus
+                    </a>
                 </p>
-            </header>
+            </div>
             <div class="card-content">
                 <p>Focus identifies who the subject of the sentence is, and hence who is at the center of attention. Readers assign more blame to the focus of the sentence. News articles that cover crashes between vehicles and vulnerable road users place the focus of the sentences on the VRU over 70% of the time.</p>
                 <p>This difference is illustrated below, with the focus (subject) underlined:</p>
@@ -357,7 +369,6 @@ export default {
   components: { CounterfactualDetails }
 }
 </script>
-
 
 <style scoped>
 section {
@@ -393,7 +404,7 @@ thead { font-weight: bold; }
 .card-agency { border-left-color: var(--color-agency); }
 .card-focus { border-left-color: var(--color-focus); }
 
-.card-header-title a { border-bottom: none; }
+.card-header-title a { border-bottom: none; color: #363636; font-size: 1.5em; }
 .card-header-title h3 { margin-bottom: 0; }
 
 #article-examples {
