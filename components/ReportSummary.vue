@@ -2,7 +2,7 @@
   <div id='report-summary'>
     <!-- article -->
     <article>
-      <span id="grade" class="is-pulled-right" :data-grade="letter">{{letter}}</span>
+      <span id="grade" class="is-pulled-right" :data-grade="score?.letter">{{score?.letter}}</span>
       <h2 class="title is-4">{{article.title}}</h2>
       <h3 class="subtitle is-6" v-if="article.url">
         <span>{{article.url}}</span><br />
@@ -13,7 +13,7 @@
       <div v-if="highlightsVisible">
         <highlightable-input
           ref="highlighter"
-          highlight-style="background-color:yellow"
+          highlight-style="background-color: yellow"
           :highlight="highlights"
           v-model="highlighterBody"
         />
@@ -33,22 +33,24 @@
             <th width="10%">Score</th>
           </tr>
         </thead>
-        <tbody>
-          <tr v-for="key in Object.keys(currentScores)" :key="key">
+        <tbody v-if="score && score.categories && Object.keys(score.categories)">
+          <tr v-for="key in Object.keys(score.categories)" :key="key">
             <td>{{impact[key]}}</td>
             <td>{{key | firstCap}}</td>
             <td class="scoring-message">
-              <small v-if="currentScores[key] !== MaxScores[key]">
+              <small v-if="score.categories[key].earned !== score.categories[key].possible">
                 <a @click="scrollToKey(key)">
                   <b-icon icon="alert" size="is-small" type="is-warning" />
                   Needs fixing
                 </a>
               </small>
-              <small v-else>
-                 <!-- No action needed -->
-              </small>
             </td>
-            <td><score :value="currentScores[key]" :max="MaxScores[key]" /></td>
+            <td>
+              <score
+                :value="score.categories[key].earned"
+                :max="score.categories[key].possible"
+              />
+            </td>
           </tr>
         </tbody>
         <tfoot>
@@ -56,7 +58,12 @@
             <th></th>
             <th></th>
             <th></th>
-            <th><score :value="scoreSum" :max="MaxScore" /></th>
+            <th>
+              <score
+                :value="score?.score"
+                :max="score?.total_possible"
+              />
+            </th>
           </tr>
         </tfoot>
       </table>
@@ -84,7 +91,6 @@
 
 <script>
 import Score from './Score'
-import { getGrade, MaxScore, MaxScores } from '../assets/Grade'
 import ProblemTypes from '../assets/ProblemTypes'
 import HighlightableInput from 'vue2-input-highlighter'
 import HighlightLegend from './HighlightLegend'
@@ -93,25 +99,14 @@ export default {
   name: 'ReportSummary',
   props: {
     'article': Object,
-    'problems': Array
+    'problems': Array,
+    'score': Object
   },
   components: { Score, HighlightableInput, HighlightLegend },
   data() {
     return {
       highlightsVisible: false,
       reportDate: new Date().toLocaleString(),
-      MaxScore,
-      MaxScores,
-      letter: '-',
-      scoreSum: 0,
-      currentScores: {
-        FRAMING: 0,
-        COUNTER: 0,
-        ACCIDENT: 0,
-        OBJECT: 0,
-        AGENCY: 0,
-        FOCUS: 0
-      },
       impact: {
         FRAMING: 'High',
         COUNTER: 'High',
@@ -130,14 +125,6 @@ export default {
     setTimeout(() => { // `toggleHighlights()` focuses the button; for initial page load, unfocus it
       document.activeElement.blur()
     }, 1)
-  },
-  watch: {
-    problems() {
-      const { letter, currentScores, scoreSum } = getGrade(this.problems)
-      this.letter = letter
-      this.currentScores = currentScores
-      this.scoreSum = scoreSum
-    }
   },
   computed: {
     highlighterBody() {
