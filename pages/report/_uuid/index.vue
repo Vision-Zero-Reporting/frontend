@@ -68,9 +68,9 @@ export default {
   mounted() {
     this.uuid = this.$route.params.uuid
     let body = ''
-    this.$axios.get(`/report/${this.uuid}`)
+    this.$axios.get(`/article/${this.uuid}`)
       .then(response => {
-        this.problems = response.data.problems
+        this.problems = response.data.features
         this.score = response.data.score
         // If URL was used, these fields need to be populated
         this.$set(this.article, 'title', response.data.title)
