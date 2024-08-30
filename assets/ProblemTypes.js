@@ -1,6 +1,5 @@
 const ProblemTypes = {
   FRAMING: { // 🟣
-    displayAsRegistered: true,
     name: 'Framing',
     id: 'FRAMING',
     impact: 'High',
@@ -19,7 +18,6 @@ const ProblemTypes = {
     ]
   },
   COUNTER: { // 🟡
-    displayAsRegistered: true,
     name: 'Counterfactual',
     id: 'COUNTER',
     impact: 'High',
@@ -41,7 +39,6 @@ const ProblemTypes = {
     ]
   },
   ACCIDENT: { // 🟠
-    displayAsRegistered: true,
     name: 'Accident',
     id: 'ACCIDENT',
     impact: 'Med',
@@ -56,7 +53,6 @@ const ProblemTypes = {
     ]
   },
   OBJECT: { // 🟢
-    displayAsRegistered: true,
     name: 'Object',
     id: 'OBJECT',
     impact: 'Med',
@@ -75,7 +71,6 @@ const ProblemTypes = {
     ]
   },
   AGENCY: { // 🔵
-    displayAsRegistered: true,
     name: 'Agency',
     id: 'AGENCY',
     impact: 'Low',
@@ -90,7 +85,6 @@ const ProblemTypes = {
     ]
   },
   FOCUS: { // 🔴
-    displayAsRegistered: true,
     name: 'Focus',
     id: 'FOCUS',
     impact: 'Low',

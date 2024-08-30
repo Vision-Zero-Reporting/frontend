@@ -15,7 +15,7 @@ export default {
   name: 'HighlightLegend',
   data() {
     return {
-      registeredProblemTypes: Object.values(ProblemTypes).filter(problemType => problemType.displayAsRegistered)
+      registeredProblemTypes: Object.values(ProblemTypes)
     }
   }
 }
