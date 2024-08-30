@@ -39,9 +39,9 @@ export default {
     submitButtonClick() {
       // if the user provided a URL, we need to fetch the content
       const { url, title, body } = this.$data
-      this.goToReportPage(url, title, body)
+      this.goToArticlePage(url, title, body)
     },
-    goToReportPage(url, title, body) {
+    goToArticlePage(url, title, body) {
       // TODO: clean up this duplicate code also in `index.vue`
       const requestBody = url ? { url } : { title, body }
       if (url || (title && body)) {
