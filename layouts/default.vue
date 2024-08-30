@@ -31,7 +31,7 @@
     <Nuxt />
 
     <footer>
-      &copy; Vision Zero Reporting&trade; 2021. All rights reserved.
+      &copy; Vision Zero Reporting&trade; 2021-2024. All rights reserved.
       <a class="no-external" href="mailto:visionzeroreporting@gmail.com"><b-icon icon="email" size="is-small" /> Email us</a> for support or questions.<!--<a class="no-external" href="https://twitter.com/ZeroReporting" target="_blank"><b-icon icon="twitter" size="is-small" /> follow us on Twitter</a>-->
     </footer>
   </div>
