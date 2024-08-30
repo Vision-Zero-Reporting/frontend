@@ -45,7 +45,7 @@ export default {
       // TODO: clean up this duplicate code also in `index.vue`
       const requestBody = url ? { url } : { title, body }
       if (url || (title && body)) {
-        this.$axios.post('/report', requestBody)
+        this.$axios.post('/article', requestBody)
           .then(response => {
             this.$router.push({ path: 'queue', query: { uuid: response.data.uuid }})
           })
