@@ -12,10 +12,6 @@
           <small>{{category.count}} {{category.count == 1 ? 'issue' : 'issues'}}</small>
         </p>
         <a class="card-header-icon">
-          <b-tag type="is-warning" v-if="category.isExperimental">
-            <b-icon icon="flask-outline" size="is-small" />
-            Experimental
-          </b-tag>
           <b-icon :icon="props.open ? 'menu-down' : 'menu-up'" />
         </a>
       </div>

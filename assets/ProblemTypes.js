@@ -1,7 +1,6 @@
 const ProblemTypes = {
   FRAMING: { // 🟣
     displayAsRegistered: true,
-    isExperimental: true,
     name: 'Framing',
     id: 'FRAMING',
     impact: 'High',
@@ -21,7 +20,6 @@ const ProblemTypes = {
   },
   COUNTER: { // 🟡
     displayAsRegistered: true,
-    isExperimental: true,
     name: 'Counterfactual',
     id: 'COUNTER',
     impact: 'High',
