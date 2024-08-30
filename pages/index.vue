@@ -48,7 +48,7 @@
     <div class="columns content">
       <div class="column">
         <article>
-          <p>A crash between a vehicle and bicyclist on Tuesday, Sept. 21, on Central Avenue, has left the bicyclist dead, police said.</p>
+          <p>A crash between a driver and bicyclist on Tuesday, Sept. 21, on Central Avenue, has left the bicyclist dead, police said.</p>
           <p>The driver of a 2017 Chevrolet, who was entering the Northway southbound ramp at around 8:30pm, struck a man riding his bike, according to Lt. Robert Donnelly. The victim has been identified as Jeremy Williams, 39, of Colonie.</p>
           <p>The investigation has not yet been concluded, but police are determining factors that may have contributed to the crash. The driver of the Chevy, a 41-year-old from Troy, stopped, called 911 and tried to help Williams. Williams was taken to Albany Medical Center Hospital by Colonie EMS with serious injuries. He died a day later without regaining consciousness.</p>
           <p>The speed limit on Central Avenue is 40 mph; a collision between a vehicle and a bicyclist or pedestrian at 40 mph gives at least a 85% chance of death.</p>
