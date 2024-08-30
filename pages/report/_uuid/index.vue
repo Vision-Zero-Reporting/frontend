@@ -10,7 +10,6 @@
     <report-summary
       :article="article"
       :problems="problems"
-      :score="score"
     />
 
     <section id='problems' class='primary'>
@@ -58,7 +57,6 @@ export default {
         body: ''
       },
       problems: [],
-      score: {},
       ProblemTypes,
     }
   },
@@ -71,7 +69,6 @@ export default {
     this.$axios.get(`/article/${this.uuid}`)
       .then(response => {
         this.problems = response.data.features
-        this.score = response.data.score
         // If URL was used, these fields need to be populated
         this.$set(this.article, 'title', response.data.title)
         this.$set(this.article, 'body', response.data.body)
