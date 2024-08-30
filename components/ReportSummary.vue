@@ -56,7 +56,6 @@ export default {
   data() {
     return {
       highlightsVisible: false,
-      reportDate: new Date().toLocaleString()
     }
   },
   mounted() {
@@ -74,6 +73,9 @@ export default {
       // The above eslint error was never a real problem, because contenteditable=false, so the
       // two-way data binding to the prop never actually exists
       return this.article.body
+    },
+    reportDate() {
+      return new Date(this.article.dateCreated).toLocaleString()
     },
     highlightsVisibleBtnIcon() {
       return this.highlightsVisible ? 'eye' : 'eye-off'
