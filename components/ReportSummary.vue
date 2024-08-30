@@ -56,15 +56,7 @@ export default {
   data() {
     return {
       highlightsVisible: false,
-      reportDate: new Date().toLocaleString(),
-      // impact: {
-      //   FRAMING: 'High',
-      //   COUNTER: 'High',
-      //   ACCIDENT: 'Med',
-      //   OBJECT: 'Med',
-      //   AGENCY: 'Low',
-      //   FOCUS: 'Low'
-      // }
+      reportDate: new Date().toLocaleString()
     }
   },
   mounted() {
