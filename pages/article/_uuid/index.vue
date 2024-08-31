@@ -10,7 +10,6 @@
     <report-summary
       :article="article"
       :problems="problems"
-      :score="score"
     />
 
     <section id='problems' class='primary'>
@@ -55,10 +54,11 @@ export default {
       article: {
         url: '',
         title: '',
-        body: ''
+        body: '',
+        dateCreated: '',
+        dateUpdated: ''
       },
       problems: [],
-      score: {},
       ProblemTypes,
     }
   },
@@ -68,13 +68,14 @@ export default {
   mounted() {
     this.uuid = this.$route.params.uuid
     let body = ''
-    this.$axios.get(`/report/${this.uuid}`)
+    this.$axios.get(`/article/${this.uuid}`)
       .then(response => {
-        this.problems = response.data.problems
-        this.score = response.data.score
+        this.problems = response.data.features
         // If URL was used, these fields need to be populated
         this.$set(this.article, 'title', response.data.title)
         this.$set(this.article, 'body', response.data.body)
+        this.$set(this.article, 'dateCreated', response.data.dateCreated)
+        this.$set(this.article, 'dateUpdated', response.data.dateUpdated)
         // UNKNOWN: for some reason setting `this.article.body` as shown above is not working reactively,
         // so the body is saved for later, and set in the .finally() clause;
         body = response.data.body

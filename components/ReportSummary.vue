@@ -2,7 +2,6 @@
   <div id='report-summary'>
     <!-- article -->
     <article>
-      <span id="grade" class="is-pulled-right" :data-grade="score?.letter">{{score?.letter}}</span>
       <h2 class="title is-4">{{article.title}}</h2>
       <h3 class="subtitle is-6" v-if="article.url">
         <span>{{article.url}}</span><br />
@@ -21,53 +20,6 @@
       </div>
 
     </article>
-
-    <!-- scoring -->
-    <div id='scoring'>
-      <table width="100%">
-        <thead>
-          <tr>
-            <th width="10%">Impact</th>
-            <th width="10%">Audit</th>
-            <th width="60%"></th>
-            <th width="10%">Score</th>
-          </tr>
-        </thead>
-        <tbody v-if="score && score.categories && Object.keys(score.categories)">
-          <tr v-for="key in Object.keys(score.categories)" :key="key">
-            <td>{{impact[key]}}</td>
-            <td>{{key | firstCap}}</td>
-            <td class="scoring-message">
-              <small v-if="score.categories[key].earned !== score.categories[key].possible">
-                <a @click="scrollToKey(key)">
-                  <b-icon icon="alert" size="is-small" type="is-warning" />
-                  Needs fixing
-                </a>
-              </small>
-            </td>
-            <td>
-              <score
-                :value="score.categories[key].earned"
-                :max="score.categories[key].possible"
-              />
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>
-              <score
-                :value="score?.score"
-                :max="score?.total_possible"
-              />
-            </th>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
 
     <!-- actions -->
     <div id='actions'>
@@ -90,7 +42,6 @@
 </template>
 
 <script>
-import Score from './Score'
 import ProblemTypes from '../assets/ProblemTypes'
 import HighlightableInput from 'vue2-input-highlighter'
 import HighlightLegend from './HighlightLegend'
@@ -100,21 +51,11 @@ export default {
   props: {
     'article': Object,
     'problems': Array,
-    'score': Object
   },
-  components: { Score, HighlightableInput, HighlightLegend },
+  components: { HighlightableInput, HighlightLegend },
   data() {
     return {
       highlightsVisible: false,
-      reportDate: new Date().toLocaleString(),
-      impact: {
-        FRAMING: 'High',
-        COUNTER: 'High',
-        ACCIDENT: 'Med',
-        OBJECT: 'Med',
-        AGENCY: 'Low',
-        FOCUS: 'Low'
-      }
     }
   },
   mounted() {
@@ -132,6 +73,9 @@ export default {
       // The above eslint error was never a real problem, because contenteditable=false, so the
       // two-way data binding to the prop never actually exists
       return this.article.body
+    },
+    reportDate() {
+      return new Date(this.article.dateCreated).toLocaleString()
     },
     highlightsVisibleBtnIcon() {
       return this.highlightsVisible ? 'eye' : 'eye-off'
@@ -185,18 +129,6 @@ export default {
 #report-summary {
   border: 1px SOLID #ddd;
 }
-
-#grade {
-  font-size: 2em;
-  position: relative;
-  top: -10px;
-}
-#grade[data-grade="A+"] { color: #4ec83d; }
-#grade[data-grade="A"]  { color: #8cd544; }
-#grade[data-grade="B"]  { color: #cee04c; }
-#grade[data-grade="C"]  { color: #eac556; }
-#grade[data-grade="D"]  { color: #f39861; }
-#grade[data-grade="F"]  { color: #fa6e6e; }
 
 td.bad { background-color: rgba(200, 0, 0, 0.05); }
 

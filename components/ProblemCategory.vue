@@ -12,10 +12,6 @@
           <small>{{category.count}} {{category.count == 1 ? 'issue' : 'issues'}}</small>
         </p>
         <a class="card-header-icon">
-          <b-tag type="is-warning" v-if="category.isExperimental">
-            <b-icon icon="flask-outline" size="is-small" />
-            Experimental
-          </b-tag>
           <b-icon :icon="props.open ? 'menu-down' : 'menu-up'" />
         </a>
       </div>
@@ -36,19 +32,6 @@
           :highlight="highlights"
           v-model="highlighterBody"
         />
-
-        <!-- <label>Sentences</label>
-        <ol v-if="category.problems.length">
-          <li v-for="problem in category.problems" :key="problem">
-            <q>{{problem.sentence}}</q>
-            <b-tag type="is-warning is-light" v-if="problem.details && category.id == 'COUNTER'">
-              {{Counterfactuals[problem.details].name}}
-            </b-tag>
-          </li>
-        </ol>
-        <ul v-else>
-          <li>None found.</li> for Framing reporter
-        </ul> -->
       </section>
 
       <section>

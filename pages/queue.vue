@@ -90,7 +90,7 @@ export default {
 
       if (this.completed && document.body.contains(this.$el)) {
         this.redirectTimer = setTimeout(() => {
-          this.$router.push({ path: `/report/${this.uuid}` })
+          this.$router.push({ path: `/article/${this.uuid}` })
         }, 1100)
       }
     })

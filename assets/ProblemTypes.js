@@ -1,9 +1,8 @@
 const ProblemTypes = {
   FRAMING: { // 🟣
-    displayAsRegistered: true,
-    isExperimental: true,
     name: 'Framing',
     id: 'FRAMING',
+    impact: 'High',
     what: 'Determines if an article includes thematic framing',
     icon: 'image-filter-frames',
     issue: 'Article lacks thematic framing',
@@ -19,10 +18,9 @@ const ProblemTypes = {
     ]
   },
   COUNTER: { // 🟡
-    displayAsRegistered: true,
-    isExperimental: true,
     name: 'Counterfactual',
     id: 'COUNTER',
+    impact: 'High',
     what: 'Identifies presence of counterfactual statements which obscure the systemic nature of crashes and increase likelihood of victim blaming',
     icon: 'clipboard-alert',
     issue: 'Counterfactual statements are present',
@@ -41,9 +39,9 @@ const ProblemTypes = {
     ]
   },
   ACCIDENT: { // 🟠
-    displayAsRegistered: true,
     name: 'Accident',
     id: 'ACCIDENT',
+    impact: 'Med',
     what: 'Identifies usage of the word "accident"',
     icon: 'car-emergency',
     issue: 'Article uses the word "accident"',
@@ -55,9 +53,9 @@ const ProblemTypes = {
     ]
   },
   OBJECT: { // 🟢
-    displayAsRegistered: true,
     name: 'Object',
     id: 'OBJECT',
+    impact: 'Med',
     what: 'Determines if actors are described by object-based language rather than person-based language',
     icon: 'package-variant',
     issue: 'Emphasis is placed on object instead of its agent',
@@ -73,9 +71,9 @@ const ProblemTypes = {
     ]
   },
   AGENCY: { // 🔵
-    displayAsRegistered: true,
     name: 'Agency',
     id: 'AGENCY',
+    impact: 'Low',
     what: 'Determines if a crash-related sentence is missing agency',
     icon: 'account-child',
     issue: 'Sentence lacks agent',
@@ -87,9 +85,9 @@ const ProblemTypes = {
     ]
   },
   FOCUS: { // 🔴
-    displayAsRegistered: true,
     name: 'Focus',
     id: 'FOCUS',
+    impact: 'Low',
     what: 'Identifies if a VRU is the focus of a sentence',
     icon: 'eye',
     issue: 'Sentence places focus on VRU',
