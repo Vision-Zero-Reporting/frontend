@@ -13,16 +13,20 @@
         <!-- See: https://stackoverflow.com/questions/57358490/how-to-use-nuxt-link-tag-in-buefy -->
         <nuxt-link to="/" class="navbar-item">Home</nuxt-link>
         <nuxt-link to="/issues" class="navbar-item">Issues</nuxt-link>
+        <nuxt-link to="/contact" class="navbar-item">Contact</nuxt-link>
+        <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
       </template>
       <template #end>
         <!-- <nuxt-link to="/partners" class="navbar-item">
           Partners
         </nuxt-link> -->
-        <nuxt-link to="/contact" class="navbar-item">Contact</nuxt-link>
-        <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
-        <!-- <a class="navbar-item" href="https://twitter.com/ZeroReporting" target="_blank">
-          <b-icon icon="twitter" size="is-small" type="is-info" />
-        </a> -->
+        <b-navbar-item tag="div">
+          <div class="buttons">
+            <nuxt-link v-if="!isLoggedIn" to="/register" class="button is-text">Register</nuxt-link>
+            <nuxt-link v-if="!isLoggedIn" to="/login" class="button is-info">Log in</nuxt-link>
+            <a v-else class="button is-info" @click="logout">Log out</a>
+          </div>
+        </b-navbar-item>
       </template>
     </b-navbar>
 
@@ -39,6 +43,19 @@
 
 <script>
 export default {
+  mounted() {
+    this.$store.dispatch('checkSession')
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch('logout')
+    }
+  },
+  computed: {
+    isLoggedIn() {
+      return Boolean(this.$store.getters.getUser?.id)
+    }
+  },
   head() {
     const pageTitle = this.$route.name.substr(0,1).toUpperCase() + this.$route.name.substr(1) // $route.name refers to file name, not component name
 
