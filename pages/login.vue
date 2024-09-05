@@ -43,6 +43,7 @@ export default {
       this.$axios.post('/login', { email, password })
       .then((response) => {
         this.$store.dispatch('checkSession')
+        // TODO: redirect to dashboard
       })
       .catch((e) => {
         this.failedLogin = true

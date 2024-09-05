@@ -4,7 +4,6 @@ export const state = () => ({
 
 export const getters = {
   getUser(state) {
-    console.log('get user', state)
     return state.user
   }
 }
