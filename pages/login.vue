@@ -40,9 +40,9 @@ export default {
     submit() {
       const { email, password } = this.$data
       this.$axios.post('/login', { email, password })
-      .then((response) => {
+      .then(async (response) => {
         if (response.status == 200) {
-          this.$store.dispatch('checkSession')
+          await this.$store.dispatch('checkSession')
           this.$router.push({ path: 'dashboard' })
         } else {
           throw Error('Error logging in')

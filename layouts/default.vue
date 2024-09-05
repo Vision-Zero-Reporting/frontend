@@ -47,8 +47,9 @@ export default {
     this.$store.dispatch('checkSession')
   },
   methods: {
-    logout() {
-      this.$store.dispatch('logout')
+    async logout() {
+      await this.$store.dispatch('logout')
+      this.$router.push({ path: '/' })
     }
   },
   computed: {
