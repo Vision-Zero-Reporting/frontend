@@ -44,6 +44,12 @@ export default {
     '@/plugins/vue-filters.js'
   ],
 
+  router: {
+    // Middleware that's applied globally: https://v2.nuxt.com/docs/directory-structure/middleware
+    middleware: [
+    ],
+  },
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
