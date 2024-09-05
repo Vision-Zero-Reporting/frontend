@@ -17,13 +17,17 @@
       <b-field label="First name">
         <b-input
           type="text"
+          autocomplete="off"
+          placeholder="John"
           v-model="firstName"
           required
         ></b-input>
       </b-field>
-      <b-field label="Last name">
+      <b-field label="Last name (or last initial)">
         <b-input
           type="text"
+          autocomplete="off"
+          placeholder="Doe"
           v-model="lastName"
           required
         ></b-input>
@@ -31,6 +35,8 @@
       <b-field label="Email">
         <b-input
           type="email"
+          autocomplete="off"
+          placeholder="john.doe@example.com"
           v-model="email"
           required
         >
@@ -39,6 +45,8 @@
       <b-field label="Password">
         <b-input
           type="password"
+          autocomplete="off"
+          placeholder="********"
           v-model="password"
           required
           validation-message="Password must be at least 12 characters long"
@@ -49,6 +57,8 @@
       <b-field label="Confirm password">
         <b-input
           type="password"
+          autocomplete="off"
+          placeholder="********"
           v-model="confirmPassword"
           required
           validation-message="Password must be at least 12 characters long"
