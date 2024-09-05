@@ -142,9 +142,9 @@ export default {
       const { firstName, lastName, email, password, confirmPassword, role } = this.$data
       this.$axios.post('/user', { firstName, lastName, email, password, confirmPassword, role })
       .then((response) => {
-        if (response.ok) {
+        if (response.status == 200) {
           this.$store.dispatch('checkSession')
-          // TODO: redirect to dashboard
+          this.$router.push({ path: 'dashboard' })
         } else {
           throw Error('Something went wrong during registration')
         }

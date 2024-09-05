@@ -39,11 +39,14 @@ export default {
   methods: {
     submit() {
       const { email, password } = this.$data
-      console.log(this.$store.state.user)
       this.$axios.post('/login', { email, password })
       .then((response) => {
-        this.$store.dispatch('checkSession')
-        // TODO: redirect to dashboard
+        if (response.status == 200) {
+          this.$store.dispatch('checkSession')
+          this.$router.push({ path: 'dashboard' })
+        } else {
+          throw Error('Error logging in')
+        }
       })
       .catch((e) => {
         this.failedLogin = true
