@@ -18,6 +18,7 @@ import ArticleCapture from '../components/ArticleCapture.vue'
 
 export default {
   name: 'Dashboard',
+  middleware: 'authenticated',
   head: {
     title: 'Vision Zero Reporting - Dashboard'
   },

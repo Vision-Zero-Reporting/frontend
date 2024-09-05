@@ -97,6 +97,7 @@ const examples = [
 
 export default {
   name: 'Home',
+  middleware: 'notAuthenticated',
   head: {
     title: 'Vision Zero Reporting - Improved car crash reporting to tell the whole story'
   },
