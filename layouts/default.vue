@@ -11,7 +11,8 @@
       </template>
       <template #start>
         <!-- See: https://stackoverflow.com/questions/57358490/how-to-use-nuxt-link-tag-in-buefy -->
-        <nuxt-link to="/" class="navbar-item">Home</nuxt-link>
+        <nuxt-link v-if="!isLoggedIn" to="/" class="navbar-item">Home</nuxt-link>
+        <nuxt-link v-else to="/dashboard" class="navbar-item">Dashboard</nuxt-link>
         <nuxt-link to="/issues" class="navbar-item">Issues</nuxt-link>
         <nuxt-link to="/contact" class="navbar-item">Contact</nuxt-link>
         <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
