@@ -28,7 +28,7 @@
           <h5 class="title is-5">Discover language issues in car crash articles</h5>
           <h6 class="subtitle is-6">Easily highlight linguistic anti-patterns in news stories and learn how language shapes our understanding of preventable crashes!</h6>
           <p>For <strong>journalists</strong>, <strong>advocates</strong>, <strong>first-responders</strong>, <strong>researchers</strong>, and more!</p>
-          <nuxt-link v-if="!isLoggedIn" to="/login" class="button is-medium is-fullwidth">Register &raquo;</nuxt-link>
+          <nuxt-link to="/register" class="button is-medium is-fullwidth">Register &raquo;</nuxt-link>
           <small>Create a <em>free</em> account in <em>30 seconds or less!</em></small>
         </div>
       </div>
