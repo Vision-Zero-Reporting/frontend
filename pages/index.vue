@@ -17,7 +17,7 @@
               <span>, in rutrum sapien purus nec nisl. Pellentesque blandit egestas nunc,</span>
               <span>a cursus mauris sodales ac. Integer purus velit,</span>
               <mark class="object">when the SUV sped up and fled the scene</mark>
-              <span> scelerisque at eros aliquam, lobortis feugiat nisl. Aenean vel ipsum . Aenean velit augue, molestie lacinia congue eu,</span>
+              <span> scelerisque at eros aliquam, lobortis feugiat nisl. Aenean vel ipsum. Aenean velit augue, molestie lacinia congue eu,</span>
               <span>posuere nec ante. Vestibulum viverra neque at ipsum suscipit, in placerat leo efficitur. Nam dui eros,</span>
               <span>facilisis </span>
               <mark class="counter">the bicyclist wasn't wearing a helmet</mark>
