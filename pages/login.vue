@@ -29,6 +29,7 @@
 <script>
 export default {
   name: 'Login',
+  middleware: 'notAuthenticated',
   data() {
     return {
       failedLogin: false,
