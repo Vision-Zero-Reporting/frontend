@@ -18,9 +18,6 @@
         <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
       </template>
       <template #end>
-        <!-- <nuxt-link to="/partners" class="navbar-item">
-          Partners
-        </nuxt-link> -->
         <b-navbar-item tag="div">
           <div class="buttons">
             <nuxt-link v-if="!isLoggedIn" to="/register" class="button is-text">Register</nuxt-link>
