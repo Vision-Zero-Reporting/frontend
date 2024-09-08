@@ -1,6 +1,7 @@
 <template>
-    <div class="article-capture-container">
-
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
         <b-tabs v-model="selectedTabIndex">
           <b-tab-item label="URL" icon="link">
             <h3 class="subtitle is-5">Paste the URL of a crash-related news article below</h3>
@@ -21,7 +22,9 @@
 
         <b-button type="is-primary" @click="submitButtonClick" class="is-pulled-right" icon-left="file-search-outline">Analyze</b-button>
         <p style="clear:both;"></p>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -56,12 +59,8 @@ export default {
 </script>
 
 <style scoped>
-.article-capture-container {
-  padding: 20px;
-  border-radius: 20px;
-  background-color: #f9f9f9;
-  width: 60%;
-  margin: auto;
+.card {
+  background-color: #fafafa;
 }
 .b-tabs { margin-bottom: 0; }
 </style>
