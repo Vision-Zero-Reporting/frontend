@@ -35,7 +35,7 @@
     </section>
 
     <section id="examples">
-      <h2 class="title is-4">Examples</h2>
+      <h2 class="title is-4 lined">Examples</h2>
       <div class="columns examples">
         <div class="column" v-for="example in examples" :key="example.title">
           <div class="example">
@@ -48,7 +48,7 @@
     </section>
 
     <section id="in-depth-review">
-      <h2 class="title is-4">In-depth review</h2>
+      <h2 class="title is-4 lined">In-depth review</h2>
       <h3 class="subtitle is-5">See the difference between episodic and thematic articles of the same incident (<em>real news article</em>)</h3>
       <br />
       <div class="columns content">
@@ -153,20 +153,6 @@ ins { text-decoration: none; }
 
 section:first-child { margin-top: 0; }
 section { margin: 60px 0; }
-
-h2 {
-  display: flex;
-  align-items: center;
-}
-h2::before, h2::after {
-  content: '';
-  border-top: 1px SOLID #ccc;
-  flex: 1;
-  margin: 0 20px 0 0;
-}
-h2::after {
-  margin: 0 0 0 20px;
-}
 
 #in-depth-review .columns { border-bottom: 1px SOLID #ddd; border-left: none; border-right: none; }
 #in-depth-review .columns.examples { border: none; }

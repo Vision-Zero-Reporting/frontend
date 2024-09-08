@@ -52,6 +52,22 @@ footer.page ol {
   padding: 0px 15px;
 }
 
+/* H2 header with lines on either side */
+h2.lined {
+  display: flex;
+  align-items: center;
+}
+h2.lined::before, h2.lined::after {
+  content: '';
+  border-top: 1px SOLID #ccc;
+  flex: 1;
+  margin: 0 20px 0 0;
+}
+h2.lined::after {
+  margin: 0 0 0 20px;
+}
+
+
 /* Hotfix for vue2-input-highlighter@1.1.0 */
 div[contenteditable="false"] { height: 100% !important; }
 
