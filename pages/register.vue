@@ -49,6 +49,7 @@
           placeholder="********"
           v-model="password"
           required
+          password-reveal
           validation-message="Password must be at least 12 characters long"
           pattern="\w{12,}"
         >
@@ -61,6 +62,7 @@
           placeholder="********"
           v-model="confirmPassword"
           required
+          password-reveal
           validation-message="Password must be at least 12 characters long"
           pattern="\w{12,}"
         >
