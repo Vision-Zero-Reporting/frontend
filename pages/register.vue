@@ -49,8 +49,9 @@
           placeholder="********"
           v-model="password"
           required
+          password-reveal
           validation-message="Password must be at least 12 characters long"
-          pattern="\w{12,}"
+          pattern=".{12,}"
         >
         </b-input>
       </b-field>
@@ -61,8 +62,9 @@
           placeholder="********"
           v-model="confirmPassword"
           required
+          password-reveal
           validation-message="Password must be at least 12 characters long"
-          pattern="\w{12,}"
+          pattern=".{12,}"
         >
         </b-input>
       </b-field>
@@ -135,9 +137,9 @@ export default {
       if (!confirmPassword) validationErrors.push('Please confirm your password')
       if (!role) validationErrors.push('Please select a role')
 
-      // Email format (see https://emailregex.com/)
-      const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
-      if (!email.match(emailRegex)) validationErrors.push('Please enter a valid email')
+      // See: https://github.com/abdielbytes/regex-gen/blob/main/validator/build/lib/app/email_in_validate.py
+      const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+[a-zA-Z0-9-]$/gi
+      if (email && !email.match(emailRegex)) validationErrors.push('Please enter a valid email')
 
       // Password checks
       if (password && confirmPassword && password !== confirmPassword) validationErrors.push('Passwords do not match')
