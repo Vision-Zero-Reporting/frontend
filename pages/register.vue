@@ -139,7 +139,7 @@ export default {
 
       // See: https://github.com/abdielbytes/regex-gen/blob/main/validator/build/lib/app/email_in_validate.py
       const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+[a-zA-Z0-9-]$/gi
-      if (!email.match(emailRegex)) validationErrors.push('Please enter a valid email')
+      if (email && !email.match(emailRegex)) validationErrors.push('Please enter a valid email')
 
       // Password checks
       if (password && confirmPassword && password !== confirmPassword) validationErrors.push('Passwords do not match')
