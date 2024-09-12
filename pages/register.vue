@@ -51,7 +51,7 @@
           required
           password-reveal
           validation-message="Password must be at least 12 characters long"
-          pattern="\w{12,}"
+          pattern=".{12,}"
         >
         </b-input>
       </b-field>
@@ -64,7 +64,7 @@
           required
           password-reveal
           validation-message="Password must be at least 12 characters long"
-          pattern="\w{12,}"
+          pattern=".{12,}"
         >
         </b-input>
       </b-field>
