@@ -103,17 +103,17 @@ import ArticleCapture from '../components/ArticleCapture.vue'
 
 const examples = [
   {
-    path: '/article/be939b77-221a-42ee-9160-4e08690131d1',
+    path: '/article/d5a5572f-db9f-4d9d-84f4-02ecb8ad1a81',
     title: 'Boy, 9, dies after being struck by vehicle near Las Vegas school',
     preview: 'A 9-year-old boy riding his bicycle was killed Friday afternoon after he was hit by an SUV near a south Las Vegas Valley middle school, police said. The boy was hit about 2:35 p.m. in a residential neighborhood behind Silvestri Junior High School, near East Silverado Ranch Boulevard and ...',
   },
   {
-    path: '/article/916d1e51-b999-449a-8a73-4c0333256457',
+    path: '/article/a4f0f2b7-cefc-4b0f-94f9-88552ad2693a',
     title: 'Fifth pedestrian, cyclist dies in Stockton after being hit by car in less than a month',
     preview: 'Five people have been killed in less than a month while walking or riding their bike in Stockton. "That is a lot," said Joe Silva, spokesman for the Stockton Police Department. "What\'s unique about these traffic fatalities, is there\'s really no correlation between any of them ...',
   },
   {
-    path: '/article/6aca3538-7e2e-4562-a457-9a65580f7a09',
+    path: '/article/8fa9d59c-6ee2-46a5-952b-8f517aa986b1',
     title: 'State police: Rome man killed when motorcycle hits SUV in town of Western',
     preview: 'A Rome man was killed in an accident at the intersection of State Route 46 and Main Street in the town of Western on Thursday evening, state police said in a statement. A 2011 Chevrolet Traverse was heading north on state Route 46, attempting to make a left turn onto Main Street, when it was hit ...',
   }
