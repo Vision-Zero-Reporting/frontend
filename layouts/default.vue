@@ -1,4 +1,5 @@
 <template>
+  <div id="default-layout">
   <div class="container">
     <b-navbar>
       <template #brand>
@@ -14,7 +15,6 @@
         <nuxt-link v-if="!isLoggedIn" to="/" class="navbar-item">Home</nuxt-link>
         <nuxt-link v-else to="/dashboard" class="navbar-item">Dashboard</nuxt-link>
         <nuxt-link to="/issues" class="navbar-item">Issues</nuxt-link>
-        <nuxt-link to="/contact" class="navbar-item">Contact</nuxt-link>
         <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
       </template>
       <template #end>
@@ -31,10 +31,21 @@
     <br/>
 
     <Nuxt />
-
-    <footer>
-      &copy; Vision Zero Reporting&trade; 2021-2024. All rights reserved.
-      <a class="no-external" href="mailto:visionzeroreporting@gmail.com"><b-icon icon="email" size="is-small" /> Email us</a> for support or questions.<!--<a class="no-external" href="https://twitter.com/ZeroReporting" target="_blank"><b-icon icon="twitter" size="is-small" /> follow us on Twitter</a>-->
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div>
+          <img
+            src="~/assets/TextLogo.png"
+            alt="Vision Zero Reporting logo"
+            width="80"
+          >
+          <p>&copy; Vision Zero Reporting&trade; 2021-2024. All rights reserved.</p>
+        </div>
+        <div>
+          <a class="no-external" href="mailto:visionzeroreporting@gmail.com"><b-icon icon="email" size="is-small" /> Contact us</a>
+        </div>
+      </div>
     </footer>
   </div>
 </template>
@@ -68,8 +79,15 @@ export default {
 <style scoped>
 .container { max-width: 900px !important; }
 footer {
-  font-size: 0.8em;
-  padding: 10px 0;
+  font-size: 0.9em;
+  padding: 20px 0;
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1)
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 footer a { border: none; }
 a.nuxt-link-exact-active {
