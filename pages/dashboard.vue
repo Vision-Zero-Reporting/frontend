@@ -7,6 +7,25 @@
     <ArticleCapture />
 
     <br />
+
+    <b-table :data="tableData" :columns="columns">
+      <b-table-column field="title" label="Title" v-slot="props">
+        <nuxt-link :to="`/article/${props.row.uuid}`">
+          {{ props.row.title }}
+        </nuxt-link>
+      </b-table-column>
+      <b-table-column field="date_created" label="Submitted on" v-slot="props">
+        {{ new Date(props.row.date_created).toLocaleString() }}
+      </b-table-column>
+      <template #empty>
+        <b-notification has-icon :closable=false>
+          Articles that you have submitted will appear here.
+          Submit an article above to get started.
+        </b-notification>
+      </template>
+    </b-table>
+
+    <br />
     <br />
 
     <h2 class="title is-4 lined">Additional resources</h2>
@@ -45,6 +64,7 @@ export default {
   },
   data() {
     return {
+      tableData: [],
       cards: [
         {
           title: 'Statistics',
@@ -71,6 +91,15 @@ export default {
   },
   components: {
     ArticleCapture
+  },
+  mounted() {
+    this.$axios.get('/user/recent-articles')
+      .then(response => {
+        this.tableData = response.data.map((data) => ({
+          ...data,
+          date_created: new Date(data.date_created).toLocaleString()
+        }))
+      })
   },
   methods: {}
 }
