@@ -1,49 +1,63 @@
 <template>
   <div id="default-layout">
-  <div class="container">
-    <b-navbar>
-      <template #brand>
-        <b-navbar-item tag="router-link" :to="{ path: '/' }">
-          <img
-            src="~/assets/TextLogo.png"
-            alt="Vision Zero Reporting logo"
-          >
-        </b-navbar-item>
-      </template>
-      <template #start>
-        <!-- See: https://stackoverflow.com/questions/57358490/how-to-use-nuxt-link-tag-in-buefy -->
-        <nuxt-link v-if="!isLoggedIn" to="/" class="navbar-item">Home</nuxt-link>
-        <nuxt-link v-else to="/dashboard" class="navbar-item">Dashboard</nuxt-link>
-        <nuxt-link to="/issues" class="navbar-item">Issues</nuxt-link>
-        <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
-      </template>
-      <template #end>
-        <b-navbar-item tag="div">
-          <div class="buttons">
-            <nuxt-link v-if="!isLoggedIn" to="/register" class="button is-text">Register</nuxt-link>
-            <nuxt-link v-if="!isLoggedIn" to="/login" class="button is-info">Log in</nuxt-link>
-            <a v-else class="button is-info" @click="logout">Log out</a>
-          </div>
-        </b-navbar-item>
-      </template>
-    </b-navbar>
+    <div class="container">
+      <b-navbar>
+        <template #brand>
+          <b-navbar-item tag="router-link" :to="{ path: '/' }">
+            <img
+              src="~/assets/TextLogo.png"
+              alt="Vision Zero Reporting logo"
+            >
+          </b-navbar-item>
+        </template>
+        <template #start>
+          <!-- See: https://stackoverflow.com/questions/57358490/how-to-use-nuxt-link-tag-in-buefy -->
+          <nuxt-link v-if="!isLoggedIn" to="/" class="navbar-item">Home</nuxt-link>
+          <nuxt-link v-else to="/dashboard" class="navbar-item">Dashboard</nuxt-link>
+          <nuxt-link to="/issues" class="navbar-item">Issues</nuxt-link>
+          <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
+        </template>
+        <template #end>
+          <b-navbar-item tag="div">
+            <div class="buttons">
+              <nuxt-link v-if="!isLoggedIn" to="/register" class="button is-text">Register</nuxt-link>
+              <nuxt-link v-if="!isLoggedIn" to="/login" class="button is-info">Log in</nuxt-link>
+              <a v-else class="button is-info" @click="logout">Log out</a>
+            </div>
+          </b-navbar-item>
+        </template>
+      </b-navbar>
 
-    <br/>
+      <br/>
 
-    <Nuxt />
+      <Nuxt />
     </div>
     <footer class="footer">
       <div class="container">
         <div>
-          <img
-            src="~/assets/TextLogo.png"
-            alt="Vision Zero Reporting logo"
-            width="80"
-          >
+          <div class="flex">
+            <img
+              src="~/assets/TextLogo.png"
+              alt="Vision Zero Reporting logo"
+              width="80"
+            />
+            <a href="https://greglang.me" target="_blank" class="no-external">
+              <p class="greg-lang">
+                <img
+                  src="~/assets/greg-logo.png"
+                  alt="Logo for Gregory Lang, author of Vision Zero Reporting"
+                  width="16"
+                  height="16"
+                  loading="lazy"
+                />
+                Built by Gregory Lang
+              </p>
+            </a>
+          </div>
           <p>&copy; Vision Zero Reporting&trade; 2021-2024. All rights reserved.</p>
         </div>
         <div>
-          <a class="no-external" href="mailto:visionzeroreporting@gmail.com"><b-icon icon="email" size="is-small" /> Contact us</a>
+          <a class="no-external" href="mailto:visionzeroreporting@greglang.me"><b-icon icon="email" size="is-small" /> Contact us</a>
         </div>
       </div>
     </footer>
@@ -93,5 +107,21 @@ footer a { border: none; }
 a.nuxt-link-exact-active {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.flex { display: flex; gap: 16px; }
+
+a .greg-lang {
+  color: black;
+}
+.greg-lang {
+  border: 1px SOLID #00AA55;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #00aa5536;
 }
 </style>

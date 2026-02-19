@@ -25,7 +25,7 @@
     </section>
     <section class="content">
       <h2 class='subtitle is-5'>Contact us</h2>
-      For questions, feedback, or assistance, please email us at <a href="mailto:visionzeroreporting@gmail.com">visionzeroreporting@gmail.com</a>.
+      For questions, feedback, or assistance, please email us at <a href="mailto:visionzeroreporting@greglang.me">visionzeroreporting@greglang.me</a>.
     </section>
     <footer class="page">
       <ol>

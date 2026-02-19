@@ -4,7 +4,7 @@
       <h1 class='title is-2'>Log in</h1>
       <b-message v-if="failedLogin" type="is-warning">
         Failed to log in: email or password is incorrect! If you need assistance logging in, contact support at 
-        <a href="mailto:visionzeroreporting@gmail.com">visionzeroreporting@gmail.com</a>
+        <a href="mailto:visionzeroreporting@greglang.me">visionzeroreporting@greglang.me</a>
       </b-message>
       <b-field label="Email">
         <b-input
