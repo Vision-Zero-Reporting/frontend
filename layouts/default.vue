@@ -1,49 +1,49 @@
 <template>
   <div id="default-layout">
-  <div class="container">
-    <b-navbar>
-      <template #brand>
-        <b-navbar-item tag="router-link" :to="{ path: '/' }">
-          <img
-            src="~/assets/TextLogo.png"
-            alt="Vision Zero Reporting logo"
-          >
-        </b-navbar-item>
-      </template>
-      <template #start>
-        <!-- See: https://stackoverflow.com/questions/57358490/how-to-use-nuxt-link-tag-in-buefy -->
-        <nuxt-link v-if="!isLoggedIn" to="/" class="navbar-item">Home</nuxt-link>
-        <nuxt-link v-else to="/dashboard" class="navbar-item">Dashboard</nuxt-link>
-        <nuxt-link to="/issues" class="navbar-item">Issues</nuxt-link>
-        <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
-      </template>
-      <template #end>
-        <b-navbar-item tag="div">
-          <div class="buttons">
-            <nuxt-link v-if="!isLoggedIn" to="/register" class="button is-text">Register</nuxt-link>
-            <nuxt-link v-if="!isLoggedIn" to="/login" class="button is-info">Log in</nuxt-link>
-            <a v-else class="button is-info" @click="logout">Log out</a>
-          </div>
-        </b-navbar-item>
-      </template>
-    </b-navbar>
+    <div class="container">
+      <b-navbar>
+        <template #brand>
+          <b-navbar-item tag="router-link" :to="{ path: '/' }">
+            <img
+              src="~/assets/TextLogo.png"
+              alt="Vision Zero Reporting logo"
+            >
+          </b-navbar-item>
+        </template>
+        <template #start>
+          <!-- See: https://stackoverflow.com/questions/57358490/how-to-use-nuxt-link-tag-in-buefy -->
+          <nuxt-link v-if="!isLoggedIn" to="/" class="navbar-item">Home</nuxt-link>
+          <nuxt-link v-else to="/dashboard" class="navbar-item">Dashboard</nuxt-link>
+          <nuxt-link to="/issues" class="navbar-item">Issues</nuxt-link>
+          <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
+        </template>
+        <template #end>
+          <b-navbar-item tag="div">
+            <div class="buttons">
+              <nuxt-link v-if="!isLoggedIn" to="/register" class="button is-text">Register</nuxt-link>
+              <nuxt-link v-if="!isLoggedIn" to="/login" class="button is-info">Log in</nuxt-link>
+              <a v-else class="button is-info" @click="logout">Log out</a>
+            </div>
+          </b-navbar-item>
+        </template>
+      </b-navbar>
 
-    <br/>
+      <br/>
 
-    <Nuxt />
+      <Nuxt />
     </div>
     <footer class="footer">
       <div class="container">
         <div>
-          <img
-            src="~/assets/TextLogo.png"
-            alt="Vision Zero Reporting logo"
-            width="80"
+            <img
+              src="~/assets/TextLogo.png"
+              alt="Vision Zero Reporting logo"
+              width="80"
           >
           <p>&copy; Vision Zero Reporting&trade; 2021-2024. All rights reserved.</p>
         </div>
         <div>
-          <a class="no-external" href="mailto:visionzeroreporting@gmail.com"><b-icon icon="email" size="is-small" /> Contact us</a>
+          <a class="no-external" href="mailto:visionzeroreporting@greglang.me"><b-icon icon="email" size="is-small" /> Contact us</a>
         </div>
       </div>
     </footer>

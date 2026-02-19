@@ -4,7 +4,7 @@
       <h1 class='title is-2'>Register</h1>
       <b-message v-if="failedRegistration" type="is-warning">
         Failed to register. Please check that all fields are filled out properly. If this error persists,
-        please contact support at <a href="mailto:visionzeroreporting@gmail.com">visionzeroreporting@gmail.com</a>
+        please contact support at <a href="mailto:visionzeroreporting@greglang.me">visionzeroreporting@greglang.me</a>
       </b-message>
       <b-message v-if="validationErrors.length" type="is-warning">
         The following issues should be addressed to register:
@@ -12,7 +12,7 @@
           <li v-for="errorMsg in validationErrors">{{ errorMsg }}</li>
         </ul>
         Please check that all fields are filled out properly. If you need help,
-        please contact support at <a href="mailto:visionzeroreporting@gmail.com">visionzeroreporting@gmail.com</a>
+        please contact support at <a href="mailto:visionzeroreporting@greglang.me">visionzeroreporting@greglang.me</a>
       </b-message>
       <b-field label="First name">
         <b-input
