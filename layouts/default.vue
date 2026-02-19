@@ -35,11 +35,25 @@
     <footer class="footer">
       <div class="container">
         <div>
+          <div class="flex">
             <img
               src="~/assets/TextLogo.png"
               alt="Vision Zero Reporting logo"
               width="80"
-          >
+            />
+            <a href="https://greglang.me" target="_blank" class="no-external">
+              <p class="greg-lang">
+                <img
+                  src="~/assets/greg-logo.png"
+                  alt="Logo for Gregory Lang, author of Vision Zero Reporting"
+                  width="16"
+                  height="16"
+                  loading="lazy"
+                />
+                Built by Gregory Lang
+              </p>
+            </a>
+          </div>
           <p>&copy; Vision Zero Reporting&trade; 2021-2024. All rights reserved.</p>
         </div>
         <div>
@@ -93,5 +107,21 @@ footer a { border: none; }
 a.nuxt-link-exact-active {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.flex { display: flex; gap: 16px; }
+
+a .greg-lang {
+  color: black;
+}
+.greg-lang {
+  border: 1px SOLID #00AA55;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #00aa5536;
 }
 </style>
